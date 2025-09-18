@@ -1,0 +1,84 @@
+<div class="marquee scroll">
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="w-embed">
+            <style>
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+.scroll {
+  animation: scroll 40s linear infinite;
+}
+.reverse {
+  animation-direction: reverse;
+}
+.marquee-image {
+  -webkit-transform: translateZ(0);
+}
+</style>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+        </div>
+        <div class="spacer-medium"></div>
+        <div class="section wrap_lipcandy-feed review-section">
+          <div class="container-max">
+            <div class="swiper is-reviews-carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> <script> document.addEventListener("DOMContentLoaded", function (){// Social carousel const teamSlider = new Swiper(".swiper.is-social-carousel",{loop: true, slidesPerView: 4, spaceBetween: 16, allowTouchMove: true, pagination:{el: ".swiper.is-social-carousel .swiper-pagination", // scoped! clickable: true, dynamicBullets: true,}, breakpoints:{480:{slidesPerView: 4,},},}); // Reviews carousel const reviewsSlider = new Swiper(".swiper.is-reviews-carousel",{loop: true, slidesPerView: 4, spaceBetween: 16, allowTouchMove: true, pagination:{el: ".swiper.is-reviews-carousel .swiper-pagination", // scoped! clickable: true, dynamicBullets: true,}, breakpoints:{768:{slidesPerView: 2,}, 1024:{slidesPerView: 3,},},});}); </script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Results Slider",
+    "class": "section reviews",
+    "presets": [
+        {
+            "name": "Results Slider",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

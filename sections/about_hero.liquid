@@ -1,0 +1,20 @@
+<div class="hero-video w-embed">{{ section.settings.html_video_embed }} </div> {% schema %} {
+    "tag": "section",
+    "name": "About Hero",
+    "class": "section about-hero",
+    "settings": [
+        {
+            "id": "html_video_embed",
+            "type": "html",
+            "label": "Video Embed",
+            "default": "<video id=\"hero-video\" class=\"hero-video\" autoplay=\"\" muted=\"\" loop=\"\" playsinline=\"\">\n            <!--  Dropbox video source with the correct format  -->\n            <source src=\"https:\/\/ia601004.us.archive.org\/18\/items\/horizontal-rerender-copy\/HorizontalRerender%20copy.ia.mp4\" type=\"video\/mp4\">\n            Your browser does not support the video tag.\n          <\/source><\/video>\n          <style>\n@media (max-width: 480px) {\n  .hero-video {\n    position: absolute !important;\n"
+        }
+    ],
+    "presets": [
+        {
+            "name": "About Hero",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

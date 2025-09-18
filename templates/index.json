@@ -1,0 +1,44 @@
+{
+    "sections": {
+        "hero": {
+            "type": "hero"
+        },
+        "intro": {
+            "type": "intro"
+        },
+        "bundles_slider": {
+            "type": "bundles_slider"
+        },
+        "featured_products": {
+            "type": "featured_products"
+        },
+        "lip_candy_home": {
+            "type": "lip_candy_home"
+        },
+        "benefits_home": {
+            "type": "benefits_home"
+        },
+        "results_slider": {
+            "type": "results_slider"
+        },
+        "cta_general": {
+            "type": "cta_general"
+        },
+        "custom_liquid": {
+            "type": "custom_liquid"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "hero",
+        "intro",
+        "bundles_slider",
+        "featured_products",
+        "lip_candy_home",
+        "benefits_home",
+        "results_slider",
+        "cta_general",
+        "custom_liquid"
+    ]
+}

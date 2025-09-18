@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "faq_hero": {
+            "type": "faq_hero"
+        },
+        "faq_graphic": {
+            "type": "faq_graphic"
+        },
+        "faq_section": {
+            "type": "faq_section"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "faq_hero",
+        "faq_graphic",
+        "faq_section"
+    ]
+}
