@@ -1,0 +1,123 @@
+<div class="contains_graphic-lipcandy">
+          <div class="wrap_lipcandy-title">
+            <div class="svg-wave w-embed">
+              <div class="lipcandy-wrap">
+                <svg class="lipcandy-svg" viewbox="0 0 1926 143" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                  <defs>
+                    <!--  Invisible path: no stroke, no fill  -->
+                    <path id="lipcandyPath" d="M1 96.7014C150.833 131.201 545.8 179.501 927 96.7014C1403.5 -6.79861 1478 -33.2986 1925 51.7014" fill="none" stroke="none"></path>
+                  </defs>
+                  <!--  Visible text along the path  -->
+                  <text class="lipcandy-text">
+                    <textpath href="#lipcandyPath" startoffset="0%" alignment-baseline="middle">
+                      LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE •
+                      LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE •
+                      LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE •
+                      LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE • LIP CANDY ZONE •
+                    </textpath>
+                  </text>
+                </svg>
+              </div>
+              <style>
+  .lipcandy-wrap { width: 100%; }
+  .lipcandy-svg { width: 100%; height: 30vh; overflow: visible; display: block; }
+  /* Style your text here */
+  .lipcandy-text { 
+    font-family: inherit; 
+    font-size: inherit; 
+    letter-spacing: inherit; 
+    fill: currentColor; /* Inherits color; set color on parent */
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+</style>
+            </div>
+          </div>
+          <div class="contains_lipcandy-bottle"><img src="{{ 'lipcandy-png-1-copy_1.avif' | asset_url }}" loading="lazy" alt="" class="img_lipcandy-bottle"></div>
+          <div class="wave_bottom"><img src="{{ 'wave-bottom.svg' | asset_url }}" loading="lazy" alt=""></div>
+          <div class="block_lip-candy-info">
+            <div>
+{{ section.settings.text_blurb_text }}
+</div>
+            <a href="{{ section.settings.url_button_link }}" class="button lipcandy w-button"> {{ section.settings.text_button_text }} </a>
+          </div>
+        </div>
+        <div class="section wrap_lipcandy-feed">
+          <div class="container-max">
+            <div class="social-title">
+              <div>@LipCandy</div>
+              <div class="flex-horizontal align-right gap-1rem">
+                <a href="#" class="social_block w-inline-block"><img src="{{ 'ic_baseline-tiktok.svg' | asset_url }}" loading="lazy" alt="">
+                  <div>Tiktok</div>
+                </a>
+                <a href="#" class="social_block w-inline-block"><img src="{{ 'mdi_instagram.svg' | asset_url }}" loading="lazy" alt="">
+                  <div>Instagram</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="spacer-small x-medium"></div>
+          <div class="container-max">
+            <div class="swiper is-social-carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <style> .swiper{--bullet-size: 10px; --bullet-gap: 10px; --bullet-transition: 220ms ease;}/* Pagination wrapper */ .swiper .swiper-pagination{min-height: 3rem margin-top: 3rem; justify-content: center; align-items: center; gap: var(--bullet-gap);}/* Normal bullets = white */ .swiper .swiper-pagination-bullet{width: 1rem; height: 1rem; border-radius: 50%; background: #fff; opacity: 1; transform: scale(1); transition: transform var(--bullet-transition), background var(--bullet-transition);}/* Active bullet = red */ .swiper .swiper-pagination-bullet-active{background: red; transform: scale(1.1); /* optional "pop" effect */}/* Optional: style dynamic prev/next bullets differently */ .swiper .swiper-pagination-bullet-active-prev, .swiper .swiper-pagination-bullet-active-next{transform: scale(1.05);}</style>
+            </div>
+          </div>
+        </div>
+        <script> (function (){function loadScript(src){return new Promise(function (resolve){if (document.querySelector('script[src="' + src + '"]')) return resolve(); var s = document.createElement('script'); s.src = src; s.onload = resolve; document.head.appendChild(s);});}function initLipCandy(){if (!window.gsap || !window.ScrollTrigger) return; gsap.registerPlugin(ScrollTrigger); document.querySelectorAll('.section.lipcandy').forEach(function(section){var textPaths = section.querySelectorAll('.lipcandy-svg textPath'); textPaths.forEach(function(tp){gsap.fromTo(tp,{attr:{startOffset: '20%'}}, // starting at the right{attr:{startOffset: '-90%'}, // moving left across the path ease: 'none', scrollTrigger:{trigger: section, start: 'top bottom', end: 'bottom top', scrub: true}});});});}function onReady(fn){if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);}onReady(function(){var gsapURL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'; var stURL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'; (window.gsap ? Promise.resolve() : loadScript(gsapURL)) .then(function(){return window.ScrollTrigger ? null : loadScript(stURL);}) .then(initLipCandy);});})(); </script> {% schema %} {
+    "tag": "section",
+    "name": "Lip Candy Home",
+    "class": "section lipcandy",
+    "settings": [
+        {
+            "id": "text_blurb_text",
+            "type": "text",
+            "label": "Blurb text",
+            "default": "Introducing Butter Up, the newest and first lip product from <span class=\"text-bold\">LIPCANDY!<\/span>"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "button-text",
+            "default": "Shop"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "button-link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Lip Candy Home",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

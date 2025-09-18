@@ -1,0 +1,24 @@
+{
+    "sections": {
+        "product_hero": {
+            "type": "product_hero"
+        },
+        "benefits_wrapper": {
+            "type": "benefits_wrapper"
+        },
+        "ugc_section": {
+            "type": "ugc_section"
+        },
+        "bundles": {
+            "type": "bundles"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "product_hero",
+        "benefits_wrapper",
+        "ugc_section",
+        "bundles"
+    ]
+}

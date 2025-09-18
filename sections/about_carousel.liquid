@@ -1,0 +1,58 @@
+<div class="marquee scroll">
+          <div class="w-embed">
+            <style>
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+.scroll {
+  animation: scroll 40s linear infinite;
+}
+.reverse {
+  animation-direction: reverse;
+}
+.marquee-image {
+  -webkit-transform: translateZ(0);
+}
+</style>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+          <div class="marquee-content">
+            <div>The founders - </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "About Carousel",
+    "class": "section about",
+    "presets": [
+        {
+            "name": "About Carousel",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

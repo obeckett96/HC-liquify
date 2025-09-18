@@ -1,0 +1,53 @@
+<div class="container-cta">
+          <div class="cta-title">
+            <div>
+{{ section.settings.text_heading }}
+</div>
+            <div class="button-group">
+              <a href="{{ section.settings.url_button_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
+              <a href="{{ section.settings.url_button_link_2 }}" class="button pink w-button"> {{ section.settings.text_button_text_2 }} </a>
+            </div>
+          </div>
+          <div class="opacity-cover"></div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "CTA General",
+    "class": "section cta",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "The future of hair care starts now."
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "button-text",
+            "default": "Shop Haircare"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "button-link"
+        },
+        {
+            "id": "text_button_text_2",
+            "type": "text",
+            "label": "button-text-2",
+            "default": "Shop Haircare"
+        },
+        {
+            "id": "url_button_link_2",
+            "type": "url",
+            "label": "button-link-2"
+        }
+    ],
+    "presets": [
+        {
+            "name": "CTA General",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

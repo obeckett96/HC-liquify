@@ -1,0 +1,120 @@
+<div class="marquee scroll">
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+          <div class="w-embed">
+            <style>
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+.scroll {
+  animation: scroll 40s linear infinite;
+}
+.reverse {
+  animation-direction: reverse;
+}
+.marquee-image {
+  -webkit-transform: translateZ(0);
+}
+</style>
+          </div>
+          <div class="marquee-content">
+            <div>Reviews + Real results</div>
+          </div>
+        </div>
+        <div class="spacer-medium"></div>
+        <div class="section wrap_lipcandy-feed review-section">
+          <div class="container-max">
+            <div class="swiper is-reviews-carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="w-embed">
+                <style>
+  .swiper {
+    --bullet-size: 10px;      
+    --bullet-gap: 10px;       
+    --bullet-transition: 220ms ease;
+  }
+  /* Pagination wrapper */
+  .swiper .swiper-pagination {
+  min-height: 3rem
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: var(--bullet-gap);
+  }
+  /* Normal bullets = white */
+  .swiper .swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform var(--bullet-transition), background var(--bullet-transition);
+  }
+  /* Active bullet = red */
+  .swiper .swiper-pagination-bullet-active {
+    background: red;
+    transform: scale(1.1); /* optional "pop" effect */
+  }
+  /* Optional: style dynamic prev/next bullets differently */
+  .swiper .swiper-pagination-bullet-active-prev,
+  .swiper .swiper-pagination-bullet-active-next {
+    transform: scale(1.05);
+  }
+</style>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "UGC Section",
+    "class": "section reviews",
+    "presets": [
+        {
+            "name": "UGC Section",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

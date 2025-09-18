@@ -1,0 +1,140 @@
+<div class="wrap_product-hero">
+          <div class="product-left">
+            <div class="wrap_product-img"><img src="{{ product.featured_image | image_url: width: 1000 }}" loading="lazy" li-object:src="product.featured_image | image_url: width: 1000" alt="" class="product-featured-img"></div>
+          </div>
+          <div class="product-right">
+            <div class="product_content">
+              <div class="product_top-info">
+                <h1 li-object:text="product.title" class="title_product">
+{{ product.title }}
+</h1>
+                <div class="block_star-rating"></div>
+              </div>
+              <div class="product_main-info">
+                <div li-object="product.description" class="product_description w-richtext">{{ product.description }}</div>
+                <div class="wrap_payment-options">
+                  <div class="product-header_price-wrapper">
+                    <div li-js-price="product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price" class="text-price" x-text="LiquifyHelper.moneyFormat(product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price, true, '{{ shop.money_with_currency_format }}')">NZD$55</div>
+                    <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+            <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+        
+                      <div li-object="product.compare_at_price | money" class="compare-at-price">{{ product.compare_at_price | money }}</div>
+                            </div>
+    </template>
+                    <div class="product-header_tag-list">
+                      <template x-if="selected_or_first_available_variant.available != true">
+            <div li-js-if="selected_or_first_available_variant.available != true" class="product-item_tag">
+        Not in Stock        </div>
+    </template>
+                      <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+            <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price" class="product-item_tag is-red">
+        Sale        </div>
+    </template>
+                    </div>
+                  </div>
+                  <div class="product-header_form-block w-form">
+                    {% form 'product', product, class: 'product-header_default-state' %}
+{% if product.selling_plan_groups.size > 0 %}    <div li-if="product.selling_plan_groups.size > 0">
+    
+                        <div li-for:inside="variant in product.variants">
+        {% for variant in product.variants %}                            
+                          
+                            <template x-if="{{ variant.id }} === product.selected_or_first_available_variant.id">
+            <div li-js-if="{{ variant.id }} === product.selected_or_first_available_variant.id" class="product-header_subscription">
+        <label class="product-header_subscription_radio-lable w-radio"><input x-on:click="sellingplan_active = false; selling_plan = ''" class="w-form-formradioinput w-radio-input" name="selling_plan_active" data-name="selling_plan_active" type="radio" id="radio-5" checked="" value=""><span class="w-form-label" for="radio-5">
+{{ section.settings.text_without_subscription }}
+</span></label>
+                            <div class="product-header_subscription_radio-lable options"><label class="product-header_subscription_radio-lable is-on w-radio"><input type="radio" name="selling_plan_active" id="radio-4" data-name="selling_plan_active" x-on:click="sellingplan_active = true; selling_plan = '{{ variant.selling_plan_allocations.first.selling_plan.id }}'" class="w-form-formradioinput w-radio-input" value="Radio 4"><span class="w-form-label" for="radio-4">
+{{ section.settings.text_with_subscription }}
+</span></label>
+                              <div x-show="sellingplan_active" class="w-layout-vflex product-header_subscription_radio-lable is-on secondary">{% for plan in variant.selling_plan_allocations %}    <label li-for="plan in variant.selling_plan_allocations" class="product-header_subscription_radio-lable-small w-radio">
+                                    <input class="w-form-formradioinput w-radio-input" li-object:value="plan.selling_plan.id" name="selling_plan" data-name="selling_plan" x-model="selling_plan" type="radio" id="radio-4" value="{{ plan.selling_plan.id }}">
+                            <span li-object="plan.selling_plan.name" class="w-form-label" for="radio-4">{{ plan.selling_plan.name }}</span>
+                        </label>
+{% endfor %}</div>
+                            </div>
+                                  </div>
+    </template>
+                            <template x-if="sellingplan_active">
+            <input name="selling_plan" type="hidden" x-model="selling_plan" li-js-if="sellingplan_active">
+    </template>
+                            
+                        
+                    {% endfor %}    </div>
+                          </div>
+{% endif %}
+                      <div class="product-header_add-to-cart-wrapper">
+                        <div class="product-header_buy-wrappper"><input class="form_input-2 is-quantity w-input" maxlength="256" name="quantity-3" li-element="add-to-cart-quantity" data-name="Quantity 3" placeholder="1" type="number" id="quantity-3" required="" x-model="quantity">
+                          <a li-element="add-to-cart" href="#" class="button pink w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to cart</a>
+                        </div>
+                        {% if product.available != true %}    <div li-if="product.available != true" class="product-header_out-of-stock">
+    
+                          <a href="#" class="button-2 is-secondary max-width-full pointer-events-off w-button">Out of Stock</a>
+                            </div>
+{% endif %}
+                      </div>
+                    {% endform %}
+                    <div class="hide w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="hide w-form-fail">
+                      <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordian_full">
+                  {% if product.metafields.details.ingredients %}    <div li-if="product.metafields.details.ingredients" class="accordian_wrap">
+    
+                    <div class="trigger_product-info">
+                      <div>Ingredients</div><img src="{{ 'Vector.svg' | asset_url }}" loading="lazy" width="20" height="20" alt="" class="icon_plus">
+                    </div>
+                    <div class="accordian_drop">
+                      <div li-object="product.metafields.details.ingredients | metafield_tag" class="info_description smaller w-richtext">{{ product.metafields.details.ingredients | metafield_tag }}</div>
+                    </div>
+                      </div>
+{% endif %}
+                  {% if product.metafields.details.directions %}    <div li-if="product.metafields.details.directions" class="accordian_wrap">
+    
+                    <div class="trigger_product-info">
+                      <div>Directions for use</div><img src="{{ 'Vector.svg' | asset_url }}" loading="lazy" width="20" height="20" alt="" class="icon_plus">
+                    </div>
+                    <div class="accordian_drop">
+                      <div li-object="product.metafields.details.directions | metafield_tag" class="info_description smaller w-richtext">{{ product.metafields.details.directions | metafield_tag }}</div>
+                    </div>
+                      </div>
+{% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Product Hero",
+    "class": "section product-hero",
+    "settings": [
+        {
+            "id": "text_without_subscription",
+            "type": "text",
+            "label": "without Subscription",
+            "default": "One-time purchase"
+        },
+        {
+            "id": "text_with_subscription",
+            "type": "text",
+            "label": "with Subscription",
+            "default": "Subscribe &amp; Save 15%"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Hero",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "product"
+        ]
+    }
+} {% endschema %}

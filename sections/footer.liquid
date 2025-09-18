@@ -1,0 +1,168 @@
+<div class="container-max">
+          <div class="footer_main-wrapper">
+            <div class="footer-left">
+              {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
+                                    
+                
+                            <div li-object="link.title" class="title-footer">{{ link.title }}</div>
+                            
+                
+                            <div li-for:inside="child_link in link.links" class="footer_link-list">
+        {% for child_link in link.links %}                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                
+                    {% endfor %}    </div>
+                            
+              
+                        </div>
+{% endfor %}
+              {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
+                                    
+                
+                            <div li-object="link.title" class="title-footer">{{ link.title }}</div>
+                            
+                
+                            <div li-for:inside="child_link in link.links" class="footer_link-list">
+        {% for child_link in link.links %}                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                  
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                
+                    {% endfor %}    </div>
+                            
+              
+                        </div>
+{% endfor %}
+            </div>
+            <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049449-6f04942f" class="footer-right">
+              <h2 class="heading-style-h2 newsletter-title">
+{{ section.settings.text_heading }}
+</h2>
+              <div class="footer_form-block w-form">
+                {% form 'customer', return_to: '/', class: 'footer_form' %}
+<div class="newsletter-wrap"><input class="newsletter-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email Address" type="email" id="Email"><input type="submit" data-wait="Please wait..." class="submit_newsletter w-button" value="Subscribe"></div>
+                  <div li-object="form.errors | default_errors" class="text-error">{{ form.errors | default_errors }}</div>
+                  <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049453-6f04942f" class="hide-2 w-embed"><input type="hidden" name="contact[accepts_marketing]" value="false"></div><label id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049454-6f04942f" class="w-checkbox form_checkbox-2" name="contact[accepts_marketing]"><input type="checkbox" name="Accepts-Marketing-2" id="Accepts-Marketing-2" data-name="Accepts Marketing 2" class="w-checkbox-input form_checkbox-icon-2"><span class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2">
+{{ section.settings.text_checkbox }}
+</span></label>
+                {% endform %}
+                <div class="hide-2 w-form-done">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="hide-2 w-form-fail">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer-medium"></div>
+        <div class="footer-logo"><img src="{{ 'Group-21.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+        <div class="spacer-medium"></div>
+        <div class="footer_divider"></div>
+        <div class="container-large">
+          <div class="footer_icon-grid">
+            {% if enabled_payment_types.length > 0 %}    <div li-if="enabled_payment_types.length > 0" id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049469-6f04942f" class="footer_icon-block">
+    
+              <div class="text-size-regular-3">
+{{ section.settings.text_payment_method }}
+</div>
+              <ul role="list" class="footer_payment-list w-list-unstyled">
+                {% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="footer_payment-item">
+                                    
+                  
+                            <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'" class="footer_payment-svg">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
+                            
+                  
+                            <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'" class="footer_payment-svg">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
+                            
+                
+                        </li>
+{% endfor %}
+              </ul>
+                </div>
+{% endif %}
+          </div>
+        </div>
+        <div class="spacer-small"></div>
+        <div class="container-large">
+          <div class="footer_sub-footer">
+            <div li-for:inside="link in linklists['footer'].links" id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049475-6f04942f" class="footer_legal-links">
+        {% for link in linklists['footer'].links %}                            
+              
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                            
+              
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                            
+            
+                    {% endfor %}    </div>
+            <div>
+              <div class="footer_legal-link">Website developed by <a href="{{ link.url }}" li-object:href="link.url">Tigernaut</a>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "footer",
+    "name": "Footer",
+    "class": "section footer",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Good hair days start here"
+        },
+        {
+            "id": "text_checkbox",
+            "type": "text",
+            "label": "Checkbox",
+            "default": "By subscribing you agree to with our <a href=\"#\"><span>Privacy Policy<\/span><\/a> and provide consent to receive updates from our company."
+        },
+        {
+            "id": "text_payment_method",
+            "type": "text",
+            "label": "Payment Method",
+            "default": "Payment Methods"
+        },
+        {
+            "type": "header",
+            "content": "Navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "footer_menu",
+            "label": "Footer Menu",
+            "default": "footer"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Footer",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "groups": [
+            "*"
+        ]
+    }
+} {% endschema %}
