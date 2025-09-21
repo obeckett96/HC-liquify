@@ -1,4 +1,4 @@
-<div class="contains_graphic-lipcandy">
+<div data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed17" class="contains_graphic-lipcandy">
           <div class="wrap_lipcandy-title">
             <div class="svg-wave w-embed">
               <div class="lipcandy-wrap">
@@ -33,9 +33,9 @@
 </style>
             </div>
           </div>
-          <div class="contains_lipcandy-bottle"><img src="{{ 'lipcandy-png-1-copy_1.avif' | asset_url }}" loading="lazy" alt="" class="img_lipcandy-bottle"></div>
+          <div class="contains_lipcandy-bottle"><img src="{{ 'lipcandy-png-1-copy_1.avif' | asset_url }}" loading="lazy" data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed1b" alt="" class="img_lipcandy-bottle"></div>
           <div class="wave_bottom"><img src="{{ 'wave-bottom.svg' | asset_url }}" loading="lazy" alt=""></div>
-          <div class="block_lip-candy-info">
+          <div data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed1e" class="block_lip-candy-info">
             <div>
 {{ section.settings.text_blurb_text }}
 </div>
@@ -58,35 +58,179 @@
           </div>
           <div class="spacer-small x-medium"></div>
           <div class="container-max">
-            <div class="swiper is-social-carousel">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+            <div class="swiper is-lipcandy">
+              <div class="swiper-wrapper is-lipcandy">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide is-lipcandy">
                   <div class="social_image-wrapper"><img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed"></div>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
-              <style> .swiper{--bullet-size: 10px; --bullet-gap: 10px; --bullet-transition: 220ms ease;}/* Pagination wrapper */ .swiper .swiper-pagination{min-height: 3rem margin-top: 3rem; justify-content: center; align-items: center; gap: var(--bullet-gap);}/* Normal bullets = white */ .swiper .swiper-pagination-bullet{width: 1rem; height: 1rem; border-radius: 50%; background: #fff; opacity: 1; transform: scale(1); transition: transform var(--bullet-transition), background var(--bullet-transition);}/* Active bullet = red */ .swiper .swiper-pagination-bullet-active{background: red; transform: scale(1.1); /* optional "pop" effect */}/* Optional: style dynamic prev/next bullets differently */ .swiper .swiper-pagination-bullet-active-prev, .swiper .swiper-pagination-bullet-active-next{transform: scale(1.05);}</style>
+              <div class="swiper-pagination is-lipcandy"></div>
+              <div class="hide w-embed w-script">
+                <style>
+/* ---------- Lipcandy Carousel Swiper Styles ---------- */
+.swiper.is-lipcandy {
+  --bullet-size: 10px;
+  --bullet-gap: 10px;
+  --bullet-transition: 220ms ease;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.swiper.is-lipcandy.swiper-ready {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.swiper-wrapper.is-lipcandy {
+  display: flex !important;
+  transition-property: transform !important;
+  box-sizing: border-box !important;
+}
+.swiper-slide.is-lipcandy {
+  flex: 0 0 auto !important;
+  height: auto !important;
+  position: relative !important;
+  transition-property: transform !important;
+  display: block !important;
+}
+/* Pagination */
+.swiper.is-lipcandy .swiper-pagination.is-lipcandy {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: var(--bullet-gap);
+  position: static !important;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+  overflow: visible !important;
+  z-index: 10;
+  min-height: calc(var(--bullet-size) + 8px);
+}
+.swiper.is-lipcandy .swiper-pagination-bullet {
+  min-width: var(--bullet-size) !important;
+  width: var(--bullet-size) !important;
+  height: var(--bullet-size) !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  opacity: 1 !important;
+  transform: scale(1);
+  transition: transform var(--bullet-transition), background var(--bullet-transition);
+  margin: 0 !important;
+  flex: none;
+  box-sizing: content-box;
+}
+.swiper.is-lipcandy .swiper-pagination-bullet-active {
+  background: red !important;
+  transform: scale(1.1) !important;
+}
+.swiper.is-lipcandy .swiper-pagination-bullets-dynamic {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bullet-gap);
+  transform-origin: center;
+}
+.swiper.is-lipcandy .swiper-pagination-bullet-active-prev,
+.swiper.is-lipcandy .swiper-pagination-bullet-active-next {
+  transform: scale(1.05) !important;
+}
+.swiper.is-lipcandy .swiper-pagination-bullet:focus {
+  outline: none;
+  transform: scale(1.25);
+}
+.swiper.is-lipcandy .swiper-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+.swiper.is-lipcandy .swiper-pagination {
+  pointer-events: auto;
+}
+</style>
+                <script>
+function initializeLipcandyCarouselSwiper() {
+  if (typeof Swiper === 'undefined') {
+    console.error('Swiper not loaded yet for lipcandy carousel');
+    setTimeout(initializeLipcandyCarouselSwiper, 100);
+    return;
+  }
+  const lipcandySwipers = document.querySelectorAll('.swiper.is-lipcandy');
+  lipcandySwipers.forEach((swiperElement, index) => {
+    if (swiperElement.hasAttribute('data-lipcandy-swiper-initialized')) return;
+    const wrapper = swiperElement.querySelector('.swiper-wrapper.is-lipcandy');
+    const pagination = swiperElement.querySelector('.swiper-pagination.is-lipcandy');
+    const slides = swiperElement.querySelectorAll('.swiper-slide.is-lipcandy');
+    if (!wrapper || slides.length === 0) {
+      swiperElement.classList.add('swiper-ready');
+      return;
+    }
+    try {
+      const config = {
+        slidesPerView: 1, // mobile default
+        spaceBetween: 20,
+        loop: slides.length > 1,
+        autoplay: slides.length > 1 ? { delay: 5000, disableOnInteraction: false } : false,
+        pagination: pagination ? {
+          el: pagination,
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 3
+        } : false,
+        keyboard: { enabled: true, onlyInViewport: true },
+        observer: true,
+        observeParents: true,
+        breakpoints: {
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 40 },
+          1440: { slidesPerView: 4, spaceBetween: 40 }
+        },
+        on: {
+          init: function() {
+            swiperElement.classList.add('swiper-ready');
+            swiperElement.setAttribute('data-lipcandy-swiper-initialized', 'true');
+          }
+        }
+      };
+      const lipcandySwiper = new Swiper(swiperElement, config);
+      setTimeout(() => {
+        if (!swiperElement.classList.contains('swiper-ready')) {
+          swiperElement.classList.add('swiper-ready');
+          swiperElement.setAttribute('data-lipcandy-swiper-initialized', 'true');
+        }
+      }, 500);
+    } catch (error) {
+      console.error('Error initializing lipcandy carousel swiper:', error);
+      swiperElement.classList.add('swiper-ready');
+    }
+  });
+}
+// run on ready / load and late fallback
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(initializeLipcandyCarouselSwiper, 600);
+});
+window.addEventListener("load", () => {
+  setTimeout(initializeLipcandyCarouselSwiper, 200);
+});
+setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
+</script>
+              </div>
             </div>
           </div>
         </div>

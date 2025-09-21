@@ -1,6 +1,251 @@
 <div class="wrap_product-hero">
           <div class="product-left">
-            <div class="wrap_product-img"><img src="{{ product.featured_image | image_url: width: 1000 }}" loading="lazy" li-object:src="product.featured_image | image_url: width: 1000" alt="" class="product-featured-img"></div>
+            <div class="wrap_product-img">
+              <div class="swiper-container is-product-gallery">
+                <div class="swiper is-product-gallery">
+                  <div id="my-gallery" li-for:inside="media in product.media" class="swiper-wrapper is-product-gallery">
+        {% for media in product.media %}                            
+                    
+                            {% if media.media_type == 'image' %}    <div li-if="media.media_type == 'image'" class="swiper-slide is-product-gallery">
+    
+                      <div class="product-header_gallery-lightbox"><img li-object:src="media | image_url: width: 1000" li-object:alt="media.alt" alt="{{ media.alt }}" src="{{ media | image_url: width: 1000 }}" loading="lazy" class="product-header_gallery-image"></div>
+                        </div>
+{% endif %}
+                            
+                    
+                            {% if media.media_type == 'image' %}    <div li-if="media.media_type == 'image'" class="swiper-slide is-product-gallery">
+    
+                      <div class="product-header_gallery-lightbox"><img li-object:src="media | image_url: width: 1000" li-object:alt="media.alt" alt="{{ media.alt }}" src="{{ media | image_url: width: 1000 }}" loading="lazy" class="product-header_gallery-image"></div>
+                        </div>
+{% endif %}
+                            
+                    
+                            {% if media.media_type == 'video' %}    <div li-if="media.media_type == 'video'" class="swiper-slide is-product-gallery">
+    
+                      <div class="product-header_gallery-lightbox">
+                        <div li-object="media | video_tag: controls: true" class="product-header_gallery-image">{{ media | video_tag: controls: true }}</div>
+                      </div>
+                        </div>
+{% endif %}
+                            
+                  
+                    {% endfor %}    </div>
+                </div>
+                <div class="product-header_slider-wrapper">
+                  <div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape">
+                    <a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block">
+                      <div class="swiper_button-icon is-reversed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                          <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                            <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                            <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                          </g>
+                        </svg></div>
+                    </a>
+                    <a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block">
+                      <div class="swiper_button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                          <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                            <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                            <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                          </g>
+                        </svg></div>
+                    </a>
+                  </div>
+                  <div class="swiper is-product-thumbnail">
+                    <div li-for:inside="media in product.media" class="swiper-wrapper is-product-thumbnail">
+        {% for media in product.media %}                            
+                      
+                            {% if media.media_type == 'image' %}    <div li-if="media.media_type == 'image'" class="swiper-slide is-product-thumbnail">
+    <img li-object:src="media | image_url: width: 200" li-object:alt="media.alt" alt="{{ media.alt }}" src="{{ media | image_url: width: 200 }}" loading="lazy" class="product-header_thumbnail-image">    </div>
+{% endif %}
+                            
+                      
+                            {% if media.media_type == 'video' %}    <div li-if="media.media_type == 'video'" class="swiper-slide is-product-thumbnail">
+    <img li-object:src="media | image_url: width: 200" li-object:alt="media.alt" alt="{{ media.alt }}" src="{{ media | image_url: width: 200 }}" loading="lazy" class="product-header_thumbnail-image">
+                        <div aria-hidden="true" class="product-header_play-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                            <path fill="currentColor" d="M8 5v14l11-7z"></path>
+                          </svg></div>
+                          </div>
+{% endif %}
+                            
+                    
+                    {% endfor %}    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+              </div>
+              <div class="hide-2 w-embed w-script"><!--  Critical CSS - Add this BEFORE Swiper CSS  -->
+                <style>
+  /* Override any conflicting styles */
+  .swiper-container.is-product-gallery {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .swiper-container.is-product-gallery.swiper-ready {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  /* Ensure swiper wrapper doesn't break */
+  .swiper-wrapper.is-product-gallery,
+  .swiper-wrapper.is-product-thumbnail {
+    display: flex !important;
+    transition-property: transform !important;
+    box-sizing: content-box !important;
+  }
+  /* Prevent slides from growing too large */
+  .swiper-slide.is-product-gallery {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    transition-property: transform !important;
+    display: block !important;
+  }
+  .swiper-slide.is-product-thumbnail {
+    flex-shrink: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    position: relative !important;
+    transition-property: transform !important;
+    display: block !important;
+  }
+  /* Ensure images behave properly */
+  .product-header_gallery-image,
+  .product-header_thumbnail-image {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+  }
+  /* Fix any potential overflow issues */
+  .swiper.is-product-gallery,
+  .swiper.is-product-thumbnail {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+</style>
+                <script>
+function initializeSwiper() {
+  console.log('Starting swiper initialization...');
+  // Check if Swiper is loaded
+  if (typeof Swiper === 'undefined') {
+    console.error('Swiper not loaded yet');
+    setTimeout(initializeSwiper, 100);
+    return;
+  }
+  const containers = document.querySelectorAll('.swiper-container.is-product-gallery');
+  console.log('Found containers:', containers.length);
+  containers.forEach((container, index) => {
+    // Skip if already initialized
+    if (container.hasAttribute('data-swiper-initialized')) {
+      return;
+    }
+    const thumbsElement = container.querySelector('.swiper.is-product-thumbnail');
+    const galleryElement = container.querySelector('.swiper.is-product-gallery');
+    const nextButton = container.querySelector('.swiper-next');
+    const prevButton = container.querySelector('.swiper-prev');
+    console.log('Elements found:', {
+      thumbsElement: !!thumbsElement,
+      galleryElement: !!galleryElement,
+      nextButton: !!nextButton,
+      prevButton: !!prevButton
+    });
+    if (!thumbsElement || !galleryElement) {
+      console.error('Required elements not found');
+      return;
+    }
+    // Check slides
+    const gallerySlides = galleryElement.querySelectorAll('.swiper-slide.is-product-gallery');
+    const thumbSlides = thumbsElement.querySelectorAll('.swiper-slide.is-product-thumbnail');
+    console.log('Slides found:', {
+      gallery: gallerySlides.length,
+      thumbs: thumbSlides.length
+    });
+    if (gallerySlides.length === 0) {
+      console.error('No gallery slides found');
+      // Show container anyway
+      container.classList.add('swiper-ready');
+      return;
+    }
+    try {
+      console.log('Initializing thumbs swiper...');
+      // Initialize thumbnail swiper
+      const thumbsSwiper = new Swiper(thumbsElement, {
+        slidesPerView: "auto",
+        slideToClickedSlide: true,
+        spaceBetween: 16,
+        watchSlidesProgress: true,
+        freeMode: true,
+        observer: true,
+        observeParents: true,
+      });
+      console.log('Thumbs swiper created:', thumbsSwiper);
+      console.log('Initializing gallery swiper...');
+      // Initialize main gallery swiper
+      const gallerySwiper = new Swiper(galleryElement, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        observer: true,
+        observeParents: true,
+        thumbs: {
+          swiper: thumbsSwiper,
+          slideThumbActiveClass: "is-active",
+        },
+        navigation: nextButton && prevButton ? {
+          nextEl: nextButton,
+          prevEl: prevButton,
+        } : false,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true
+        },
+        mousewheel: {
+          forceToAxis: true
+        },
+        on: {
+          init: function() {
+            console.log('Gallery swiper initialized');
+            container.classList.add('swiper-ready');
+            container.setAttribute('data-swiper-initialized', 'true');
+          },
+          slideChange: function() {
+            console.log('Slide changed to:', this.activeIndex);
+          }
+        }
+      });
+      console.log('Gallery swiper created:', gallerySwiper);
+      // Manual trigger if init event doesn't fire
+      setTimeout(() => {
+        if (!container.classList.contains('swiper-ready')) {
+          console.log('Manually showing container');
+          container.classList.add('swiper-ready');
+          container.setAttribute('data-swiper-initialized', 'true');
+        }
+      }, 500);
+    } catch (error) {
+      console.error('Error initializing swiper:', error);
+      // Show container even if swiper fails
+      container.classList.add('swiper-ready');
+    }
+  });
+}
+// Multiple initialization attempts
+document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM Content Loaded');
+  setTimeout(initializeSwiper, 500);
+});
+window.addEventListener("load", () => {
+  console.log('Window Load');
+  setTimeout(initializeSwiper, 100);
+});
+// Fallback initialization
+setTimeout(() => {
+  console.log('Fallback initialization');
+  initializeSwiper();
+}, 2000);
+</script>
+              </div>
+            </div>
           </div>
           <div class="product-right">
             <div class="product_content">
