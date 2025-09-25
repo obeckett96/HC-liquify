@@ -9,14 +9,18 @@
 {% endif %}</a>
               </div>
               <nav role="navigation" id="w-node-c446a928-c9cc-3fc4-d455-ef1492c6f34a-92c6f343" class="nav_menu is-page-height-tablet w-nav-menu">
-                {% for link in linklists[section.settings.menu].links %}    <a li-for="link in linklists[section.settings.menu].links" href="#" class="nav_menu_link">
-                                    Hair candy
-                        </a>
+                {% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links">
+                                    
+                  
+                            <a li-object:href="link.url" href="{{ link.url }}" class="nav_menu_link w-inline-block">
+                    <div>
+                      <div li-object="link.title">{{ link.title }}</div>
+                    </div>
+                  </a>
+                            
+                
+                        </div>
 {% endfor %}
-                <a href="#" class="nav_menu_link">Lip Candy</a>
-                <a href="#" class="nav_menu_link">About us</a>
-                <a href="#" class="nav_menu_link">Faq</a>
-                <a href="#" class="nav_menu_link">Blog</a>
               </nav>
               <div class="nav_shop-icons">
                 <a href="{{ section.settings.url_button_link }}" class="button nav w-button"> {{ section.settings.text_button_text }} </a>

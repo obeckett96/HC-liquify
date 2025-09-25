@@ -1,55 +1,55 @@
 <div class="container-max">
           <div class="footer_main-wrapper">
             <div class="footer-left">
-              {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
+              <div>
+                <div li-object="link.title" class="title-footer">{{ link.title }}</div>
+                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
                                     
-                
-                            <div li-object="link.title" class="title-footer">{{ link.title }}</div>
-                            
-                
+                  
                             <div li-for:inside="child_link in link.links" class="footer_link-list">
         {% for child_link in link.links %}                            
-                  
+                    
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                    
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                    
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                    
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            
+                    
                             <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
                             
                   
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                  
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                  
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                  
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                
                     {% endfor %}    </div>
                             
-              
+                
                         </div>
 {% endfor %}
-              {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
+              </div>
+              <div>
+                <div class="title-footer">Socials</div>
+                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
                                     
-                
-                            <div li-object="link.title" class="title-footer">{{ link.title }}</div>
-                            
-                
+                  
                             <div li-for:inside="child_link in link.links" class="footer_link-list">
         {% for child_link in link.links %}                            
-                  
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                    
+                            <a href="{{ section.settings.url_ig_link }}" class="link_footer"> {{ section.settings.text_ig_link }} </a>
+                            
+                    
+                            <a href="{{ section.settings.url_tiktok_link }}" class="link_footer"> {{ section.settings.text_tiktok_link }} </a>
                             
                   
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                
                     {% endfor %}    </div>
                             
-              
+                
                         </div>
 {% endfor %}
+              </div>
             </div>
             <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049449-6f04942f" class="footer-right">
               <h2 class="heading-style-h2 newsletter-title">
@@ -107,15 +107,15 @@
             <div li-for:inside="link in linklists['footer'].links" id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049475-6f04942f" class="footer_legal-links">
         {% for link in linklists['footer'].links %}                            
               
-                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                            <a href="{{ section.settings.url_privacy_policy }}" class="footer_legal-link"> {{ section.settings.text_privacy_policy_text }} </a>
                             
               
-                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                            <a href="{{ section.settings.url_terms_link }}" class="footer_legal-link"> {{ section.settings.text_terms_text }} </a>
                             
             
                     {% endfor %}    </div>
             <div>
-              <div class="footer_legal-link">Website developed by <a href="{{ link.url }}" li-object:href="link.url">Tigernaut</a>
+              <div class="footer_legal-link">Website developed by <a href="{{ section.settings.url_tn_link }}"> Tigernaut </a>
               </div>
             </div>
           </div>
@@ -124,6 +124,28 @@
     "name": "Footer",
     "class": "section footer",
     "settings": [
+        {
+            "id": "url_ig_link",
+            "type": "url",
+            "label": "ig-link"
+        },
+        {
+            "id": "text_ig_link",
+            "type": "text",
+            "label": "ig-link",
+            "default": "Instagram"
+        },
+        {
+            "id": "text_tiktok_link",
+            "type": "text",
+            "label": "tiktok-link",
+            "default": "Tiktok"
+        },
+        {
+            "id": "url_tiktok_link",
+            "type": "url",
+            "label": "tiktok-link"
+        },
         {
             "id": "text_heading",
             "type": "text",
@@ -141,6 +163,33 @@
             "type": "text",
             "label": "Payment Method",
             "default": "Payment Methods"
+        },
+        {
+            "id": "text_privacy_policy_text",
+            "type": "text",
+            "label": "privacy-policy-text",
+            "default": "Privacy Policy"
+        },
+        {
+            "id": "url_privacy_policy",
+            "type": "url",
+            "label": "privacy-policy"
+        },
+        {
+            "id": "text_terms_text",
+            "type": "text",
+            "label": "terms-text",
+            "default": "Terms of Service"
+        },
+        {
+            "id": "url_terms_link",
+            "type": "url",
+            "label": "terms-link"
+        },
+        {
+            "id": "url_tn_link",
+            "type": "url",
+            "label": "TN-link"
         },
         {
             "type": "header",
