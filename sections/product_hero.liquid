@@ -13,13 +13,6 @@
 {% endif %}
                             
                     
-                            {% if media.media_type == 'image' %}    <div li-if="media.media_type == 'image'" class="swiper-slide is-product-gallery">
-    
-                      <div class="product-header_gallery-lightbox"><img li-object:src="media | image_url: width: 1000" li-object:alt="media.alt" alt="{{ media.alt }}" src="{{ media | image_url: width: 1000 }}" loading="lazy" class="product-header_gallery-image"></div>
-                        </div>
-{% endif %}
-                            
-                    
                             {% if media.media_type == 'video' %}    <div li-if="media.media_type == 'video'" class="swiper-slide is-product-gallery">
     
                       <div class="product-header_gallery-lightbox">
@@ -309,9 +302,12 @@ setTimeout(() => {
                           </div>
 {% endif %}
                       <div class="product-header_add-to-cart-wrapper">
-                        <div class="product-header_buy-wrappper"><input class="form_input-2 is-quantity w-input" maxlength="256" name="quantity-3" li-element="add-to-cart-quantity" data-name="Quantity 3" placeholder="1" type="number" id="quantity-3" required="" x-model="quantity">
-                          <a li-element="add-to-cart" href="#" class="button pink w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to cart</a>
-                        </div>
+                        <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        <input class="form_input-2 is-quantity w-input" maxlength="256" name="quantity-3" li-element="add-to-cart-quantity" data-name="Quantity 3" placeholder="1" type="number" id="quantity-3" required="" x-model="quantity">
+                          <a li-element="add-to-cart" href="#" class="button pink add-to-cart w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to cart</a>
+                                </div>
+    </template>
                         {% if product.available != true %}    <div li-if="product.available != true" class="product-header_out-of-stock">
     
                           <a href="#" class="button-2 is-secondary max-width-full pointer-events-off w-button">Out of Stock</a>

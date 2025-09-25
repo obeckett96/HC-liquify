@@ -115,6 +115,14 @@
 </style>
   <!--  Swiper CSS (Head)  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <!--  GSAP PREVENT FLICKER  -->
+  <style>
+html:not(.gsap-not-found) [no-flicker='true'] { visibility: hidden; }
+.line-mask, .word-mask, .char-mask { padding-block: 0.1em; margin-block: -0.1em; }
+</style>
+  <noscript>
+    <style>[no-flicker='true'] { visibility: visible !important; }</style>
+  </noscript>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="product" li-layout="theme">
   <div class="page-wrapper">
@@ -337,5 +345,106 @@ a,
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=689f35a65f7959740fb944cd" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript"></script><!--  Swiper JS (Before initializer)  -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!--  GSAP INITIALISATION  -->
+  <!--  GSAP Settings Footer Code  -->
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+	if (typeof window.gsap === "undefined") document.documentElement.classList.add("gsap-not-found");
+	gsap.registerPlugin(ScrollTrigger, SplitText);
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <!--  GSAP ANIMATIONS  -->
+  <script>
+// WORD REVEAL TEXT - GLOBAL
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[word-split='true']").forEach((text) => {
+    const split = SplitText.create(text, {
+      type: "words, chars",
+      mask: "words",
+      wordsClass: "word",
+      charsClass: "char",
+    });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: text,
+        start: "top bottom",
+        end: "top 90%",
+        toggleActions: "none play none reset",
+      },
+    });
+    tl.from(split.words, {
+      yPercent: 120,
+      delay: 0.2,
+      duration: 0.8,
+      stagger: { amount: 0.5 },
+    });
+    gsap.set(text, { visibility: "visible" });
+  });
+});
+//BUTTON GLOBAL ANIMATION
+// Button reveal animation on scroll - optimized for multiple sections
+gsap.registerPlugin(ScrollTrigger);
+// Set initial state for all buttons with data-button-reveal='true'
+gsap.set("[button-slide='true']", {
+  opacity: 0,
+  y: 30, // slide up from 30px below
+  visibility: "visible", // prevent flicker
+});
+// Use ScrollTrigger.batch for multiple buttons across different sections
+ScrollTrigger.batch("[button-slide='true']", {
+  onEnter: (elements) =>
+    gsap.to(elements, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.1,
+    }),
+  onEnterBack: (elements) =>
+    gsap.to(elements, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.1,
+    }),
+  start: "top 80%", // animation starts when element is 80% down the viewport
+  // markers: true // uncomment for debugging
+});
+</script>
+  <!--  LENIS SMOOTH SCROLL -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script>
+let lenis = new Lenis({
+  lerp: 0.1,
+  wheelMultiplier: 0.7,
+  gestureOrientation: "vertical",
+  normalizeWheel: false,
+  smoothTouch: false,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+$("[data-lenis-start]").on("click", function () {
+  lenis.start();
+});
+$("[data-lenis-stop]").on("click", function () {
+  lenis.stop();
+});
+$("[data-lenis-toggle]").on("click", function () {
+  $(this).toggleClass("stop-scroll");
+  if ($(this).hasClass("stop-scroll")) {
+    lenis.stop();
+  } else {
+    lenis.start();
+  }
+});
+</script>
 </body>
 </html>

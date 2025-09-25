@@ -1,4 +1,52 @@
-<div data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed17" class="contains_graphic-lipcandy">
+<div class="script_lipcandy w-embed w-script">
+          <script>
+(function () {
+  function loadScript(src) {
+    return new Promise(function (resolve) {
+      if (document.querySelector('script[src="' + src + '"]')) return resolve();
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      document.head.appendChild(s);
+    });
+  }
+  function initLipCandy() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    document.querySelectorAll('.section.lipcandy').forEach(function(section){
+      var textPaths = section.querySelectorAll('.lipcandy-svg textPath');
+      textPaths.forEach(function(tp){
+        gsap.fromTo(tp, 
+          { attr: { startOffset: '20%' } },  // starting at the right
+          { 
+            attr: { startOffset: '-90%' },      // moving left across the path
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true
+            }
+          }
+        );
+      });
+    });
+  }
+  function onReady(fn){ 
+    if (document.readyState !== 'loading') fn(); 
+    else document.addEventListener('DOMContentLoaded', fn); 
+  }
+  onReady(function(){
+    var gsapURL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+    var stURL   = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+    (window.gsap ? Promise.resolve() : loadScript(gsapURL))
+      .then(function(){ return window.ScrollTrigger ? null : loadScript(stURL); })
+      .then(initLipCandy);
+  });
+})();
+</script>
+        </div>
+        <div data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed17" class="contains_graphic-lipcandy">
           <div class="wrap_lipcandy-title">
             <div class="svg-wave w-embed">
               <div class="lipcandy-wrap">
@@ -233,8 +281,7 @@ setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
               </div>
             </div>
           </div>
-        </div>
-        <script> (function (){function loadScript(src){return new Promise(function (resolve){if (document.querySelector('script[src="' + src + '"]')) return resolve(); var s = document.createElement('script'); s.src = src; s.onload = resolve; document.head.appendChild(s);});}function initLipCandy(){if (!window.gsap || !window.ScrollTrigger) return; gsap.registerPlugin(ScrollTrigger); document.querySelectorAll('.section.lipcandy').forEach(function(section){var textPaths = section.querySelectorAll('.lipcandy-svg textPath'); textPaths.forEach(function(tp){gsap.fromTo(tp,{attr:{startOffset: '20%'}}, // starting at the right{attr:{startOffset: '-90%'}, // moving left across the path ease: 'none', scrollTrigger:{trigger: section, start: 'top bottom', end: 'bottom top', scrub: true}});});});}function onReady(fn){if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);}onReady(function(){var gsapURL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'; var stURL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'; (window.gsap ? Promise.resolve() : loadScript(gsapURL)) .then(function(){return window.ScrollTrigger ? null : loadScript(stURL);}) .then(initLipCandy);});})(); </script> {% schema %} {
+        </div> {% schema %} {
     "tag": "section",
     "name": "Lip Candy Home",
     "class": "section lipcandy",

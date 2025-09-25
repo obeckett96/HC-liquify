@@ -54,6 +54,7 @@
   --text-color--text-secondary: white;
   --background-color--background-success: var(--base-color-brand--pink-footer);
   --text-color--text-success\<deleted\|variable-17518f72-fb93-45b5-ad9e-fdd3f2b1833a\>: var(--base-color-system--success-green-dark\<deleted\|variable-70ae3530-1c64-4d15-f2af-205678316683\>);
+  --darkest-text: #f06ca5;
   --border-color--border-primary\<deleted\|variable-d4c54ba4-ee41-67ce-58a5-5216ca039f83\>: var(--base-color-neutral--neutral-lightest\<deleted\|variable-eede0174-1898-a99e-0c79-395339ec1911\>);
   --background-color--background-alternate: var(--base-color-brand--pink-footer);
   --background-color--background-secondary: var(--base-color-brand--bg-darkest);
@@ -67,9 +68,9 @@
   --text-color--text-warning\<deleted\|variable-825aa1d8-b093-0b89-37c5-87d980df10f5\>: var(--base-color-system--warning-yellow-dark\<deleted\|variable-296491a7-483e-1229-36b5-e13808cc9004\>);
   --base-color-brand--second-pink: #f4b6d7;
   --base-color-brand--bg-pink-light: #fedcfa;
+  --base-color-brand--bg-darkest: #f4b6d7;
   --base-color-brand--bg-pink-dark: #f7c2e1;
   --base-color-brand--pink-footer: #fee0fc;
-  --base-color-brand--bg-darkest: #f4b6d7;
   --base-color-system--success-green-dark\<deleted\|variable-70ae3530-1c64-4d15-f2af-205678316683\>: #114e0b;
   --base-color-neutral--neutral-lightest\<deleted\|variable-eede0174-1898-a99e-0c79-395339ec1911\>: #eee;
   --base-color-system--error-red-dark\<deleted\|variable-f7a8b234-8033-a5d6-4d85-0326277c2bf8\>: #3b0b0b;
@@ -146,7 +147,7 @@
 body {
   background-color: var(--background-color--background-primary);
   color: #000;
-  font-family: Sohne Mager, Impact, sans-serif;
+  font-family: Sohne Mager, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -157,7 +158,7 @@ h1 {
   margin-top: 0;
   margin-bottom: 0;
   font-family: Recent Grotesk, Impact, sans-serif;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 500;
   line-height: 1.1;
 }
@@ -167,7 +168,7 @@ h2 {
   margin-top: 0;
   margin-bottom: 0;
   font-family: Recent Grotesk, Impact, sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -206,8 +207,8 @@ h6 {
 
 p {
   margin-bottom: 0;
-  font-family: Sohne Mager, Impact, sans-serif;
-  font-size: 1.6rem;
+  font-family: Sohne Mager, Arial, sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -718,7 +719,12 @@ figcaption {
 }
 
 .heading-style-h1.smaller {
+  color: var(--darkest-text);
   font-size: 6rem;
+}
+
+.heading-style-h1.text-darkest {
+  color: var(--darkest-text);
 }
 
 .padding-global {
@@ -1160,10 +1166,15 @@ figcaption {
 
 .button.pink {
   background-color: var(--base-color-brand--main-pink);
+  line-height: 1.1;
 }
 
 .button.pink:hover {
   background-color: #ec5295;
+}
+
+.button.pink.add-to-cart {
+  padding-top: .7rem;
 }
 
 .button.nav {
@@ -1510,9 +1521,6 @@ figcaption {
 }
 
 .section.about-hero {
-  background-image: url({{ 'Screen-Shot-2025-06-06-at-12.09.30-PM-1_1.avif' | asset_url }});
-  background-position: 50%;
-  background-size: cover;
   height: 90vh;
   padding: 0%;
 }
@@ -1521,6 +1529,10 @@ figcaption {
   color: #f06ca5;
   background-color: #f4b6d7;
   overflow: clip;
+}
+
+.section.default {
+  background-color: var(--base-color-brand--bg-darkest);
 }
 
 .tophero_content {
@@ -1785,7 +1797,7 @@ figcaption {
   grid-row-gap: .5rem;
   justify-content: flex-end;
   align-items: center;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
   display: flex;
@@ -1827,7 +1839,7 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
   padding: .75rem 1rem;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-weight: 600;
   text-decoration: none;
   display: flex;
@@ -2076,7 +2088,7 @@ figcaption {
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: 1.3rem;
   line-height: 1.1;
   display: flex;
@@ -2198,7 +2210,7 @@ figcaption {
 
 .title-footer {
   text-transform: uppercase;
-  margin-bottom: .3rem;
+  margin-bottom: .5rem;
   font-family: Recent Grotesk, Impact, sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
@@ -2208,7 +2220,7 @@ figcaption {
 .link_footer {
   color: var(--base-color-brand--main-pink);
   text-transform: uppercase;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: .9rem;
   line-height: 1;
   text-decoration: none;
@@ -2249,7 +2261,7 @@ figcaption {
 
 .text-agree {
   text-transform: uppercase;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: .8rem;
   font-weight: 500;
 }
@@ -2737,7 +2749,7 @@ figcaption {
   align-items: center;
   width: 2rem;
   height: 2rem;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   display: flex;
 }
 
@@ -2807,9 +2819,9 @@ figcaption {
 
 .heading-style-h3-2 {
   text-transform: uppercase;
-  font-family: Sohneschmal Fett;
+  font-family: Sohne Mager, Arial, sans-serif;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -3047,14 +3059,14 @@ figcaption {
   text-transform: uppercase;
   background-color: #f8e4e400;
   padding: 0;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1;
 }
 
 .price-compare {
   opacity: .5;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   text-decoration: line-through;
 }
 
@@ -3082,7 +3094,7 @@ figcaption {
 }
 
 .text-bold {
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
 }
 
 .footer_legal-link {
@@ -3738,12 +3750,12 @@ figcaption {
 .eyebrow-text {
   text-transform: uppercase;
   margin-bottom: .25rem;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-weight: 500;
 }
 
 .pg {
-  font-family: Sohne Mager, Impact, sans-serif;
+  font-family: Sohne Mager, Arial, sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
 }
@@ -3812,7 +3824,7 @@ figcaption {
   letter-spacing: -1px;
   text-transform: uppercase;
   margin-bottom: .5rem;
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.1;
@@ -3820,7 +3832,7 @@ figcaption {
 
 .ig-link-about {
   color: var(--text-color--text-secondary);
-  font-family: Sohne Halbfett, Impact, sans-serif;
+  font-family: Sohne Halbfett, Arial, sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.2;
@@ -3890,7 +3902,7 @@ figcaption {
 }
 
 .rt_faq p {
-  font-family: Sohne Mager, Impact, sans-serif;
+  font-family: Sohne Mager, Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -4082,6 +4094,10 @@ figcaption {
   display: flex;
   position: absolute;
   inset: 0%;
+}
+
+.rt-default {
+  color: var(--text-color--text-secondary);
 }
 
 @media screen and (max-width: 991px) {
@@ -4691,6 +4707,10 @@ figcaption {
     font-size: .875rem;
   }
 
+  p {
+    font-size: 1.2rem;
+  }
+
   .padding-xlarge {
     padding: 2rem;
   }
@@ -4824,7 +4844,7 @@ figcaption {
   }
 
   .heading-style-h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .padding-global {
@@ -4999,6 +5019,10 @@ figcaption {
 }
 
 @media screen and (max-width: 479px) {
+  p {
+    font-size: 1.1rem;
+  }
+
   .margin-horizontal {
     margin-top: 0;
     margin-bottom: 0;
@@ -5118,6 +5142,10 @@ figcaption {
 
   .section.about-hero {
     height: 100vh;
+  }
+
+  .section.default {
+    padding-top: 7rem;
   }
 
   .img_tophero {
