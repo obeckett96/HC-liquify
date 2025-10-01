@@ -32,23 +32,12 @@
               </div>
               <div>
                 <div class="title-footer">Socials</div>
-                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
-                                    
-                  
-                            <div li-for:inside="child_link in link.links" class="footer_link-list">
-        {% for child_link in link.links %}                            
-                    
-                            <a href="{{ section.settings.url_ig_link }}" class="link_footer"> {{ section.settings.text_ig_link }} </a>
-                            
-                    
-                            <a href="{{ section.settings.url_tiktok_link }}" class="link_footer"> {{ section.settings.text_tiktok_link }} </a>
-                            
-                  
-                    {% endfor %}    </div>
-                            
-                
-                        </div>
-{% endfor %}
+                <div class="footer-menu">
+                  <div class="footer_link-list">
+                    <a href="{{ section.settings.url_ig_link }}" class="link_footer"> {{ section.settings.text_ig_link }} </a>
+                    <a href="{{ section.settings.url_tiktok_link }}" class="link_footer"> {{ section.settings.text_tiktok_link }} </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049449-6f04942f" class="footer-right">
@@ -104,16 +93,10 @@
         <div class="spacer-small"></div>
         <div class="container-large">
           <div class="footer_sub-footer">
-            <div li-for:inside="link in linklists['footer'].links" id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049475-6f04942f" class="footer_legal-links">
-        {% for link in linklists['footer'].links %}                            
-              
-                            <a href="{{ section.settings.url_privacy_policy }}" class="footer_legal-link"> {{ section.settings.text_privacy_policy_text }} </a>
-                            
-              
-                            <a href="{{ section.settings.url_terms_link }}" class="footer_legal-link"> {{ section.settings.text_terms_text }} </a>
-                            
-            
-                    {% endfor %}    </div>
+            <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049475-6f04942f" class="footer_legal-links">
+              <a href="{{ section.settings.url_privacy_policy }}" class="footer_legal-link"> {{ section.settings.text_privacy_policy_text }} </a>
+              <a href="{{ section.settings.url_terms_link }}" class="footer_legal-link"> {{ section.settings.text_terms_text }} </a>
+            </div>
             <div>
               <div class="footer_legal-link">Website developed by <a href="{{ section.settings.url_tn_link }}"> Tigernaut </a>
               </div>

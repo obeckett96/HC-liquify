@@ -1,0 +1,72 @@
+<div class="container-max">
+          <div class="block-content videos">
+            <div>
+              <h1 prevent-flicker="true" button-slide="true" class="heading-style-h1 smaller">
+{{ section.settings.text_videos_heading }}
+</h1>
+            </div>
+            <div class="grid_videos">
+              <div class="block_video-abt">
+                <div class="tusc-video w-embed"><video id="about-video-1" class="tusc-video" controls="" playsinline="">
+                    <!--  Dropbox video source with the correct format  -->
+                    <source src="https://ia601303.us.archive.org/0/items/tuscany-interview-4/Tuscany%20-%20Interview%201.mp4" type="video/mp4"></video></div>
+                <div class="title_video">
+{{ section.settings.text_video1 }}
+</div>
+              </div>
+              <div class="block_video-abt">
+                <div class="tusc-video w-embed"><video id="about-video-1" class="tusc-video" controls="" playsinline="">
+                    <!--  Dropbox video source with the correct format  -->
+                    <source src="https://ia601303.us.archive.org/0/items/tuscany-interview-4/Tuscany%20-%20Interview%203.mp4" type="video/mp4"></video></div>
+                <div class="title_video">
+{{ section.settings.text_video2 }}
+</div>
+              </div>
+              <div class="block_video-abt">
+                <div class="tusc-video w-embed"><video id="about-video-1" class="tusc-video" controls="" playsinline="">
+                    <!--  Dropbox video source with the correct format  -->
+                    <source src="https://ia601303.us.archive.org/0/items/tuscany-interview-4/Tuscany%20-%20Interview%204.mp4" type="video/mp4"></video></div>
+                <div class="title_video">
+{{ section.settings.text_video3 }}
+</div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Videos Section",
+    "class": "section about",
+    "settings": [
+        {
+            "id": "text_videos_heading",
+            "type": "text",
+            "label": "videos heading",
+            "default": "What we're about"
+        },
+        {
+            "id": "text_video1",
+            "type": "text",
+            "label": "video1",
+            "default": "Who are we?"
+        },
+        {
+            "id": "text_video2",
+            "type": "text",
+            "label": "video2",
+            "default": "What makes our shampoo different?"
+        },
+        {
+            "id": "text_video3",
+            "type": "text",
+            "label": "video3",
+            "default": "What does \"Ugly-free\" mean?"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Videos Section",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

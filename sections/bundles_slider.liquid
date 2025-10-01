@@ -5,48 +5,54 @@
                 <div class="card_product-slider">
                   <div class="card_slider-left">
                     <div>
-                      <h2 class="heading-style-h2 larger">Shampoo <span class="symbol-and">&</span> <br>Conditioner bundle</h2>
+                      <h2 class="heading-style-h2 larger">
+{{ section.settings.text_bundle_slider_1 }}
+</h2>
                       <div class="spacer-small"></div>
-                      <a href="#" class="button pink w-button">Shop now</a>
+                      <a href="{{ section.settings.url_bundle_slide_1 }}" class="button pink w-button"> Shop now </a>
                     </div>
                   </div>
-                  <div class="card_slider-right"></div>
+                  <div class="card_slider-right">{% if section.settings.image_bundle_slide_1 %}
+{{ section.settings.image_bundle_slide_1 | image_url: width: 1000 | image_tag: class: 'slide_bundle-img', sizes: '(max-width: 1570px) 100vw, 1570px', loading: 'lazy' }}
+{% else %}
+<img class="slide_bundle-img" src="{{ 'Rectangle-14_1.avif' | asset_url }}" alt="" sizes="(max-width: 1570px) 100vw, 1570px" loading="lazy" srcset="{{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 500w, {{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 800w, {{ 'Rectangle-14_1.avif' | asset_url }} 1570w">
+{% endif %}</div>
                 </div>
               </div>
               <div class="wrap_product-slider w-slide">
                 <div class="card_product-slider">
                   <div class="card_slider-left">
                     <div>
-                      <h2 class="heading-style-h2 larger">Shampoo <span class="symbol-and">&</span> <br>Conditioner bundle</h2>
+                      <h2 class="heading-style-h2 larger">
+{{ section.settings.text_bundle_slider_2 }}
+</h2>
                       <div class="spacer-small"></div>
-                      <a href="#" class="button pink w-button">Shop now</a>
+                      <a href="{{ section.settings.url_bundle_slide_2 }}" class="button pink w-button"> Shop now </a>
                     </div>
                   </div>
-                  <div class="card_slider-right"><img src="{{ 'Rectangle-6_1.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1622px) 100vw, 1622px" srcset="{{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 500w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 800w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 1080w, {{ 'Rectangle-6_1.avif' | asset_url }} 1622w" alt="" class="img_card-slider"></div>
+                  <div class="card_slider-right">{% if section.settings.image_bundle_slide_2 %}
+{{ section.settings.image_bundle_slide_2 | image_url: width: 1000 | image_tag: class: 'slide_bundle-img', sizes: '(max-width: 1570px) 100vw, 1570px', loading: 'lazy' }}
+{% else %}
+<img class="slide_bundle-img" src="{{ 'Rectangle-14_1.avif' | asset_url }}" alt="" sizes="(max-width: 1570px) 100vw, 1570px" loading="lazy" srcset="{{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 500w, {{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 800w, {{ 'Rectangle-14_1.avif' | asset_url }} 1570w">
+{% endif %}</div>
                 </div>
               </div>
               <div class="wrap_product-slider w-slide">
                 <div class="card_product-slider">
                   <div class="card_slider-left">
                     <div>
-                      <h2 class="heading-style-h2 larger">Shampoo <span class="symbol-and">&</span> <br>Conditioner bundle</h2>
+                      <h2 class="heading-style-h2 larger">
+{{ section.settings.text_bundle_slider_3 }}
+</h2>
                       <div class="spacer-small"></div>
-                      <a href="#" class="button pink w-button">Shop now</a>
+                      <a href="{{ section.settings.url_bundle_slide_3 }}" class="button pink w-button"> Shop now </a>
                     </div>
                   </div>
-                  <div class="card_slider-right"><img src="{{ 'Rectangle-6_1.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1622px) 100vw, 1622px" srcset="{{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 500w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 800w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 1080w, {{ 'Rectangle-6_1.avif' | asset_url }} 1622w" alt="" class="img_card-slider"></div>
-                </div>
-              </div>
-              <div class="wrap_product-slider w-slide">
-                <div class="card_product-slider">
-                  <div class="card_slider-left">
-                    <div>
-                      <h2 class="heading-style-h2 larger">Shampoo <span class="symbol-and">&</span> <br>Conditioner bundle</h2>
-                      <div class="spacer-small"></div>
-                      <a href="#" class="button pink w-button">Shop now</a>
-                    </div>
-                  </div>
-                  <div class="card_slider-right"><img src="{{ 'Rectangle-6_1.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1622px) 100vw, 1622px" srcset="{{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 500w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 800w, {{ 'Rectangle-6_1Rectangle-6.avif' | asset_url }} 1080w, {{ 'Rectangle-6_1.avif' | asset_url }} 1622w" alt="" class="img_card-slider"></div>
+                  <div class="card_slider-right">{% if section.settings.image_bundle_slide_3 %}
+{{ section.settings.image_bundle_slide_3 | image_url: width: 1000 | image_tag: class: 'slide_bundle-img', sizes: '(max-width: 1570px) 100vw, 1570px', loading: 'lazy' }}
+{% else %}
+<img class="slide_bundle-img" src="{{ 'Rectangle-14_1.avif' | asset_url }}" alt="" sizes="(max-width: 1570px) 100vw, 1570px" loading="lazy" srcset="{{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 500w, {{ 'Rectangle-14_1Rectangle-14.avif' | asset_url }} 800w, {{ 'Rectangle-14_1.avif' | asset_url }} 1570w">
+{% endif %}</div>
                 </div>
               </div>
             </div>
@@ -62,6 +68,56 @@
     "tag": "section",
     "name": "Bundles Slider",
     "class": "section hero",
+    "settings": [
+        {
+            "id": "text_bundle_slider_1",
+            "type": "text",
+            "label": "bundle slider 1",
+            "default": "Shampoo <span class=\"symbol-and\">&amp;<\/span> <br\/>Conditioner bundle"
+        },
+        {
+            "id": "url_bundle_slide_1",
+            "type": "url",
+            "label": "bundle slide 1"
+        },
+        {
+            "id": "image_bundle_slide_1",
+            "type": "image_picker",
+            "label": "bundle slide 1"
+        },
+        {
+            "id": "text_bundle_slider_2",
+            "type": "text",
+            "label": "bundle slider 2",
+            "default": "Shampoo <span class=\"symbol-and\">&amp;<\/span> <br\/>Conditioner bundle"
+        },
+        {
+            "id": "url_bundle_slide_2",
+            "type": "url",
+            "label": "bundle slide 2"
+        },
+        {
+            "id": "image_bundle_slide_2",
+            "type": "image_picker",
+            "label": "bundle slide 2"
+        },
+        {
+            "id": "text_bundle_slider_3",
+            "type": "text",
+            "label": "bundle slider 3",
+            "default": "Shampoo <span class=\"symbol-and\">&amp;<\/span> <br\/>Conditioner bundle"
+        },
+        {
+            "id": "url_bundle_slide_3",
+            "type": "url",
+            "label": "bundle slide 3"
+        },
+        {
+            "id": "image_bundle_slide_3",
+            "type": "image_picker",
+            "label": "bundle slide 3"
+        }
+    ],
     "presets": [
         {
             "name": "Bundles Slider",

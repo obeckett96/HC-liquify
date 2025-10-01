@@ -240,16 +240,22 @@ setTimeout(() => {
               </div>
             </div>
           </div>
-          <div class="product-right">
+          <div id="w-node-_29cac495-f401-9ac8-4922-53a5f39dc7e8-3f62b365" class="product-right">
             <div class="product_content">
               <div class="product_top-info">
-                <h1 li-object:text="product.title" class="title_product">
+                <h1 no-flicker="true" li-object:text="product.title" word-split="true" class="title_product">
 {{ product.title }}
 </h1>
+                {% if product.metafields.custom.bottle_size.value %}    <div li-if="product.metafields.custom.bottle_size.value" class="text-bottle-size">
+    
+                  <div>Size:</div>
+                  <div li-object="product.metafields.custom.bottle_size | metafield_tag">{{ product.metafields.custom.bottle_size | metafield_tag }}</div>
+                    </div>
+{% endif %}
                 <div class="block_star-rating"></div>
               </div>
               <div class="product_main-info">
-                <div li-object="product.description" class="product_description w-richtext">{{ product.description }}</div>
+                <div no-flicker="true" li-object="product.description" word-split="true" class="product_description w-richtext">{{ product.description }}</div>
                 <div class="wrap_payment-options">
                   <div class="product-header_price-wrapper">
                     <div li-js-price="product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price" class="text-price" x-text="LiquifyHelper.moneyFormat(product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price, true, '{{ shop.money_with_currency_format }}')">NZD$55</div>

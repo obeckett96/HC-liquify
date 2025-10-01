@@ -1,20 +1,41 @@
 <div class="container-max">
           <div class="block-content">
             <div>
-              <div class="eyebrow-text">THE HAIRCANDY STORY</div>
-              <h1 class="heading-style-h1 smaller">Who are we?</h1>
+              <div button-slide="true" prevent-flicker="true" class="eyebrow-text">
+{{ section.settings.text_eyebrow_who_we_are }}
+</div>
+              <h1 button-slide="true" prevent-flicker="true" class="heading-style-h1 smaller">
+{{ section.settings.text_who_are_we_heading }}
+</h1>
             </div>
             <div class="pg-wrap">
-              <p class="pg text-white">HAIR CANDY is a brand built off three factors of LOVE: Hair, People's overall health & well-being, and Our Planet.</p>
-              <p class="pg text-white">Our founder, entrepreneur Tuscany Hamel, daughter of the world-renowned hairstylist Mike Hamel, started Hair Candy back in 2015.  But After selling out multiple times over, Hair Candy had become to big to handle on her own. This time round we have a team of people on board to bring the beloved Hair Candy back to you.<br></p>
-              <p class="pg text-white">Hair Candy products weren’t just created overnight. Over 15 years of trials, testing and research our products have been crafted and touched over a quarter of million heads, we have carefully created products that truly deliver results time and time again.</p>
-              <p class="pg text-white">Our product is all <strong>New Zealand made</strong> and created, using all natural and locally sourced pure keratin derived from NZ sheep wool.</p>
+              <div word-split="true" prevent-flicker="true" class="text-color-secondary w-richtext"> {{ section.settings.textarea_who_are_we_paragraphs }} </div>
             </div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Who are we",
     "class": "section about",
+    "settings": [
+        {
+            "id": "text_eyebrow_who_we_are",
+            "type": "text",
+            "label": "eyebrow who we are",
+            "default": "THE\u00a0HAIRCANDY\u00a0STORY"
+        },
+        {
+            "id": "text_who_are_we_heading",
+            "type": "text",
+            "label": "who are we heading",
+            "default": "Who are we?"
+        },
+        {
+            "id": "textarea_who_are_we_paragraphs",
+            "type": "textarea",
+            "label": "who are we paragraphs",
+            "default": "\n                <p>HAIR CANDY is a brand built off three factors of LOVE: Hair, People's overall health &amp; well-being, and Our Planet.<\/p>\n                <p>\u200d<\/p>\n                <p>Our founder, entrepreneur Tuscany Hamel, daughter of the world-renowned hairstylist Mike Hamel, started Hair Candy back in 2015. \u00a0But After selling out multiple times over, Hair Candy had become to big to handle on her own. This time round we have a team of people on board to bring the bel"
+        }
+    ],
     "presets": [
         {
             "name": "Who are we",
