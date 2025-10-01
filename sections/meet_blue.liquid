@@ -1,16 +1,45 @@
 <div class="container-max">
           <div class="block-content about-bio">
             <div class="about-block-right">
-              <h3 class="subheading-standard">Meet the creative director</h3>
-              <p class="pg smaller">Gen Z Serial Entrepreneur and Creative from NZ living abroad most of his life in New York and LA. Previously working for Adidas and now working within the Music, fashion and design industries. Also leading and creating multiple NFT/ 3D based content and projects.<br></p>
-              <a href="#" class="ig-link-about">@halfofnothing</a>
+              <h3 word-split="true" prevent-flicker="true" class="subheading-standard">
+{{ section.settings.text_founder_2_heading }}
+</h3>
+              <p word-split="true" prevent-flicker="true" class="pg smaller">
+{{ section.settings.text_founder_2_pg }}
+</p>
+              <a button-slide="true" prevent-flicker="true" href="{{ section.settings.url_founder_2_url }}" class="ig-link-about"> {{ section.settings.text_founder_2_handle }} </a>
             </div>
-            <div class="img_about-bio"><img src="{{ 'Screen-Shot-2025-06-07-at-12.23.04-PM-1_1.avif' | asset_url }}" loading="lazy" alt="" class="img-inner-standard"></div>
+            <div button-slide="true" prevent-flicker="true" class="img_about-bio"><img src="{{ 'DSC01473_1.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1136px) 100vw, 1136px" srcset="{{ 'DSC01473_1DSC01473.avif' | asset_url }} 500w, {{ 'DSC01473_1.avif' | asset_url }} 1136w" alt="" class="img-inner-standard"></div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Meet Blue",
     "class": "section about",
+    "settings": [
+        {
+            "id": "text_founder_2_heading",
+            "type": "text",
+            "label": "founder 2 heading",
+            "default": "Meet the creative director"
+        },
+        {
+            "id": "text_founder_2_pg",
+            "type": "text",
+            "label": "founder 2 pg",
+            "default": "Gen Z Serial Entrepreneur and Creative from NZ living abroad most of his life in New York and LA. Previously working for Adidas and now working within the Music, fashion and design industries. Also leading and creating multiple NFT\/ 3D based content and projects.<br\/>"
+        },
+        {
+            "id": "text_founder_2_handle",
+            "type": "text",
+            "label": "founder 2 handle",
+            "default": "@halfofnothing"
+        },
+        {
+            "id": "url_founder_2_url",
+            "type": "url",
+            "label": "founder 2 URL"
+        }
+    ],
     "presets": [
         {
             "name": "Meet Blue",

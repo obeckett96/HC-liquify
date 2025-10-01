@@ -6,11 +6,11 @@
                               <div class="product_bg-circle"></div>
                             </div>
                           </a>
-                          <div class="product-item_tag_list">
-                            {% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="product-item_tag-2 is-red">
-    Sale    </div>
+                          {% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="product-item_tag_list">
+    
+                            <div class="product-item_tag-2 is-red">Sale</div>
+                              </div>
 {% endif %}
-                          </div>
                           <a li-element="add-to-cart" href="#" class="linkto_product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Quick add to cart</a>
                         </div>
                         <div class="spacer-xxsmall-2"></div>

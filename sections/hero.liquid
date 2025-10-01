@@ -1,17 +1,58 @@
 <div class="tophero_content">
-            <div class="img_tophero"><img src="{{ 'hero-jar_1.avif' | asset_url }}" loading="lazy" data-w-id="cba507ef-2d63-b264-d6fd-ed934501de6e" sizes="(max-width: 1125px) 100vw, 1125px" alt="" srcset="{{ 'hero-jar_1hero-jar.avif' | asset_url }} 500w, {{ 'hero-jar_1.avif' | asset_url }} 1125w" class="img_hero-jar"></div>
+            <div class="img_tophero">{% if section.settings.image_hero_image %}
+{{ section.settings.image_hero_image | image_url: width: 1000 | image_tag: class: 'img_hero-jar', sizes: '(max-width: 1125px) 100vw, 1125px', data-w-id: 'cba507ef-2d63-b264-d6fd-ed934501de6e', loading: 'lazy' }}
+{% else %}
+<img class="img_hero-jar" src="{{ 'hero-jar_1.avif' | asset_url }}" alt="" sizes="(max-width: 1125px) 100vw, 1125px" data-w-id="cba507ef-2d63-b264-d6fd-ed934501de6e" loading="lazy" srcset="{{ 'hero-jar_1hero-jar.avif' | asset_url }} 500w, {{ 'hero-jar_1.avif' | asset_url }} 1125w">
+{% endif %}</div>
             <div class="text-align-center">
-              <h2 no-flicker="true" word-split="true" class="heading-style-h2 top-hero">Enter the world of hair candy</h2>
+              <h2 word-split="true" no-flicker="true" class="heading-style-h2 top-hero">
+{{ section.settings.text_hero_heading }}
+</h2>
               <div class="spacer-small"></div>
               <div class="button-group">
-                <a no-flicker="true" button-slide="true" href="#" class="button w-button">Shop now</a>
-                <a no-flicker="true" button-slide="true" href="#" class="button pink dark w-button">About us</a>
+                <a button-slide="true" no-flicker="true" href="{{ section.settings.url_hero_button_1 }}" class="button w-button"> {{ section.settings.text_hero_button_1 }} </a>
+                <a button-slide="true" no-flicker="true" href="{{ section.settings.url_hero_button_2 }}" class="button pink dark w-button"> {{ section.settings.text_hero_button_2 }} </a>
               </div>
             </div>
           </div> {% schema %} {
     "tag": "div",
     "name": "Hero",
     "class": "section top-hero",
+    "settings": [
+        {
+            "id": "image_hero_image",
+            "type": "image_picker",
+            "label": "hero image"
+        },
+        {
+            "id": "text_hero_heading",
+            "type": "text",
+            "label": "hero heading",
+            "default": "Enter the world of hair candy"
+        },
+        {
+            "id": "text_hero_button_1",
+            "type": "text",
+            "label": "hero button 1",
+            "default": "Shop now"
+        },
+        {
+            "id": "url_hero_button_1",
+            "type": "url",
+            "label": "hero button 1"
+        },
+        {
+            "id": "text_hero_button_2",
+            "type": "text",
+            "label": "hero button 2",
+            "default": "About us"
+        },
+        {
+            "id": "url_hero_button_2",
+            "type": "url",
+            "label": "hero button 2"
+        }
+    ],
     "presets": [
         {
             "name": "Hero",

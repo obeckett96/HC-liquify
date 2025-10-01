@@ -1,14 +1,33 @@
 <div class="container-max">
           <div class="block-content about-02">
-            <div class="img_about-large"><img src="{{ 'Screen-Shot-2025-06-07-at-12.22.41-PM-1_1.avif' | asset_url }}" loading="lazy" alt="" class="img-inner-standard"></div>
+            <div prevent-flicker="true" button-slide="true" class="img_about-large">{% if section.settings.image_founders_image %}
+{{ section.settings.image_founders_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '(max-width: 974px) 100vw, 974px', loading: 'lazy' }}
+{% else %}
+<img class="img-inner-standard" src="{{ 'DSC01443_1.avif' | asset_url }}" alt="" sizes="(max-width: 974px) 100vw, 974px" loading="lazy" srcset="{{ 'DSC01443_1DSC01443.avif' | asset_url }} 500w, {{ 'DSC01443_1.avif' | asset_url }} 974w">
+{% endif %}</div>
             <div class="about-block-right">
-              <div class="text-huge">We are here to change the way people view hair products</div>
+              <div word-split="true" prevent-flicker="true" class="text-huge">
+{{ section.settings.text_giant_text }}
+</div>
             </div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "About Graphic",
     "class": "section about",
+    "settings": [
+        {
+            "id": "image_founders_image",
+            "type": "image_picker",
+            "label": "founders image"
+        },
+        {
+            "id": "text_giant_text",
+            "type": "text",
+            "label": "giant text",
+            "default": "We are here to change the way people view hair products"
+        }
+    ],
     "presets": [
         {
             "name": "About Graphic",

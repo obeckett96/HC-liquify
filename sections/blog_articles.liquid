@@ -1,0 +1,121 @@
+<div class="container-max">
+          <div class="blog_cms-wrapper w-dyn-list">
+            {% if blog.articles != blank %}    <div li-if="blog.articles != blank" role="list" class="blog_list w-dyn-items">
+    
+              {% for article in blog.articles %}    <div li-for="article in blog.articles" role="listitem" class="blog_cms-item w-dyn-item">
+                                    
+                
+                            <a li-object:href="article.url" href="{{ article.url }}" class="blog_item-grid w-inline-block">
+                  <div id="w-node-_2c70579c-a50c-391e-dd47-706a953e61e9-953e61e8" class="blog_tags-wrapper"><img id="w-node-_2c70579c-a50c-391e-dd47-706a953e61ea-953e61e8" li-object:src="article.image | image_url: width: 450" alt="{{ article.image.alt }}" src="{{ article.image | image_url: width: 450 }}" loading="lazy" li-object:alt="article.image.alt" class="blog_img">
+                    <div class="blog_tag-row">
+                      {% for tag in article.tags %}    <div li-for="tag in article.tags" class="blog_tag">
+                                    
+                        
+                            <div li-object="tag">{{ tag }}</div>
+                            
+                      
+                        </div>
+{% endfor %}
+                    </div>
+                  </div>
+                  <div class="blog_info-wrapper">
+                    <h3 li-object="article.title" class="blog-title">{{ article.title }}</h3>
+                    <div li-object="article.excerpt" class="blog-subhead">{{ article.excerpt }}</div>
+                  </div>
+                </a>
+                            
+              
+                        </div>
+{% endfor %}
+                </div>
+{% endif %}
+            {% if blog.articles == blank %}    <div li-if="blog.articles == blank" class="blog_cms-empty w-dyn-empty">
+    
+              <div>No blog items found.</div>
+                </div>
+{% endif %}
+          </div>
+          {% if paginate.pages > 1 %}    <nav li-if="paginate.pages > 1" class="pagination_component">
+    
+            <ul role="list" class="pagination_list w-list-unstyled">
+              {% if paginate.previous %}    <li li-if="paginate.previous" class="pagination_item">
+    
+                <a li-object:href="paginate.previous.url" href="{{ paginate.previous.url }}" class="button is-icon w-inline-block">
+                  <div class="pagination_arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 13 8" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                      <path d="M1.67318 0.589844L6.26318 5.16984L10.8532 0.589844L12.2632 1.99984L6.26318 7.99984L0.263184 1.99984L1.67318 0.589844Z" fill="currentColor"></path>
+                    </svg></div>
+                  <div>Back</div>
+                </a>
+                  </li>
+{% endif %}
+              {% if paginate.previous == false %}    <li li-if="paginate.previous == false" class="pagination_item">
+    
+                <a li-object:href="paginate.previous.url" href="{{ paginate.previous.url }}" class="button-3 is-secondary is-icon text-style-muted pointer-events-off w-inline-block">
+                  <div class="pagination_arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 13 8" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                      <path d="M1.67318 0.589844L6.26318 5.16984L10.8532 0.589844L12.2632 1.99984L6.26318 7.99984L0.263184 1.99984L1.67318 0.589844Z" fill="currentColor"></path>
+                    </svg></div>
+                  <div>Back</div>
+                </a>
+                  </li>
+{% endif %}
+              {% for part in paginate.parts %}    <li li-for="part in paginate.parts" class="pagination_item">
+                                    
+                
+                            {% if part.is_link %}    <div li-if="part.is_link">
+    
+                  <a li-object:href="part.url" href="{{ part.url }}" class="pagination_count w-inline-block">
+                    <div li-object="part.title" class="text-style-link-3">{{ part.title }}</div>
+                  </a>
+                    </div>
+{% endif %}
+                            
+                
+                            {% if part.is_link == false %}    <div li-if="part.is_link == false">
+    
+                  <div li-object="part.title" class="{% if part.title == paginate.current_page %}text-weight-semibold{% endif %}">{{ part.title }}</div>
+                    </div>
+{% endif %}
+                            
+              
+                        </li>
+{% endfor %}
+              {% if paginate.next == false %}    <li li-if="paginate.next == false" class="pagination_item">
+    
+                <a li-object:href="paginate.next.url" href="{{ paginate.next.url }}" class="button-3 is-secondary is-icon text-style-muted pointer-events-off w-inline-block">
+                  <div>Next</div>
+                  <div class="pagination_arrow is-right w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 13 8" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                      <path d="M1.67318 0.589844L6.26318 5.16984L10.8532 0.589844L12.2632 1.99984L6.26318 7.99984L0.263184 1.99984L1.67318 0.589844Z" fill="currentColor"></path>
+                    </svg></div>
+                </a>
+                  </li>
+{% endif %}
+              {% if paginate.next %}    <li li-if="paginate.next" class="pagination_item">
+    
+                <a li-object:href="paginate.next.url" href="{{ paginate.next.url }}" class="button is-icon w-inline-block">
+                  <div>Next</div>
+                  <div class="pagination_arrow is-right w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 13 8" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                      <path d="M1.67318 0.589844L6.26318 5.16984L10.8532 0.589844L12.2632 1.99984L6.26318 7.99984L0.263184 1.99984L1.67318 0.589844Z" fill="currentColor"></path>
+                    </svg></div>
+                </a>
+                  </li>
+{% endif %}
+            </ul>
+              </nav>
+{% endif %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Blog-Articles",
+    "class": "section",
+    "presets": [
+        {
+            "name": "Blog-Articles",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "Blog"
+        ]
+    }
+} {% endschema %}

@@ -1,0 +1,21 @@
+<div class="container-max">
+          <div class="article_wrapper">
+            <div li-object="article.content" class="w-richtext">{{ article.content }}</div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Article Content",
+    "class": "section",
+    "presets": [
+        {
+            "name": "Article Content",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "article"
+        ]
+    }
+} {% endschema %}

@@ -1,0 +1,25 @@
+<div class="container-max z-index-4">
+          <div class="title-block blog-hero">
+            <h1 li-object="article.title" class="heading-style-h1 smaller text-color-secondary">{{ article.title }}</h1>
+            <div li-object="article.excerpt" class="subheading-small text-colour-dark text-color-secondary">{{ article.excerpt }}</div>
+          </div>
+        </div>
+        <div class="blog_bg-elements">
+          <div class="overlay-about"></div><img class="img_blog-hero" src="{{ article.image | image_url: width: 1000 }}" alt="{{ article.image.alt }}" sizes="(max-width: 2533px) 100vw, 2533px" li-object:src="article.image | image_url: width: 1000" loading="lazy" li-object:alt="article.image.alt" srcset="{{ 'cta-bg-1_1cta-bg-1.avif' | asset_url }} 500w, {{ 'cta-bg-1_1cta-bg-1.avif' | asset_url }} 800w, {{ 'cta-bg-1_1cta-bg-1.avif' | asset_url }} 1080w, {{ 'cta-bg-1_1.avif' | asset_url }} 2533w">
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Article Hero",
+    "class": "section blog-hero",
+    "presets": [
+        {
+            "name": "Article Hero",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "article"
+        ]
+    }
+} {% endschema %}
