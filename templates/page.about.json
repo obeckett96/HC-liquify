@@ -1,36 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "about_hero": {
-            "type": "about_hero"
-        },
-        "about_intro": {
-            "type": "about_intro"
-        },
-        "about_graphic": {
-            "type": "about_graphic"
-        },
-        "who_are_we": {
-            "type": "who_are_we"
-        },
-        "about_carousel": {
-            "type": "about_carousel"
-        },
-        "meet_tuscany": {
-            "type": "meet_tuscany"
-        },
-        "meet_blue": {
-            "type": "meet_blue"
-        }
+  "sections": {
+    "about_hero_qX68i9": {
+      "type": "about_hero",
+      "name": "About Hero",
+      "settings": {
+        "html_video_embed": "<video id=\"hero-video\" class=\"hero-video\" autoplay=\"\" muted=\"\" loop=\"\" playsinline=\"\">\n            <!--  Dropbox video source with the correct format  -->\n            <source src=\"https://ia601004.us.archive.org/18/items/horizontal-rerender-copy/HorizontalRerender%20copy.ia.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n          </source></video>\n          <style>\n@media (max-width: 480px) {\n  .hero-video {\n    position: absolute !important;</style>"
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "about_hero",
-        "about_intro",
-        "about_graphic",
-        "who_are_we",
-        "about_carousel",
-        "meet_tuscany",
-        "meet_blue"
-    ]
+    "about_intro_Yx4TqN": {
+      "type": "about_intro",
+      "name": "About Intro",
+      "settings": {}
+    },
+    "about_graphic_DcxBGx": {
+      "type": "about_graphic",
+      "name": "About Graphic",
+      "settings": {}
+    },
+    "about_carousel_BwWkDf": {
+      "type": "about_carousel",
+      "name": "About Carousel",
+      "settings": {}
+    },
+    "meet_tuscany": {
+      "type": "meet_tuscany",
+      "settings": {}
+    },
+    "meet_blue": {
+      "type": "meet_blue",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "about_hero_qX68i9",
+    "about_intro_Yx4TqN",
+    "about_graphic_DcxBGx",
+    "about_carousel_BwWkDf",
+    "meet_tuscany",
+    "meet_blue"
+  ]
 }
