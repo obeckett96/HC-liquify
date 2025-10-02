@@ -31,6 +31,16 @@
         "text_benefit_3": "Seal ingrowth"
       }
     },
+    "featured_products": {
+      "type": "featured_products",
+      "settings": {
+        "text_heading_text": "Our Bestsellers",
+        "url_button_link": "",
+        "text_button_text": "Shop all",
+        "collection_collection": "frontpage",
+        "collection_collection_limit": 3
+      }
+    },
     "bundles_slider": {
       "type": "bundles_slider",
       "settings": {
@@ -43,20 +53,10 @@
         "url_bundle_slide_3": ""
       }
     },
-    "featured_products": {
-      "type": "featured_products",
-      "settings": {
-        "text_heading_text": "Our Bestsellers",
-        "url_button_link": "",
-        "text_button_text": "Shop all",
-        "collection_collection": "frontpage",
-        "collection_collection_limit": 3
-      }
-    },
     "lip_candy_home": {
       "type": "lip_candy_home",
       "settings": {
-        "text_blurb_text": "Introducing Butter Up, the newest and first lip product from <span class=\"text-bold\">LIPCANDY!</span>",
+        "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
         "url_button_link": ""
       }
@@ -104,8 +104,8 @@
   "order": [
     "hero",
     "intro",
-    "bundles_slider",
     "featured_products",
+    "bundles_slider",
     "lip_candy_home",
     "benefits_home",
     "results_slider",

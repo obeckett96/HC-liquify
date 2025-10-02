@@ -13,16 +13,30 @@
       "type": "product_hero",
       "settings": {
         "text_without_subscription": "One-time purchase",
-        "text_with_subscription": "Subscribe &amp; Save 15%"
+        "text_with_subscription": "Subscribe & Save 15%"
       }
     },
     "benefits_wrapper": {
       "type": "benefits_wrapper",
       "settings": {}
     },
-    "ugc_section": {
-      "type": "ugc_section",
-      "settings": {}
+    "results_slider_7dR4HC": {
+      "type": "results_slider",
+      "name": "Results Slider",
+      "settings": {
+        "text_review_1": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_1": "Sarah",
+        "text_review_2": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_2": "Sarah",
+        "text_review_3": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_3": "Sarah",
+        "text_review_4": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_4": "Sarah",
+        "text_review_5": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_5": "Sarah",
+        "text_review_6": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_6": "Sarah"
+      }
     },
     "bundles": {
       "type": "bundles",
@@ -40,7 +54,7 @@
   "order": [
     "product_hero",
     "benefits_wrapper",
-    "ugc_section",
+    "results_slider_7dR4HC",
     "bundles"
   ]
 }
