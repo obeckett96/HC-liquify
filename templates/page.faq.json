@@ -1,20 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "faq_hero": {
-            "type": "faq_hero"
-        },
-        "faq_graphic": {
-            "type": "faq_graphic"
-        },
-        "faq_section": {
-            "type": "faq_section"
-        }
-    },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "faq_hero",
-        "faq_graphic",
-        "faq_section"
-    ]
+  "sections": {
+    "deafault": {
+      "type": "deafault",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "deafault"
+  ]
 }
