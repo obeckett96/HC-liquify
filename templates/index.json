@@ -58,7 +58,8 @@
       "settings": {
         "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
-        "url_button_link": ""
+        "url_button_link": "",
+        "image_social_img_1": "shopify://shop_images/HEROshotconditioner_a12e5338-a5cd-455e-a791-782d448a4b62.png"
       }
     },
     "benefits_home": {
@@ -70,6 +71,7 @@
       "settings": {
         "text_review_1": "\"Review text goes here, editable in shopify\"",
         "text_review_author_1": "Sarah",
+        "image_review_1": "shopify://shop_images/Product-cutout-2.png",
         "text_review_2": "\"Review text goes here, editable in shopify\"",
         "text_review_author_2": "Sarah",
         "text_review_3": "\"Review text goes here, editable in shopify\"",
