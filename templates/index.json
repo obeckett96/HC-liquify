@@ -1,44 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero": {
-            "type": "hero"
-        },
-        "intro": {
-            "type": "intro"
-        },
-        "bundles_slider": {
-            "type": "bundles_slider"
-        },
-        "featured_products": {
-            "type": "featured_products"
-        },
-        "lip_candy_home": {
-            "type": "lip_candy_home"
-        },
-        "benefits_home": {
-            "type": "benefits_home"
-        },
-        "results_slider": {
-            "type": "results_slider"
-        },
-        "cta_general": {
-            "type": "cta_general"
-        },
-        "custom_liquid": {
-            "type": "custom_liquid"
-        }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "text_hero_heading": "Enter the world of hair candy",
+        "text_hero_button_1": "Shop now",
+        "url_hero_button_1": "",
+        "text_hero_button_2": "About us",
+        "url_hero_button_2": ""
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "hero",
-        "intro",
-        "bundles_slider",
-        "featured_products",
-        "lip_candy_home",
-        "benefits_home",
-        "results_slider",
-        "cta_general",
-        "custom_liquid"
-    ]
+    "intro": {
+      "type": "intro",
+      "settings": {
+        "text_intro_btn_1": "Hair candy shampoo",
+        "url_intro_btn_1": "",
+        "text_intro_btn_2": "Hair candy conditioner",
+        "url_intro_btn_2": "",
+        "text_benefit_1": "Cleanse",
+        "text_benefit_2": "Stimulate",
+        "text_benefit_3": "Seal ingrowth"
+      }
+    },
+    "bundles_slider": {
+      "type": "bundles_slider",
+      "settings": {
+        "text_bundle_slider_1": "Shampoo & Conditioner bundle",
+        "url_bundle_slide_1": "",
+        "image_bundle_slide_1": "shopify://shop_images/HERO_shot_shampoo.png",
+        "text_bundle_slider_2": "Shampoo & Conditioner bundle",
+        "url_bundle_slide_2": "",
+        "text_bundle_slider_3": "Shampoo & Conditioner bundle",
+        "url_bundle_slide_3": ""
+      }
+    },
+    "featured_products": {
+      "type": "featured_products",
+      "settings": {
+        "text_heading_text": "Our Bestsellers",
+        "url_button_link": "",
+        "text_button_text": "Shop all",
+        "collection_collection": "frontpage",
+        "collection_collection_limit": 3
+      }
+    },
+    "lip_candy_home": {
+      "type": "lip_candy_home",
+      "settings": {
+        "text_blurb_text": "Introducing Butter Up, the newest and first lip product from <span class=\"text-bold\">LIPCANDY!</span>",
+        "text_button_text": "Shop",
+        "url_button_link": ""
+      }
+    },
+    "benefits_home": {
+      "type": "benefits_home",
+      "settings": {}
+    },
+    "results_slider": {
+      "type": "results_slider",
+      "settings": {
+        "text_review_1": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_1": "Sarah",
+        "text_review_2": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_2": "Sarah",
+        "text_review_3": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_3": "Sarah",
+        "text_review_4": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_4": "Sarah",
+        "text_review_5": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_5": "Sarah",
+        "text_review_6": "\"Review text goes here, editable in shopify\"",
+        "text_review_author_6": "Sarah"
+      }
+    },
+    "cta_general": {
+      "type": "cta_general",
+      "settings": {
+        "text_heading": "The future of hair care starts now.",
+        "text_button_text": "Shop Haircare",
+        "url_button_link": "",
+        "text_button_text_2": "Shop Haircare",
+        "url_button_link_2": ""
+      }
+    },
+    "custom_liquid": {
+      "type": "custom_liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "hero",
+    "intro",
+    "bundles_slider",
+    "featured_products",
+    "lip_candy_home",
+    "benefits_home",
+    "results_slider",
+    "cta_general",
+    "custom_liquid"
+  ]
 }
