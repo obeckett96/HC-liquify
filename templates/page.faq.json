@@ -9,14 +9,24 @@
  */
 {
   "sections": {
-    "deafault": {
-      "type": "deafault",
+    "faq_hero": {
+      "type": "faq_hero",
+      "settings": {}
+    },
+    "faq_section": {
+      "type": "faq_section",
+      "settings": {}
+    },
+    "faq_graphic": {
+      "type": "faq_graphic",
       "settings": {}
     }
   },
   "layout": "theme",
   "wrapper": "main.main-wrapper",
   "order": [
-    "deafault"
+    "faq_hero",
+    "faq_section",
+    "faq_graphic"
   ]
 }
