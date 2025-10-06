@@ -1,0 +1,40 @@
+{
+    "sections": {
+        "about_hero": {
+            "type": "about_hero"
+        },
+        "about_intro": {
+            "type": "about_intro"
+        },
+        "about_graphic": {
+            "type": "about_graphic"
+        },
+        "who_are_we": {
+            "type": "who_are_we"
+        },
+        "videos_section": {
+            "type": "videos_section"
+        },
+        "about_carousel": {
+            "type": "about_carousel"
+        },
+        "meet_tuscany": {
+            "type": "meet_tuscany"
+        },
+        "meet_blue": {
+            "type": "meet_blue"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "about_hero",
+        "about_intro",
+        "about_graphic",
+        "who_are_we",
+        "videos_section",
+        "about_carousel",
+        "meet_tuscany",
+        "meet_blue"
+    ]
+}
