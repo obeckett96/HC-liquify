@@ -276,96 +276,59 @@ setTimeout(() => {
     </template>
                     </div>
                   </div>
-                  <style>
-/* Quick fallback styles — keep minimal so your theme CSS won't be overridden */
-.product-header_default-state { margin:0; padding:0; }
-.product-header_subscription { margin-bottom: 12px; }
-.variant-selling-plans { margin-left: 0.5rem; margin-bottom: 8px; }
-.product-header_add-to-cart-wrapper { margin-top: 12px; display:block; }
-.product-variant-select { margin-right:10px; }
-.form_input-2.is-quantity { width:70px; margin-left:8px; }
-</style>
-
-{%- comment -%}
-  ---- Replace current form area with this block ----
-  This is server-rendered (Liquid). It will show the Add to cart + subscription options without requiring Alpine/Vue.
-  Backup file first.
-{%- endcomment -%}
-
-{% form 'product', product, class: 'product-header_default-state' %}
-
-  {%- comment -%} SELLING PLANS (server-rendered fallback) {%- endcomment -%}
-  {% if product.selling_plan_groups.size > 0 %}
-    <div class="product-header_subscription" aria-live="polite">
-      <div>
-        <label class="product-header_subscription_radio-lable">
-          <input type="radio" name="selling_plan_choice" value="" checked>
-          {{ section.settings.text_without_subscription | default: 'One-time purchase' }}
-        </label>
-      </div>
-
-      {%- comment -%}
-        Render plan allocations grouped per variant.
-        We render one container per variant and hide all but the selected variant's container.
-        JS will toggle visibility when variant changes and copy the selected radio into name="selling_plan".
-      {%- endcomment -%}
-      {% for variant in product.variants %}
-        <div class="variant-selling-plans" data-variant-id="{{ variant.id }}" style="{% unless variant == product.selected_or_first_available_variant %}display:none{% endunless %}">
-          {% for allocation in variant.selling_plan_allocations %}
-            <label class="product-header_subscription_radio-lable-small">
-              <input
-                type="radio"
-                name="selling_plan_for_{{ variant.id }}"
-                value="{{ allocation.selling_plan.id }}"
-                class="selling-plan-radio"
-                data-selling-plan-for="{{ variant.id }}"
-              >
-              {{ allocation.selling_plan.name }}
-            </label>
-          {% endfor %}
-        </div>
-      {% endfor %}
-
-      {%- comment -%} Hidden canonical field that Shopify expects: name="selling_plan" {%- endcomment -%}
-      <input type="hidden" name="selling_plan" value="" class="selling-plan-hidden" />
-    </div>
-  {% endif %}
-
-  {%- comment -%} ADD TO CART area {%- endcomment -%}
-  <div class="product-header_add-to-cart-wrapper">
-    {% if product.available %}
-      {% if product.variants.size > 1 %}
-        <label>
-          <span class="visually-hidden">Choose variant</span>
-          <select name="id" class="product-variant-select" aria-label="Variant">
-            {% for variant in product.variants %}
-              <option
-                value="{{ variant.id }}"
-                {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
-                {% unless variant.available %}disabled{% endunless %}
-                data-variant-id="{{ variant.id }}"
-              >
-                {{ variant.title }}{% unless variant.available %} — sold out{% endunless %}
-              </option>
-            {% endfor %}
-          </select>
-        </label>
-      {% else %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-      {% endif %}
-
-      <label>
-        <span class="visually-hidden">Quantity</span>
-        <input type="number" name="quantity" value="1" min="1" class="form_input-2 is-quantity" />
-      </label>
-
-      <button type="submit" class="button pink add-to-cart">Add to cart</button>
-    {% else %}
-      <button type="button" class="button-2 is-secondary max-width-full pointer-events-off" disabled>Out of Stock</button>
-    {% endif %}
-  </div>
-
-{% endform %}
+                  <div class="product-header_form-block w-form">
+                    {% form 'product', product, class: 'product-header_default-state' %}
+{% if product.selling_plan_groups.size > 0 %}    <div li-if="product.selling_plan_groups.size > 0">
+    
+                        <div li-for:inside="variant in product.variants">
+        {% for variant in product.variants %}                            
+                          
+                            <template x-if="{{ variant.id }} === product.selected_or_first_available_variant.id">
+            <div li-js-if="{{ variant.id }} === product.selected_or_first_available_variant.id" class="product-header_subscription">
+        <label class="product-header_subscription_radio-lable w-radio"><input x-on:click="sellingplan_active = false; selling_plan = ''" class="w-form-formradioinput w-radio-input" name="selling_plan_active" data-name="selling_plan_active" type="radio" id="radio-5" checked="" value=""><span class="w-form-label" for="radio-5">
+{{ section.settings.text_without_subscription }}
+</span></label>
+                            <div class="product-header_subscription_radio-lable options"><label class="product-header_subscription_radio-lable is-on w-radio"><input type="radio" name="selling_plan_active" id="radio-4" data-name="selling_plan_active" x-on:click="sellingplan_active = true; selling_plan = '{{ variant.selling_plan_allocations.first.selling_plan.id }}'" class="w-form-formradioinput w-radio-input" value="Radio 4"><span class="w-form-label" for="radio-4">
+{{ section.settings.text_with_subscription }}
+</span></label>
+                              <div x-show="sellingplan_active" class="w-layout-vflex product-header_subscription_radio-lable is-on secondary">{% for plan in variant.selling_plan_allocations %}    <label li-for="plan in variant.selling_plan_allocations" class="product-header_subscription_radio-lable-small w-radio">
+                                    <input class="w-form-formradioinput w-radio-input" li-object:value="plan.selling_plan.id" name="selling_plan" data-name="selling_plan" x-model="selling_plan" type="radio" id="radio-4" value="{{ plan.selling_plan.id }}">
+                            <span li-object="plan.selling_plan.name" class="w-form-label" for="radio-4">{{ plan.selling_plan.name }}</span>
+                        </label>
+{% endfor %}</div>
+                            </div>
+                                  </div>
+    </template>
+                            <template x-if="sellingplan_active">
+            <input name="selling_plan" type="hidden" x-model="selling_plan" li-js-if="sellingplan_active">
+    </template>
+                            
+                        
+                    {% endfor %}    </div>
+                          </div>
+{% endif %}
+                      <div class="product-header_add-to-cart-wrapper">
+                        <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        <input class="form_input-2 is-quantity w-input" maxlength="256" name="quantity-3" li-element="add-to-cart-quantity" data-name="Quantity 3" placeholder="1" type="number" id="quantity-3" required="" x-model="quantity">
+                          <a li-element="add-to-cart" href="#" class="button pink add-to-cart w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to cart</a>
+                                </div>
+    </template>
+                        {% if product.available != true %}    <div li-if="product.available != true" class="product-header_out-of-stock">
+    
+                          <a href="#" class="button-2 is-secondary max-width-full pointer-events-off w-button">Out of Stock</a>
+                            </div>
+{% endif %}
+                      </div>
+                    {% endform %}
+                    <div class="hide w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="hide w-form-fail">
+                      <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                  </div>
+                </div>
                 <div class="accordian_full">
                   {% if product.metafields.details.ingredients %}    <div li-if="product.metafields.details.ingredients" class="accordian_wrap">
     
