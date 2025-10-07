@@ -22,21 +22,36 @@
     },
     "results_slider_7dR4HC": {
       "type": "results_slider",
+      "blocks": {
+        "results_slide_HNPBjF": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        },
+        "results_slide_C4qDTh": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        },
+        "results_slide_HGDzDf": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        }
+      },
+      "block_order": [
+        "results_slide_HNPBjF",
+        "results_slide_C4qDTh",
+        "results_slide_HGDzDf"
+      ],
       "name": "Results Slider",
-      "settings": {
-        "text_review_1": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_1": "Sarah",
-        "text_review_2": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_2": "Sarah",
-        "text_review_3": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_3": "Sarah",
-        "text_review_4": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_4": "Sarah",
-        "text_review_5": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_5": "Sarah",
-        "text_review_6": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_6": "Sarah"
-      }
+      "settings": {}
     },
     "bundles": {
       "type": "bundles",

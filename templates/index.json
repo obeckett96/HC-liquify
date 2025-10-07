@@ -45,7 +45,7 @@
       "type": "bundles_slider",
       "settings": {
         "text_bundle_slider_1": "Shampoo & Conditioner bundle",
-        "url_bundle_slide_1": "",
+        "url_bundle_slide_1": "shopify://products/shampoo-conditioner-bundle",
         "image_bundle_slide_1": "shopify://shop_images/HERO_shot_shampoo.png",
         "text_bundle_slider_2": "Shampoo & Conditioner bundle",
         "url_bundle_slide_2": "",
@@ -68,21 +68,35 @@
     },
     "results_slider": {
       "type": "results_slider",
-      "settings": {
-        "text_review_1": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_1": "Sarah",
-        "image_review_1": "shopify://shop_images/Product-cutout-2.png",
-        "text_review_2": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_2": "Sarah",
-        "text_review_3": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_3": "Sarah",
-        "text_review_4": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_4": "Sarah",
-        "text_review_5": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_5": "Sarah",
-        "text_review_6": "\"Review text goes here, editable in shopify\"",
-        "text_review_author_6": "Sarah"
-      }
+      "blocks": {
+        "results_slide_xLD6gX": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        },
+        "results_slide_BBMB6Q": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        },
+        "results_slide_rVHrL4": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
+        }
+      },
+      "block_order": [
+        "results_slide_xLD6gX",
+        "results_slide_BBMB6Q",
+        "results_slide_rVHrL4"
+      ],
+      "settings": {}
     },
     "cta_general": {
       "type": "cta_general",
