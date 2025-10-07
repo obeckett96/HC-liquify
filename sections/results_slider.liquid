@@ -41,102 +41,30 @@
           <div class="container-max">
             <div class="swiper is-reviews-carousel">
               <div class="swiper-wrapper is-reviews-carousel">
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
+                {% for block in section.blocks %}
+    {% if block.type == "" %}
+                    <div li-block="" class="swiper-slide is-reviews-carousel">
+                                    
+                  
+                                    <div class="social_image-wrapper">
                     <div class="block_review-text">
                       <div>
-{{ section.settings.text_review_1 }}
+{{ block.settings.text_review_text }}
 </div>
                       <div class="review-name">
-{{ section.settings.text_review_author_1 }}
+{{ block.settings.text_review_author }}
 </div>
-                    </div>{% if section.settings.image_review_1 %}
-{{ section.settings.image_review_1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
+                    </div>{% if block.settings.image_review_image %}
+{{ block.settings.image_review_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
 {% else %}
 <img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
 {% endif %}
                   </div>
-                </div>
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
-                    <div class="block_review-text">
-                      <div>
-{{ section.settings.text_review_2 }}
-</div>
-                      <div class="review-name">
-{{ section.settings.text_review_author_2 }}
-</div>
-                    </div>{% if section.settings.image_review_2 %}
-{{ section.settings.image_review_2 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}
-                  </div>
-                </div>
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
-                    <div class="block_review-text">
-                      <div>
-{{ section.settings.text_review_3 }}
-</div>
-                      <div class="review-name">
-{{ section.settings.text_review_author_3 }}
-</div>
-                    </div>{% if section.settings.image_review_3 %}
-{{ section.settings.image_review_3 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}
-                  </div>
-                </div>
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
-                    <div class="block_review-text">
-                      <div>
-{{ section.settings.text_review_4 }}
-</div>
-                      <div class="review-name">
-{{ section.settings.text_review_author_4 }}
-</div>
-                    </div>{% if section.settings.image_review_4 %}
-{{ section.settings.image_review_4 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}
-                  </div>
-                </div>
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
-                    <div class="block_review-text">
-                      <div>
-{{ section.settings.text_review_5 }}
-</div>
-                      <div class="review-name">
-{{ section.settings.text_review_author_5 }}
-</div>
-                    </div>{% if section.settings.image_review_5 %}
-{{ section.settings.image_review_5 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}
-                  </div>
-                </div>
-                <div class="swiper-slide is-reviews-carousel">
-                  <div class="social_image-wrapper">
-                    <div class="block_review-text">
-                      <div>
-{{ section.settings.text_review_6 }}
-</div>
-                      <div class="review-name">
-{{ section.settings.text_review_author_6 }}
-</div>
-                    </div>{% if section.settings.image_review_6 %}
-{{ section.settings.image_review_6 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}
-                  </div>
-                </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
               </div>
               <div class="swiper-pagination is-reviews-carousel"></div>
             </div>
@@ -146,115 +74,40 @@
     "tag": "section",
     "name": "Results Slider",
     "class": "section reviews",
-    "settings": [
+    "blocks": [
         {
-            "id": "text_review_1",
-            "type": "text",
-            "label": "review 1",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_1",
-            "type": "text",
-            "label": "review author 1",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_1",
-            "type": "image_picker",
-            "label": "review 1"
-        },
-        {
-            "id": "text_review_2",
-            "type": "text",
-            "label": "review 2",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_2",
-            "type": "text",
-            "label": "review author 2",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_2",
-            "type": "image_picker",
-            "label": "review 2"
-        },
-        {
-            "id": "text_review_3",
-            "type": "text",
-            "label": "review 3",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_3",
-            "type": "text",
-            "label": "review author 3",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_3",
-            "type": "image_picker",
-            "label": "review 3"
-        },
-        {
-            "id": "text_review_4",
-            "type": "text",
-            "label": "review 4",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_4",
-            "type": "text",
-            "label": "review author 4",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_4",
-            "type": "image_picker",
-            "label": "review 4"
-        },
-        {
-            "id": "text_review_5",
-            "type": "text",
-            "label": "review 5",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_5",
-            "type": "text",
-            "label": "review author 5",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_5",
-            "type": "image_picker",
-            "label": "review 5"
-        },
-        {
-            "id": "text_review_6",
-            "type": "text",
-            "label": "review 6",
-            "default": "\"Review text goes here, editable in shopify\""
-        },
-        {
-            "id": "text_review_author_6",
-            "type": "text",
-            "label": "review author 6",
-            "default": "Sarah"
-        },
-        {
-            "id": "image_review_6",
-            "type": "image_picker",
-            "label": "review 6"
+            "name": "",
+            "type": "",
+            "settings": [
+                {
+                    "id": "text_review_text",
+                    "type": "text",
+                    "label": "review text",
+                    "default": "\"Review text goes here, editable in shopify\""
+                },
+                {
+                    "id": "text_review_author",
+                    "type": "text",
+                    "label": "review author",
+                    "default": "Sarah"
+                },
+                {
+                    "id": "image_review_image",
+                    "type": "image_picker",
+                    "label": "review image"
+                }
+            ]
         }
     ],
     "presets": [
         {
             "name": "Results Slider",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": ""
+                }
+            ]
         }
     ]
 } {% endschema %}

@@ -242,7 +242,7 @@ setTimeout(() => {
             </div>
           </div>
           <div id="w-node-_29cac495-f401-9ac8-4922-53a5f39dc7e8-3f62b365" class="product-right">
-            <div class="product_content">
+            <div x-data="{selling_plan: '{{ product.selected_or_first_available_variant. selected_selling_plan_allocation.selling_plan.id }}', sellingplan_active: false }" class="product_content">
               <div class="product_top-info">
                 <h1 no-flicker="true" li-object:text="product.title" word-split="true" class="title_product">
 {{ product.title }}

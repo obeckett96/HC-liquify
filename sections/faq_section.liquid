@@ -1,9 +1,13 @@
 <div class="container-max">
           <div class="container_faq">
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
+            {% for block in section.blocks %}
+    {% if block.type == "faq" %}
+                    <div li-block="faq" class="faq-wrapper">
+                                    
+              
+                                    <div class="faq-trigger">
                 <div>
-{{ section.settings.text_faq_heading_1 }}
+{{ block.settings.text_faq_heading }}
 </div>
                 <div class="plus-contain">
                   <div class="plus-vert">
@@ -14,191 +18,52 @@
                   </div>
                 </div>
               </div>
-              <div class="faq-content">
+                                    
+              
+                                    <div class="faq-content">
                 <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_1 }} </div>
+                  <div class="rt_faq w-richtext"> {{ block.settings.textarea_faq_answer }} </div>
                 </div>
               </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_2 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_2 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_3 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_3 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_4 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_4 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_5 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_5 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_6 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_6 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_7 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_7 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_8 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_8 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_9 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_9 }} </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq-wrapper">
-              <div class="faq-trigger">
-                <div>
-{{ section.settings.text_faq_heading_10 }}
-</div>
-                <div class="plus-contain">
-                  <div class="plus-vert">
-                    <div class="line-vert"></div>
-                  </div>
-                  <div class="plus-vert">
-                    <div class="line-hori"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="faq-content">
-                <div class="faq-inner">
-                  <div class="rt_faq w-richtext"> {{ section.settings.textarea_faq_answer_10 }} </div>
-                </div>
-              </div>
-            </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
           </div>
-        </div> {% schema %}  {% endschema %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "FAQ Section",
+    "class": "section faq-wrap",
+    "blocks": [
+        {
+            "name": "faq",
+            "type": "faq",
+            "settings": [
+                {
+                    "id": "text_faq_heading",
+                    "type": "text",
+                    "label": "faq heading",
+                    "default": "What makes Hair Candy different from other haircare brands?"
+                },
+                {
+                    "id": "textarea_faq_answer",
+                    "type": "textarea",
+                    "label": "faq answer",
+                    "default": "\n                    <p>Hair Candy is 100% New Zealand\u2013made and built on three pillars of love: <strong>hair, people\u2019s health, and the planet<\/strong>. Our products use <strong>natural keratin derived from NZ sheep wool<\/strong>, which is a 99% match to human keratin. This helps rebuild and repair hair from the inside out, while being gentle on your scalp and the environment.<\/p>\n                  "
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "FAQ Section",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "faq"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
