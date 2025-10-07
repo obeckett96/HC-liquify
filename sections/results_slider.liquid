@@ -42,8 +42,8 @@
             <div class="swiper is-reviews-carousel">
               <div class="swiper-wrapper is-reviews-carousel">
                 {% for block in section.blocks %}
-    {% if block.type == "" %}
-                    <div li-block="" class="swiper-slide is-reviews-carousel">
+    {% if block.type == "results-slide" %}
+                    <div li-block="results slide" class="swiper-slide is-reviews-carousel">
                                     
                   
                                     <div class="social_image-wrapper">
@@ -76,8 +76,8 @@
     "class": "section reviews",
     "blocks": [
         {
-            "name": "",
-            "type": "",
+            "name": "results slide",
+            "type": "results-slide",
             "settings": [
                 {
                     "id": "text_review_text",
@@ -105,7 +105,7 @@
             "category": "Liquify",
             "blocks": [
                 {
-                    "type": ""
+                    "type": "results-slide"
                 }
             ]
         }
