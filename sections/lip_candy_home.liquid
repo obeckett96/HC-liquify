@@ -108,48 +108,21 @@
           <div class="container-max">
             <div class="swiper is-lipcandy">
               <div class="swiper-wrapper is-lipcandy">
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_1 %}
-{{ section.settings.image_social_img_1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
+                {% for block in section.blocks %}
+    {% if block.type == "lip-candy-slide" %}
+                    <div li-block="Lip Candy Slide" class="swiper-slide is-lipcandy">
+                                    
+                  
+                                    <div class="social_image-wrapper">{% if block.settings.image_social_img_1 %}
+{{ block.settings.image_social_img_1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
 {% else %}
 <img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
 {% endif %}</div>
-                </div>
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_2 %}
-{{ section.settings.image_social_img_2 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
-                </div>
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_3 %}
-{{ section.settings.image_social_img_3 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
-                </div>
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_4 %}
-{{ section.settings.image_social_img_4 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
-                </div>
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_5 %}
-{{ section.settings.image_social_img_5 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
-                </div>
-                <div class="swiper-slide is-lipcandy">
-                  <div class="social_image-wrapper">{% if section.settings.image_social_img_6 %}
-{{ section.settings.image_social_img_6 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
-{% else %}
-<img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
-                </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
               </div>
               <div class="swiper-pagination is-lipcandy"></div>
               <div class="hide w-embed w-script">
@@ -303,6 +276,19 @@ setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
     "tag": "section",
     "name": "Lip Candy Home",
     "class": "section lipcandy",
+    "blocks": [
+        {
+            "name": "Lip Candy Slide",
+            "type": "lip-candy-slide",
+            "settings": [
+                {
+                    "id": "image_social_img_1",
+                    "type": "image_picker",
+                    "label": "Social img 1"
+                }
+            ]
+        }
+    ],
     "settings": [
         {
             "id": "text_blurb_text",
@@ -320,43 +306,17 @@ setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
             "id": "url_button_link",
             "type": "url",
             "label": "button-link"
-        },
-        {
-            "id": "image_social_img_1",
-            "type": "image_picker",
-            "label": "Social img 1"
-        },
-        {
-            "id": "image_social_img_2",
-            "type": "image_picker",
-            "label": "Social img 2"
-        },
-        {
-            "id": "image_social_img_3",
-            "type": "image_picker",
-            "label": "Social img 3"
-        },
-        {
-            "id": "image_social_img_4",
-            "type": "image_picker",
-            "label": "Social img 4"
-        },
-        {
-            "id": "image_social_img_5",
-            "type": "image_picker",
-            "label": "Social img 5"
-        },
-        {
-            "id": "image_social_img_6",
-            "type": "image_picker",
-            "label": "Social img 6"
         }
     ],
     "presets": [
         {
             "name": "Lip Candy Home",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "lip-candy-slide"
+                }
+            ]
         }
     ]
 } {% endschema %}

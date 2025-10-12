@@ -1,9 +1,9 @@
 <div class="container-max">
           <div class="block-content about-bio">
             <div button-slide="true" prevent-flicker="true" class="img_about-bio">{% if section.settings.image_founder_1_image %}
-{{ section.settings.image_founder_1_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '100vw', loading: 'lazy' }}
+{{ section.settings.image_founder_1_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '(max-width: 1107px) 100vw, 1107px', loading: 'lazy' }}
 {% else %}
-<img class="img-inner-standard" src="{{ 'DSC01426_1.avif' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'DSC01426_1DSC01426.avif' | asset_url }} 500w, {{ 'DSC01426_1.avif' | asset_url }} 1107w">
+<img class="img-inner-standard" src="{{ 'DSC01426_1.avif' | asset_url }}" alt="" sizes="(max-width: 1107px) 100vw, 1107px" loading="lazy" srcset="{{ 'DSC01426_1DSC01426.avif' | asset_url }} 500w, {{ 'DSC01426_1.avif' | asset_url }} 1107w">
 {% endif %}</div>
             <div class="about-block-right">
               <h3 word-split="true" prevent-flicker="true" class="subheading-standard">
