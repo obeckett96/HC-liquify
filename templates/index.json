@@ -55,11 +55,39 @@
     },
     "lip_candy_home": {
       "type": "lip_candy_home",
+      "blocks": {
+        "lip_candy_slide_99K4xh": {
+          "type": "lip-candy-slide",
+          "settings": {}
+        },
+        "lip_candy_slide_8DkcLx": {
+          "type": "lip-candy-slide",
+          "settings": {}
+        },
+        "lip_candy_slide_LWGNai": {
+          "type": "lip-candy-slide",
+          "settings": {}
+        },
+        "lip_candy_slide_aeNDgT": {
+          "type": "lip-candy-slide",
+          "settings": {}
+        },
+        "lip_candy_slide_RKURTR": {
+          "type": "lip-candy-slide",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "lip_candy_slide_99K4xh",
+        "lip_candy_slide_8DkcLx",
+        "lip_candy_slide_LWGNai",
+        "lip_candy_slide_aeNDgT",
+        "lip_candy_slide_RKURTR"
+      ],
       "settings": {
         "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
-        "url_button_link": "",
-        "image_social_img_1": "shopify://shop_images/HEROshotconditioner_a12e5338-a5cd-455e-a791-782d448a4b62.png"
+        "url_button_link": ""
       }
     },
     "benefits_home": {
