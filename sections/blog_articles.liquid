@@ -1,5 +1,4 @@
-{% paginate article in blog.articles by 50 %}
-    <div li-paginate:by="50" li-paginate="article in blog.articles" class="container-max" by="50">
+<div class="container-max">
           <div class="blog_cms-wrapper w-dyn-list">
             {% if blog.articles != blank %}    <div li-if="blog.articles != blank" role="list" class="blog_list w-dyn-items">
     
@@ -103,7 +102,7 @@
             </ul>
               </nav>
 {% endif %}
-        </div>{% endpaginate %} {% schema %} {
+        </div> {% schema %} {
     "tag": "section",
     "name": "Blog-Articles",
     "class": "section",
