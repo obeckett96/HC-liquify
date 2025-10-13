@@ -27,8 +27,11 @@
         "text_intro_btn_2": "Hair candy conditioner",
         "url_intro_btn_2": "",
         "text_benefit_1": "Cleanse",
+        "image_benefit1": "shopify://shop_images/WhatsApp_Image_2025-10-03_at_11.38.56.jpg",
         "text_benefit_2": "Stimulate",
-        "text_benefit_3": "Seal ingrowth"
+        "image_benefit2": "shopify://shop_images/WhatsApp_Image_2025-10-03_at_11.38.56_2.jpg",
+        "text_benefit_3": "Seal in growth",
+        "image_benefit_3": "shopify://shop_images/WhatsApp_Image_2025-10-03_at_11.38.56_1.jpg"
       }
     },
     "featured_products": {
