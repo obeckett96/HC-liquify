@@ -359,25 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 
-  <script>
-function waitForSwiper(callback) {
-  if (typeof Swiper !== 'undefined') {
-    callback();
-  } else {
-    setTimeout(() => waitForSwiper(callback), 100);
-  }
-}
 
-waitForSwiper(() => {
-  initializeLipcandyCarouselSwiper();
-  initializeReviewsCarouselSwiper();
-});
-</script>
-<script>
-console.log('Checking Swiper:', typeof Swiper);
-console.log('Checking lipcandy carousel:', document.querySelector('.swiper.is-lipcandy'));
-console.log('Checking reviews carousel:', document.querySelector('.swiper.is-reviews-carousel'));
-</script>
   <!--  GSAP ANIMATIONS  -->
   <script>
 // WORD REVEAL TEXT - GLOBAL
