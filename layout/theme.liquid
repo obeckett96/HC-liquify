@@ -373,7 +373,11 @@ waitForSwiper(() => {
   initializeReviewsCarouselSwiper();
 });
 </script>
-
+<script>
+console.log('Checking Swiper:', typeof Swiper);
+console.log('Checking lipcandy carousel:', document.querySelector('.swiper.is-lipcandy'));
+console.log('Checking reviews carousel:', document.querySelector('.swiper.is-reviews-carousel'));
+</script>
   <!--  GSAP ANIMATIONS  -->
   <script>
 // WORD REVEAL TEXT - GLOBAL
