@@ -26,29 +26,20 @@
             <div class="benefit_circle">
               <div class="text-benefit">
 {{ section.settings.text_benefit_1 }}
-</div>{% if section.settings.image_benefit1 %}
-{{ section.settings.image_benefit1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'benefit-img-inner' }}
-{% else %}
-<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="benefit-img-inner">
-{% endif %}
+</div>
+              <div class="grad-cover"></div>
             </div>
-            <div class="benefit_circle">
+            <div class="benefit_circle stim">
               <div class="text-benefit">
 {{ section.settings.text_benefit_2 }}
-</div>{% if section.settings.image_benefit2 %}
-{{ section.settings.image_benefit2 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'benefit-img-inner' }}
-{% else %}
-<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="benefit-img-inner">
-{% endif %}
+</div>
+              <div class="grad-cover"></div>
             </div>
-            <div class="benefit_circle">
+            <div class="benefit_circle seal">
               <div class="text-benefit">
 {{ section.settings.text_benefit_3 }}
-</div>{% if section.settings.image_benefit_3 %}
-{{ section.settings.image_benefit_3 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'benefit-img-inner' }}
-{% else %}
-<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="benefit-img-inner">
-{% endif %}
+</div>
+              <div class="grad-cover"></div>
             </div>
           </div>
         </div> {% schema %} {
@@ -95,31 +86,16 @@
             "default": "Cleanse"
         },
         {
-            "id": "image_benefit1",
-            "type": "image_picker",
-            "label": "benefit1"
-        },
-        {
             "id": "text_benefit_2",
             "type": "text",
             "label": "benefit 2",
             "default": "Stimulate"
         },
         {
-            "id": "image_benefit2",
-            "type": "image_picker",
-            "label": "benefit2"
-        },
-        {
             "id": "text_benefit_3",
             "type": "text",
             "label": "benefit 3",
             "default": "Seal in<br\/>growth"
-        },
-        {
-            "id": "image_benefit_3",
-            "type": "image_picker",
-            "label": "benefit 3"
         }
     ],
     "presets": [
