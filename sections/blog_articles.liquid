@@ -6,7 +6,7 @@
                                     
                 
                             <a li-object:href="article.url" href="{{ article.url }}" class="blog_item-grid w-inline-block">
-                  <div id="w-node-_2c70579c-a50c-391e-dd47-706a953e61e9-953e61e8" class="blog_tags-wrapper"><img id="w-node-_2c70579c-a50c-391e-dd47-706a953e61ea-953e61e8" li-object:src="article.image | image_url: width: 450" alt="{{ article.image.alt }}" src="{{ article.image | image_url: width: 450 }}" loading="lazy" li-object:alt="article.image.alt" class="blog_img">
+                  <div id="w-node-_2c70579c-a50c-391e-dd47-706a953e61e9-953e61e8" class="blog_tags-wrapper">
                     <div class="blog_tag-row">
                       {% for tag in article.tags %}    <div li-for="tag in article.tags" class="blog_tag">
                                     
@@ -16,7 +16,7 @@
                       
                         </div>
 {% endfor %}
-                    </div>
+                    </div><img class="img_blog" src="{{ article.image | image_url: width: 450 }}" alt="{{ article.image.alt }}" sizes="(max-width: 1571px) 100vw, 1571px" li-object:src="article.image | image_url: width: 450" loading="lazy" li-object:alt="article.image.alt" srcset="{{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 500w, {{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 800w, {{ 'Rectangle-15_1.avif' | asset_url }} 1571w">
                   </div>
                   <div class="blog_info-wrapper">
                     <h3 li-object="article.title" class="blog-title">{{ article.title }}</h3>
@@ -31,7 +31,8 @@
 {% endif %}
             {% if blog.articles == blank %}    <div li-if="blog.articles == blank" class="blog_cms-empty w-dyn-empty">
     
-              <div>No blog items found.</div>
+              <div>There's nothing here yet...</div>
+              <div class="empty-subhead">Come back soon! We'll be updating the blog.</div>
                 </div>
 {% endif %}
           </div>

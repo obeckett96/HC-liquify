@@ -1,4 +1,5 @@
-<div class="container-max">
+<div class="spacer-between"></div>
+        <div class="container-max">
           <div class="w-layout-grid contact_component">
             <div class="contact_content">
               <div class="margin-bottom margin-small">
@@ -6,9 +7,7 @@
 {{ section.settings.text_heading }}
 </h1>
               </div>
-              <p>
-{{ section.settings.text_paragraph }}
-</p>
+              <div> {{ section.settings.richtext_paragraph }} </div>
             </div>
             <div class="contact_form-block w-form">
               {% form 'contact', return_to: '/', class: 'contact_form' %}
@@ -48,10 +47,10 @@
             "default": "Contact us"
         },
         {
-            "id": "text_paragraph",
-            "type": "text",
+            "id": "richtext_paragraph",
+            "type": "richtext",
             "label": "Paragraph",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"
         },
         {
             "id": "text_first_name",
