@@ -117,12 +117,20 @@
             "text_review_text": "\"Review text goes here, editable in shopify\"",
             "text_review_author": "Sarah"
           }
+        },
+        "results_slide_Ydn6j8": {
+          "type": "results-slide",
+          "settings": {
+            "text_review_text": "\"Review text goes here, editable in shopify\"",
+            "text_review_author": "Sarah"
+          }
         }
       },
       "block_order": [
         "results_slide_xLD6gX",
         "results_slide_BBMB6Q",
-        "results_slide_rVHrL4"
+        "results_slide_rVHrL4",
+        "results_slide_Ydn6j8"
       ],
       "settings": {}
     },
