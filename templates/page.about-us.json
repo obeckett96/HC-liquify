@@ -1,40 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "about_hero": {
-            "type": "about_hero"
-        },
-        "about_intro": {
-            "type": "about_intro"
-        },
-        "about_graphic": {
-            "type": "about_graphic"
-        },
-        "who_are_we": {
-            "type": "who_are_we"
-        },
-        "videos_section": {
-            "type": "videos_section"
-        },
-        "about_carousel": {
-            "type": "about_carousel"
-        },
-        "meet_tuscany": {
-            "type": "meet_tuscany"
-        },
-        "meet_blue": {
-            "type": "meet_blue"
-        }
+  "sections": {
+    "about_hero_b3mYze": {
+      "type": "about_hero",
+      "name": "About Hero",
+      "settings": {
+        "html_video_embed": "<video id=\"hero-video\" class=\"hero-video\" autoplay=\"\" muted=\"\" loop=\"\" playsinline=\"\">\n            <!--  Dropbox video source with the correct format  -->\n            <source src=\"https://ia601004.us.archive.org/18/items/horizontal-rerender-copy/HorizontalRerender%20copy.ia.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n          </source></video>\n          <style>\n@media (max-width: 480px) {\n  .hero-video {\n    position: absolute !important;</style>"
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "about_hero",
-        "about_intro",
-        "about_graphic",
-        "who_are_we",
-        "videos_section",
-        "about_carousel",
-        "meet_tuscany",
-        "meet_blue"
-    ]
+    "about_intro_RVdNTj": {
+      "type": "about_intro",
+      "name": "About Intro",
+      "settings": {
+        "text_eyebrow_text_intro": "THE HAIRCANDY STORY",
+        "text_intro_heading": "Born out of genuine love for hair",
+        "textarea_intro_paragraphs": "<p>Hair Candy all began from a small concept of, how we care for you and your hair. With over 15 years of experience and research combined, Our beautiful product was born.</p>\n                <p>‍</p>\n                <p>Hair Candy was born out of genuine love for hair and maximising hair health. A passion that overflowed from a hairstylist's love for hair and creating Natural products which are care for you and the environment.</p>\n                <p>‍</p>"
+      }
+    },
+    "about_graphic_whQDUH": {
+      "type": "about_graphic",
+      "name": "About Graphic",
+      "settings": {
+        "text_giant_text": "We are here to change the way people view hair products"
+      }
+    },
+    "who_are_we_4WzrJc": {
+      "type": "who_are_we",
+      "name": "Who are we",
+      "settings": {
+        "text_eyebrow_who_we_are": "THE HAIRCANDY STORY",
+        "text_who_are_we_heading": "Who are we?",
+        "textarea_who_are_we_paragraphs": "<p>HAIR CANDY is a brand built off three factors of LOVE: Hair, People's overall health & well-being, and Our Planet.</p>\n                <p>‍</p>\n                <p>Our founder, entrepreneur Tuscany Hamel, daughter of the world-renowned hairstylist Mike Hamel, started Hair Candy back in 2015.  But After selling out multiple times over, Hair Candy had become to big to handle on her own. This time round we have a team of people on board to bring the bel</p>"
+      }
+    },
+    "videos_section_Jp3rgj": {
+      "type": "videos_section",
+      "name": "Videos Section",
+      "settings": {
+        "text_videos_heading": "What we're about",
+        "text_video1": "Who are we?",
+        "text_video2": "What makes our shampoo different?",
+        "text_video3": "What does \"Ugly-free\" mean?"
+      }
+    },
+    "about_carousel_QgLxJi": {
+      "type": "about_carousel",
+      "name": "About Carousel",
+      "settings": {}
+    },
+    "meet_tuscany": {
+      "type": "meet_tuscany",
+      "settings": {
+        "text_founder_1_heading": "Meet tuscany",
+        "text_founder_1_pg": "New Zealand entrepreneur, beauty, fashion and Sports enthusiast Tuscany Hamel was inspired to create a range of products that provide benefits to peoples overall health of there hair, mind and body.Where it all started, was after Tuscany having a very successful early start of her career as a professional tennis player playing on the junior world circuit. But unfortunately, after a fews years of back to back injuries made her having to change course. Growing up with two very successful Hair salon/stylists ownersTo stay updated on all things Tuscany and sneak peeks to Hair Candy go check her Instagram out here:<br>",
+        "text_founder_1_handle": "@tuscanyhamel",
+        "url_founder_1_url": ""
+      }
+    },
+    "meet_blue": {
+      "type": "meet_blue",
+      "settings": {
+        "text_founder_2_heading": "Meet the creative director",
+        "text_founder_2_pg": "Gen Z Serial Entrepreneur and Creative from NZ living abroad most of his life in New York and LA. Previously working for Adidas and now working within the Music, fashion and design industries. Also leading and creating multiple NFT/ 3D based content and projects.<br>",
+        "text_founder_2_handle": "@halfofnothing",
+        "url_founder_2_url": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "about_hero_b3mYze",
+    "about_intro_RVdNTj",
+    "about_graphic_whQDUH",
+    "who_are_we_4WzrJc",
+    "videos_section_Jp3rgj",
+    "about_carousel_QgLxJi",
+    "meet_tuscany",
+    "meet_blue"
+  ]
 }
