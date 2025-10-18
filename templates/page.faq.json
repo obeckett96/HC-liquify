@@ -16,14 +16,7 @@
     "faq_section": {
       "type": "faq_section",
       "blocks": {
-        "faq_93kUwb": {
-          "type": "faq",
-          "settings": {
-            "text_faq_heading": "What makes Hair Candy different from other haircare brands?",
-            "textarea_faq_answer": "<p>Hair Candy is 100% New Zealand–made and built on three pillars of love: <strong>hair, people’s health, and the planet</strong>. Our products use <strong>natural keratin derived from NZ sheep wool</strong>, which is a 99% match to human keratin. This helps rebuild and repair hair from the inside out, while being gentle on your scalp and the environment.</p>"
-          }
-        },
-        "faq_pdxLDB": {
+        "faq_GgHLqd": {
           "type": "faq",
           "settings": {
             "text_faq_heading": "What makes Hair Candy different from other haircare brands?",
@@ -34,7 +27,7 @@
           "type": "faq",
           "settings": {
             "text_faq_heading": "What makes Hair Candy different from other haircare brands?",
-            "textarea_faq_answer": "<p>Hair Candy is 100% New Zealand–made and built on three pillars of love: <strong>hair, people’s health, and the planet</strong>. Our products use <strong>natural keratin derived from NZ sheep wool</strong>, which is a 99% match to human keratin. This helps rebuild and repair hair from the inside out, while being gentle on your scalp and the environment.</p>"
+            "textarea_faq_answer": "<p>Yes. Whether your hair is straight, wavy, curly, fine, or thick, Hair Candy is designed to <strong>restore strength, elasticity, and shine.</strong> It is especially effective for <strong>damaged, dry, or bleached hair,</strong> helping reduce breakage and frizz.</p>"
           }
         },
         "faq_RMDEhK": {
@@ -46,8 +39,7 @@
         }
       },
       "block_order": [
-        "faq_93kUwb",
-        "faq_pdxLDB",
+        "faq_GgHLqd",
         "faq_tqFhbG",
         "faq_RMDEhK"
       ],
