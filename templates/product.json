@@ -20,39 +20,6 @@
       "type": "benefits_wrapper",
       "settings": {}
     },
-    "results_slider_7dR4HC": {
-      "type": "results_slider",
-      "blocks": {
-        "results_slide_HNPBjF": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        },
-        "results_slide_C4qDTh": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        },
-        "results_slide_HGDzDf": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        }
-      },
-      "block_order": [
-        "results_slide_HNPBjF",
-        "results_slide_C4qDTh",
-        "results_slide_HGDzDf"
-      ],
-      "name": "Results Slider",
-      "settings": {}
-    },
     "bundles": {
       "type": "bundles",
       "settings": {
@@ -69,7 +36,6 @@
   "order": [
     "product_hero",
     "benefits_wrapper",
-    "results_slider_7dR4HC",
     "bundles"
   ]
 }
