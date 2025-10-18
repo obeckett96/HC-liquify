@@ -29,7 +29,7 @@
       "settings": {
         "text_heading_text": "Make it a bundle",
         "text_button_text": "All Bundles",
-        "url_button_link": "",
+        "url_button_link": "shopify://collections/bundles",
         "collection_bundles": "bundles",
         "collection_bundles_limit": 3
       }
