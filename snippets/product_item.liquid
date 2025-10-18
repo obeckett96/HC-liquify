@@ -14,6 +14,12 @@
                           <a li-element="add-to-cart" href="#" class="linkto_product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Quick add to cart</a>
                         </div>
                         <div class="spacer-xxsmall-2"></div>
+                        <!-- Start of Judge.me code --> 
+  <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+    {{ product.metafields.judgeme.badge }} 
+  </div> 
+<!-- End of Judge.me code -->
+
                         <a li-object:href="product.url" href="{{ product.url }}" class="name_product-item w-inline-block">
                           <div li-object="product.title">{{ product.title }}</div>
                           <div class="price-block">
