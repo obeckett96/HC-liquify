@@ -71,6 +71,20 @@
             "text_faq_heading": "How much do Hair Candy products cost?",
             "textarea_faq_answer": "<p>Retail prices range from <strong>NZD $55 – $120</strong>, depending on the product. Wholesale pricing is available for approved stockists.</p>"
           }
+        },
+        "faq_r7QXRn": {
+          "type": "faq",
+          "settings": {
+            "text_faq_heading": "Do you offer international shipping?",
+            "textarea_faq_answer": "<p>Currently, we ship within <strong>New Zealand and Australia, North America, United Kingdom, Europe, South America, Japan, Korea, Singapore, UAE.</strong>   More regions are coming soon — sign up for our newsletter to be the first to know when global shipping launches.</p>"
+          }
+        },
+        "faq_RDkr39": {
+          "type": "faq",
+          "settings": {
+            "text_faq_heading": "How can I become a stockist or distributor?",
+            "textarea_faq_answer": "<p>We’d love to partner with you! Please contact us via our <a href=\"/pages/contact\">Contact Page</a> or email us at <a href=\"mailto:hello@haircandy.nz\">hello@haircandy.nz</a> for wholesale inquiries.</p>"
+          }
         }
       },
       "block_order": [
@@ -81,7 +95,9 @@
         "faq_mxdr7b",
         "faq_ayzDrC",
         "faq_6titKN",
-        "faq_DMT3G3"
+        "faq_DMT3G3",
+        "faq_r7QXRn",
+        "faq_RDkr39"
       ],
       "settings": {}
     },
