@@ -24,21 +24,6 @@
       "type": "judgeme_section",
       "settings": {}
     },
-    "1760797341d6a4cdea": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_nwiyGz": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_nwiyGz"
-      ],
-      "settings": {}
-    },
     "bundles": {
       "type": "bundles",
       "settings": {
@@ -48,24 +33,6 @@
         "collection_bundles": "bundles",
         "collection_bundles_limit": 3
       }
-    },
-    "1760797384d3d9c01f": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_7CnWgc": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_7CnWgc"
-      ],
-      "settings": {}
     }
   },
   "layout": "theme",
@@ -74,8 +41,6 @@
     "product_hero",
     "benefits_wrapper",
     "judgeme_section",
-    "1760797341d6a4cdea",
-    "bundles",
-    "1760797384d3d9c01f"
+    "bundles"
   ]
 }
