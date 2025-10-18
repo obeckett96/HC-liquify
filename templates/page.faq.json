@@ -50,6 +50,27 @@
             "text_faq_heading": "How do I use Hair Candy products?",
             "textarea_faq_answer": "<p>For best results:</p>\n<br>\n<ul>\n  <li>\n<strong>Shampoo</strong> → Gently cleanse, rinse thoroughly.</li>\n  <li>\n<strong>Conditioner Whip</strong> → Apply mid-length to ends, leave for a few minutes, rinse.</li>\n  <li>\n<strong>Keratin Treatment / Salvage Shot</strong> → Use as directed for deeper repair.</li>\n</ul>\n<br>\n<p>A little goes a long way — most customers find they need less than with typical hair products.</p>"
           }
+        },
+        "faq_ayzDrC": {
+          "type": "faq",
+          "settings": {
+            "text_faq_heading": "How quickly will I see results?",
+            "textarea_faq_answer": "<p>Many customers notice improvements <strong>after just one use</strong> — smoother, shinier, stronger hair. Continued use leads to long-term repair, reduced breakage (up to 85% less), and improved colour retention.</p>"
+          }
+        },
+        "faq_6titKN": {
+          "type": "faq",
+          "settings": {
+            "text_faq_heading": "Where can I buy Hair Candy?",
+            "textarea_faq_answer": "<p>You can purchase directly from our website <a>haircandy.nz</a>. We ship across <strong>New Zealand and Australia</strong> with fast delivery options.\n</p>"
+          }
+        },
+        "faq_DMT3G3": {
+          "type": "faq",
+          "settings": {
+            "text_faq_heading": "How much do Hair Candy products cost?",
+            "textarea_faq_answer": "<p>Retail prices range from <strong>NZD $55 – $120</strong>, depending on the product. Wholesale pricing is available for approved stockists.</p>"
+          }
         }
       },
       "block_order": [
@@ -57,7 +78,10 @@
         "faq_tqFhbG",
         "faq_RMDEhK",
         "faq_K8EnYH",
-        "faq_mxdr7b"
+        "faq_mxdr7b",
+        "faq_ayzDrC",
+        "faq_6titKN",
+        "faq_DMT3G3"
       ],
       "settings": {}
     },
