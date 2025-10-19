@@ -2,33 +2,21 @@
           <div class="footer_main-wrapper">
             <div class="footer-left">
               <div>
-                <div li-object="link.title" class="title-footer">{{ link.title }}</div>
-                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer-menu">
+                <div class="title-footer">
+{{ section.settings.text_footer_menu_title }}
+</div>
+                <div class="footer-menu">
+                  {% for link in linklists['footer'].links %}    <div li-for="link in linklists['footer'].links" class="footer_link-list">
                                     
-                  
-                            <div li-for:inside="child_link in link.links" class="footer_link-list">
-        {% for child_link in link.links %}                            
                     
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                    
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                    
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                    
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
-                            
-                    
-                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="link_footer">{{ child_link.title }}</a>
+                            <a li-object:href="link.url" href="{{ link.url }}" class="link-block w-inline-block">
+                      <div li-object="link.title" class="link_footer">{{ link.title }}</div>
+                    </a>
                             
                   
-                    {% endfor %}    </div>
-                            
-                
                         </div>
 {% endfor %}
+                </div>
               </div>
               <div>
                 <div class="title-footer">Socials</div>
@@ -107,6 +95,12 @@
     "name": "Footer",
     "class": "section footer",
     "settings": [
+        {
+            "id": "text_footer_menu_title",
+            "type": "text",
+            "label": "Footer Menu Title",
+            "default": "Navigate"
+        },
         {
             "id": "url_ig_link",
             "type": "url",
