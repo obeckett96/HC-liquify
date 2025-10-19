@@ -247,19 +247,12 @@ setTimeout(() => {
                 <h1 no-flicker="true" li-object:text="product.title" word-split="true" class="title_product">
 {{ product.title }}
 </h1>
-<!-- Start of Judge.me code --> 
-  <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
-    {{ product.metafields.judgeme.badge }} 
-  </div> 
-<!-- End of Judge.me code -->
-
                 {% if product.metafields.custom.bottle_size.value %}    <div li-if="product.metafields.custom.bottle_size.value" class="text-bottle-size">
     
                   <div>Size:</div>
                   <div li-object="product.metafields.custom.bottle_size | metafield_tag">{{ product.metafields.custom.bottle_size | metafield_tag }}</div>
                     </div>
 {% endif %}
-                <div class="block_star-rating"></div>
               </div>
               <div class="product_main-info">
                 <div no-flicker="true" li-object="product.description" word-split="true" class="product_description w-richtext">{{ product.description }}</div>
@@ -323,7 +316,7 @@ setTimeout(() => {
     </template>
                         {% if product.available != true %}    <div li-if="product.available != true" class="product-header_out-of-stock">
     
-                          <a href="#" class="button-2 is-secondary max-width-full pointer-events-off w-button">Out of Stock</a>
+                          <a href="#" class="button-2 is-secondary max-width-full pointer-events-off w-button">Out of Stock - Check back soon!</a>
                             </div>
 {% endif %}
                       </div>
