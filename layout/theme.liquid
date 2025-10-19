@@ -359,20 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 
-<!-- Webflow runtime -->
-  {{ 'webflow.js' | asset_url | script_tag }}
-
-  <!-- Swiper JS -->
-  {{ 'swiper-bundle.min.js' | asset_url | script_tag }}
-
-  <!-- Patched Webflow init for Shopify -->
-  {{ 'webflow_patched_for_shopify.js' | asset_url | script_tag }}
-
-  <!-- Liquify Section Renderer -->
-  {{ 'section-rendering.js' | asset_url | script_tag }}
-
-  <!-- Reinit Hook -->
-  {{ 'liquify-reinit.js' | asset_url | script_tag }}
 
   <!--  GSAP ANIMATIONS  -->
   <script>
