@@ -94,44 +94,9 @@
       "type": "benefits_home",
       "settings": {}
     },
-    "results_slider": {
-      "type": "results_slider",
-      "blocks": {
-        "results_slide_xLD6gX": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        },
-        "results_slide_BBMB6Q": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        },
-        "results_slide_rVHrL4": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        },
-        "results_slide_Ydn6j8": {
-          "type": "results-slide",
-          "settings": {
-            "text_review_text": "\"Review text goes here, editable in shopify\"",
-            "text_review_author": "Sarah"
-          }
-        }
-      },
-      "block_order": [
-        "results_slide_xLD6gX",
-        "results_slide_BBMB6Q",
-        "results_slide_rVHrL4",
-        "results_slide_Ydn6j8"
-      ],
+    "judgeme_section_GaVXma": {
+      "type": "judgeme_section",
+      "name": "Judgeme Section",
       "settings": {}
     },
     "cta_general": {
@@ -160,7 +125,7 @@
     "bundles_slider",
     "lip_candy_home",
     "benefits_home",
-    "results_slider",
+    "judgeme_section_GaVXma",
     "cta_general",
     "custom_liquid"
   ]

@@ -33,21 +33,6 @@
         "collection_bundles": "bundles",
         "collection_bundles_limit": 3
       }
-    },
-    "1760879914493a3b32": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_Y4QcRz": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_Y4QcRz"
-      ],
-      "settings": {}
     }
   },
   "layout": "theme",
@@ -56,7 +41,6 @@
     "product_hero",
     "benefits_wrapper",
     "judgeme_section",
-    "bundles",
-    "1760879914493a3b32"
+    "bundles"
   ]
 }
