@@ -23,9 +23,9 @@
       "type": "intro",
       "settings": {
         "text_intro_btn_1": "Hair candy shampoo",
-        "url_intro_btn_1": "",
+        "url_intro_btn_1": "shopify://products/hair-candy-shampoo",
         "text_intro_btn_2": "Hair candy conditioner",
-        "url_intro_btn_2": "",
+        "url_intro_btn_2": "shopify://products/hair-candy-conditioner",
         "text_benefit_1": "Cleanse",
         "text_benefit_2": "Stimulate",
         "text_benefit_3": "Seal in growth"
