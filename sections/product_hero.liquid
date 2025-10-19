@@ -247,6 +247,14 @@ setTimeout(() => {
                 <h1 no-flicker="true" li-object:text="product.title" word-split="true" class="title_product">
 {{ product.title }}
 </h1>
+                <div class="star-rating">
+                  <div class="w-embed"><!--  Start of Judge.me code  -->
+                    <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+                      {{ product.metafields.judgeme.badge }}
+                    </div>
+                    <!--  End of Judge.me code  -->
+                  </div>
+                </div>
                 {% if product.metafields.custom.bottle_size.value %}    <div li-if="product.metafields.custom.bottle_size.value" class="text-bottle-size">
     
                   <div>Size:</div>
