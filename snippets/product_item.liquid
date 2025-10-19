@@ -3,7 +3,7 @@
                         <div data-w-id="5fa52ad4-ea30-d8f7-adde-75787d252d7d" class="product-item_image-link">
                           <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | image_url: width: 450" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | image_url: width: 450 }}" loading="lazy" class="product-item_image">
                             <div class="wrap_bg-circle">
-                              <div class="product_bg-circle"></div>
+                              <div class="product_bg-circle" style.background-color: product.metafields.custom.bg_colour></div>
                             </div>
                           </a>
                           {% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="product-item_tag_list">
