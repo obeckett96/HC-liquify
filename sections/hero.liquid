@@ -1,5 +1,5 @@
 <div class="tophero_content">
-            <div class="img_tophero">{% if section.settings.image_hero_image %}
+            <div data="loop-images" class="img_tophero">{% if section.settings.image_hero_image %}
 {{ section.settings.image_hero_image | image_url: width: 1000 | image_tag: class: 'img_hero-jar', sizes: '(max-width: 1125px) 100vw, 1125px', data-w-id: 'cba507ef-2d63-b264-d6fd-ed934501de6e', loading: 'lazy' }}
 {% else %}
 <img class="img_hero-jar" src="{{ 'hero-jar_1.avif' | asset_url }}" alt="" sizes="(max-width: 1125px) 100vw, 1125px" data-w-id="cba507ef-2d63-b264-d6fd-ed934501de6e" loading="lazy" srcset="{{ 'hero-jar_1hero-jar.avif' | asset_url }} 500w, {{ 'hero-jar_1.avif' | asset_url }} 1125w">

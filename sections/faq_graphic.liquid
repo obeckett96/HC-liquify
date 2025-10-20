@@ -2,7 +2,7 @@
           <div class="title_sustain-benefits">
             <h1 class="heading-style-h1 text-red text-align-center">Sustainability + Science.<br><span class="text-color-secondary">no nasties.</span></h1>
             <div class="button-group">
-              <a no-flicker="true" button-slide="true" href="#" class="button w-button">Shop Haircandy</a>
+              <a button-slide="true" no-flicker="true" href="{{ section.settings.url_button_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
             </div>
           </div>
           <div class="spacer-medium"></div>
@@ -46,6 +46,19 @@
     "tag": "div",
     "name": "FAQ Graphic",
     "class": "section hero",
+    "settings": [
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "button text",
+            "default": "Shop Haircandy"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "Button Link"
+        }
+    ],
     "presets": [
         {
             "name": "FAQ Graphic",
