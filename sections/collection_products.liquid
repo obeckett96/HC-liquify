@@ -5,6 +5,9 @@
               <div class="filter_feed-header">
                 <div role="navigation" class="filter_tags-wrapper">
                   <div class="filter_filter-group-list">
+                    <div class="filter_filter-group">
+                      <a li-object="Shop All" li-render-filter="filter" li-render-filter-trigger="click" li-render-filter-value="/collections/all" href="/collections/all" class="filter_link filter_shop-all w-inline-block">{{ Shop All }}</a>
+                    </div>
                     {% for link in linklists['collection-filters'].links %}    <div li-for="link in linklists['collection-filters'].links" class="filter_filter-group">
                                     
                       
