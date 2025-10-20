@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "thank_you": {
+            "type": "thank_you"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "thank_you"
+    ]
+}
