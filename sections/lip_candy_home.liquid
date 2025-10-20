@@ -81,7 +81,7 @@
 </style>
             </div>
           </div>
-          <div class="contains_lipcandy-bottle"><img src="{{ 'lipcandy-png-1-copy_1.avif' | asset_url }}" loading="lazy" data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed1b" alt="" class="img_lipcandy-bottle"></div>
+          <div data="loop-images" class="contains_lipcandy-bottle"><img src="{{ 'lipcandy-png-1-copy_1.avif' | asset_url }}" loading="lazy" data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed1b" alt="" class="img_lipcandy-bottle"></div>
           <div class="wave_bottom"><img src="{{ 'wave-bottom.svg' | asset_url }}" loading="lazy" alt=""></div>
           <div data-w-id="004ba8c1-e448-50bc-7a5c-ad22da1fed1e" class="block_lip-candy-info">
             <div>
@@ -95,12 +95,8 @@
             <div class="social-title">
               <div>Follow us</div>
               <div class="flex-horizontal align-right gap-1rem">
-                <a href="#" class="social_block w-inline-block"><img src="{{ 'ic_baseline-tiktok.svg' | asset_url }}" loading="lazy" alt="">
-                  <div>Tiktok</div>
-                </a>
-                <a href="#" class="social_block w-inline-block"><img src="{{ 'mdi_instagram.svg' | asset_url }}" loading="lazy" alt="">
-                  <div>Instagram</div>
-                </a>
+                <a href="{{ section.settings.url_tiktok_lc }}" target="_blank" class="social_block w-inline-block"> <img src="{{ 'ic_baseline-tiktok.svg' | asset_url }}" loading="lazy" alt=""> <div>Tiktok</div> </a>
+                <a href="{{ section.settings.url_ig_lc }}" target="_blank" class="social_block w-inline-block"> <img src="{{ 'mdi_instagram.svg' | asset_url }}" loading="lazy" alt=""> <div>Instagram</div> </a>
               </div>
             </div>
           </div>
@@ -306,6 +302,16 @@ setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
             "id": "url_button_link",
             "type": "url",
             "label": "button-link"
+        },
+        {
+            "id": "url_tiktok_lc",
+            "type": "url",
+            "label": "tiktok-lc"
+        },
+        {
+            "id": "url_ig_lc",
+            "type": "url",
+            "label": "ig-lc"
         }
     ],
     "presets": [
