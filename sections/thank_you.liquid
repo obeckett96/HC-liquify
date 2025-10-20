@@ -1,0 +1,26 @@
+<div class="utility-page_wrapper thanku"><img src="{{ 'Group-21.avif' | asset_url }}" alt="" class="utility-page_image hc-logo">
+          <h3 class="_404-title">Thank you</h3>
+          <div class="_404-subhead">
+{{ section.settings.text_thank_you_message }}
+</div>
+          <a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="button pink w-button">Back Home</a>
+        </div> {% schema %} {
+    "tag": "div",
+    "name": "Thank you",
+    "class": "utility-page_component",
+    "settings": [
+        {
+            "id": "text_thank_you_message",
+            "type": "text",
+            "label": "Thank you message",
+            "default": "We've received your submission and will get back to you soon :)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Thank you",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

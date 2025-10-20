@@ -123,6 +123,15 @@ html:not(.gsap-not-found) [no-flicker='true'] { visibility: hidden; }
   <noscript>
     <style>[no-flicker='true'] { visibility: visible !important; }</style>
   </noscript>
+  <style>
+/* CSS: set sensible defaults and initial state (y = 1rem) */
+.loop-image,
+[data="loop-images"] {
+  display: inline-block;        /* or whatever fits your layout */
+  will-change: transform;       /* helps performance */
+  transform: translateY(1rem);  /* initial visual state */
+}
+</style>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-layout="theme" li-page="404">
   <div class="page-wrapper">
@@ -415,6 +424,34 @@ ScrollTrigger.batch("[button-slide='true']", {
   start: "top 80%", // animation starts when element is 80% down the viewport
   // markers: true // uncomment for debugging
 });
+</script>
+  <script>
+// GSAP loader + init (only loads GSAP if not present)
+(function () {
+  function init() {
+    const nodes = document.querySelectorAll('[data="loop-images"]');
+    if (!nodes.length) return;
+    nodes.forEach((el) => {
+      // Ensure initial state (solid) in case CSS was missing/overridden
+      gsap.set(el, { y: '1rem' });
+      // Timeline per element (infinite loop)
+      const tl = gsap.timeline({ repeat: -1 });
+      tl.to(el, { y: '0rem', duration: 0.8, ease: 'power1.inOut' })
+        .to(el, { y: '1rem', duration: 0.7, ease: 'power1.out' })
+        .to(el, { y: '1rem', duration: 0.7 }); // hold at 1rem
+      // If you prefer a staggered group animation, replace the above per-element loop
+      // with a single timeline operating on all nodes and add .to(nodes, {..., stagger: 0.1})
+    });
+  }
+  if (typeof gsap === 'undefined') {
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+    s.onload = init;
+    document.head.appendChild(s);
+  } else {
+    init();
+  }
+})();
 </script>
   <!--  LENIS SMOOTH SCROLL -->
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
