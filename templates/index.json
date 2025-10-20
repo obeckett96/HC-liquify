@@ -35,7 +35,7 @@
       "type": "featured_products",
       "settings": {
         "text_heading_text": "Our Bestsellers",
-        "url_button_link": "",
+        "url_button_link": "/collections/all",
         "text_button_text": "Shop all",
         "collection_collection": "frontpage",
         "collection_collection_limit": 3
@@ -87,7 +87,7 @@
       "settings": {
         "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
-        "url_button_link": ""
+        "url_button_link": "shopify://products/lip-candy"
       }
     },
     "benefits_home": {
@@ -104,9 +104,9 @@
       "settings": {
         "text_heading": "The future of hair care starts now.",
         "text_button_text": "Shop Haircare",
-        "url_button_link": "",
-        "text_button_text_2": "Shop Haircare",
-        "url_button_link_2": ""
+        "url_button_link": "shopify://collections/hair-candy",
+        "text_button_text_2": "About us",
+        "url_button_link_2": "shopify://pages/about-us"
       }
     },
     "custom_liquid": {
