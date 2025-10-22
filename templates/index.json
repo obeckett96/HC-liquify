@@ -133,7 +133,7 @@
             "show_instagram_link": false,
             "link_alignment": "left",
             "link_color": "#000000",
-            "background_color": "",
+            "background_color": "#f7c2e1",
             "feed_id": "",
             "html_area": ""
           }
