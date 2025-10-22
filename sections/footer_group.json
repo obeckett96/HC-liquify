@@ -23,7 +23,7 @@
         "text_checkbox": "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.",
         "text_payment_method": "Payment Methods",
         "text_privacy_policy_text": "Privacy Policy",
-        "url_privacy_policy": "shopify://policies/privacy-policy",
+        "url_privacy_policy": "shopify://pages/privacy-policy",
         "text_terms_text": "Terms of Service",
         "url_terms_link": "",
         "url_tn_link": "",
