@@ -1,0 +1,50 @@
+<div class="container-max">
+          <div class="block-content about-02">
+            <div prevent-flicker="true" button-slide="true" class="img_about-large">{% if section.settings.image_founders_image %}
+{{ section.settings.image_founders_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '(max-width: 1320px) 100vw, 1320px', loading: 'lazy' }}
+{% else %}
+<img class="img-inner-standard" src="{{ 'DSC01086.png' | asset_url }}" alt="" sizes="(max-width: 1320px) 100vw, 1320px" loading="lazy" srcset="{{ 'DSC01086-p-500.png' | asset_url }} 500w, {{ 'DSC01086-p-800.png' | asset_url }} 800w, {{ 'DSC01086-p-1080.png' | asset_url }} 1080w, {{ 'DSC01086.png' | asset_url }} 1320w">
+{% endif %}</div>
+            <div class="about-block-right align-left">
+              <div word-split="true" prevent-flicker="true" class="text-huge smaller">
+{{ section.settings.text_giant_text }}
+</div>
+              <a href="{{ section.settings.url_abt_button_link }}" class="button w-button"> {{ section.settings.text_abt_button_text }} </a>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Large Graphic",
+    "class": "section about home-bg",
+    "settings": [
+        {
+            "id": "image_founders_image",
+            "type": "image_picker",
+            "label": "founders image"
+        },
+        {
+            "id": "text_giant_text",
+            "type": "text",
+            "label": "giant text",
+            "default": "We are here to change the way people view hair products"
+        },
+        {
+            "id": "text_abt_button_text",
+            "type": "text",
+            "label": "abt-button-text",
+            "default": "About us"
+        },
+        {
+            "id": "url_abt_button_link",
+            "type": "url",
+            "label": "abt-button-link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Large Graphic",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

@@ -1571,6 +1571,10 @@ figcaption {
   overflow: clip;
 }
 
+.section.about.home-bg {
+  background-color: var(--background-color--background-primary);
+}
+
 .section.default {
   background-color: var(--base-color-brand--bg-darkest);
 }
@@ -1591,6 +1595,13 @@ figcaption {
 
 .section.reviews-j {
   padding-top: 1rem;
+}
+
+.section.lc_benefits {
+  z-index: 3;
+  background-color: var(--base-color-brand--second-pink);
+  position: relative;
+  overflow: clip;
 }
 
 .tophero_content {
@@ -3943,6 +3954,11 @@ figcaption {
   line-height: .9;
 }
 
+.text-huge.smaller {
+  color: var(--darkest-text);
+  font-size: 7.4rem;
+}
+
 .about-block-right {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
@@ -3950,6 +3966,13 @@ figcaption {
   flex-flow: column;
   max-width: 40%;
   display: flex;
+}
+
+.about-block-right.align-left {
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .img_about-bio {
@@ -4943,6 +4966,26 @@ figcaption {
   color: var(--darkest-text);
 }
 
+.img_lc-benefit {
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+.subhead_lc-benefits {
+  color: var(--background-color--background-error);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+  font-family: Recent Grotesk, Impact, sans-serif;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 @media screen and (max-width: 991px) {
   .padding-xlarge {
     padding: 3rem;
@@ -5545,8 +5588,17 @@ figcaption {
     width: 100%;
   }
 
+  .text-huge.smaller {
+    text-align: center;
+  }
+
   .about-block-right {
     max-width: 100%;
+  }
+
+  .about-block-right.align-left {
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .container_faq {
@@ -6476,6 +6528,15 @@ figcaption {
     font-size: 6rem;
   }
 
+  .text-huge.smaller {
+    text-align: left;
+    font-size: 5rem;
+  }
+
+  .about-block-right.align-left {
+    align-items: stretch;
+  }
+
   .img_about-bio {
     width: 100%;
     height: 28rem;
@@ -6602,6 +6663,12 @@ figcaption {
   .filter_link {
     flex: none;
     font-size: 2.4rem;
+  }
+
+  .img_lc-benefit {
+    width: 100%;
+    height: 28rem;
+    overflow: clip;
   }
 }
 

@@ -132,6 +132,11 @@ html:not(.gsap-not-found) [no-flicker='true'] { visibility: hidden; }
   transform: translateY(1rem);  /* initial visual state */
 }
 </style>
+  <style>
+.shopify-section {
+ z-index: 3;
+  }
+</style>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-layout="theme" li-page="404">
   <div class="page-wrapper">
