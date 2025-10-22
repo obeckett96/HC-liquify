@@ -46,11 +46,13 @@
       "settings": {
         "text_bundle_slider_1": "Shampoo & Conditioner bundle",
         "url_bundle_slide_1": "shopify://products/shampoo-conditioner-bundle",
-        "image_bundle_slide_1": "shopify://shop_images/HERO_shot_shampoo.png",
-        "text_bundle_slider_2": "Shampoo & Conditioner bundle",
-        "url_bundle_slide_2": "",
-        "text_bundle_slider_3": "Shampoo & Conditioner bundle",
-        "url_bundle_slide_3": ""
+        "image_bundle_slide_1": "shopify://shop_images/HEROshotgroupsham_con.png",
+        "text_bundle_slider_2": "Haircandy Core Bundle",
+        "url_bundle_slide_2": "shopify://products/haircandy-core-bundle",
+        "image_bundle_slide_2": "shopify://shop_images/HEROshotgroupsham_con.png",
+        "text_bundle_slider_3": "The Works",
+        "url_bundle_slide_3": "shopify://products/haircandy-core-bundle-copy",
+        "image_bundle_slide_3": "shopify://shop_images/HEROshotgroupsham_con.png"
       }
     },
     "lip_candy_home": {
