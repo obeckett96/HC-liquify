@@ -18,7 +18,9 @@
     },
     "benefits_wrapper": {
       "type": "benefits_wrapper",
-      "settings": {}
+      "settings": {
+        "text_founder_1_heading": "Core features"
+      }
     },
     "judgeme_section": {
       "type": "judgeme_section",
@@ -33,6 +35,33 @@
         "collection_bundles": "bundles",
         "collection_bundles_limit": 3
       }
+    },
+    "176117064782e64771": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_9cHR8N": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_9cHR8N"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -41,6 +70,7 @@
     "product_hero",
     "benefits_wrapper",
     "judgeme_section",
-    "bundles"
+    "bundles",
+    "176117064782e64771"
   ]
 }
