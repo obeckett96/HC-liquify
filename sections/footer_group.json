@@ -15,7 +15,7 @@
       "type": "footer",
       "settings": {
         "text_footer_menu_title": "Navigate",
-        "url_ig_link": "",
+        "url_ig_link": "https://www.instagram.com/haircandy_nz/?hl=en",
         "text_ig_link": "Instagram",
         "text_tiktok_link": "Tiktok",
         "url_tiktok_link": "",
@@ -26,7 +26,7 @@
         "url_privacy_policy": "shopify://pages/privacy-policy",
         "text_terms_text": "Terms of Service",
         "url_terms_link": "",
-        "url_tn_link": "",
+        "url_tn_link": "https://tigernaut.co",
         "footer_menu": "footer"
       }
     }
