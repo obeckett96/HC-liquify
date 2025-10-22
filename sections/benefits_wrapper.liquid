@@ -3,18 +3,28 @@
           <div class="container-max">
             <div class="block-content about-bio">
               <div button-slide="true" prevent-flicker="true" class="img_lc-benefit">
-                <div class="tusc-video w-embed"><video id="lc-vid" class="tusc-video" autoplay="" loop="" playsinline="">
+                <div class="tusc-video w-embed"><video id="lc-vid" class="tusc-video" autoplay="" muted="" loop="" playsinline="">
                     <!--  Dropbox video source with the correct format  -->
                     <source src="https://ia601008.us.archive.org/24/items/LIPCANDY/LIPCANDY.mp4" type="video/mp4"></video></div>
               </div>
               <div class="about-block-right">
-                <h3 word-split="true" prevent-flicker="true" class="subhead_lc-benefits">
-{{ section.settings.text_founder_1_heading }}
-</h3>
+                <h3 word-split="true" prevent-flicker="true" class="subhead_lc-benefits">Core features</h3>
                 <ul role="list">
-                  <li></li>
-                  <li></li>
-                  <li></li>
+                  <li class="lc-ben-li">
+                    <div>Clear, high-shine finish – perfect to wear alone or over your favourite lipstick</div>
+                  </li>
+                  <li class="lc-ben-li">
+                    <div>Subtle sparkle adds instant glow and dimension without stickiness</div>
+                  </li>
+                  <li class="lc-ben-li">
+                    <div>Lightweight & smooth texture for all-day comfort</div>
+                  </li>
+                  <li class="lc-ben-li">
+                    <div>Non-sticky, glossy formula with a buttery slip feel</div>
+                  </li>
+                  <li class="lc-ben-li">
+                    <div>Compact 3ml size – easy to pop into any handbag or pocket</div>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -158,18 +168,56 @@
             </div>
           </div>
             </div>
+{% endif %}
+        {% if product.metafields.benefits.salvage.value %}    <div li-if="product.metafields.benefits.salvage.value" class="section hero">
+    
+          <div class="container-max">
+            <div class="title_sustain-benefits">
+              <h1 no-flicker="true" word-split="true" class="heading-style-h1 text-red text-align-center">Sustainability + Science.<br><span class="text-color-secondary">no nasties.</span></h1>
+            </div>
+            <div class="spacer-medium"></div>
+            <div class="wrap_benefits-graphic">
+              <div class="wrap_benefits left">
+                <div class="block_benefits text-red">
+                  <div class="img_benefit icon"><img src="{{ 'Vegan-2.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div class="text-red">Vegan</div>
+                </div>
+                <div class="block_benefits text-red">
+                  <div class="img_benefit icon"><img src="{{ 'recycle-2.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div>Recyclable<br>packaging</div>
+                </div>
+                <div class="block_benefits text-red">
+                  <div class="img_benefit icon"><img src="{{ 'NO-SLS-2.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div>Sls free</div>
+                </div>
+              </div>
+              <div class="contain_side-gfx"><img src="{{ 'side-graphic-red.svg' | asset_url }}" loading="lazy" alt="" class="side-grphc flipped"></div>
+              <div class="line_dotted red"></div>
+              <div class="img_sustain-product"><img src="{{ 'Product-cutout-4.png' | asset_url }}" loading="lazy" sizes="(max-width: 1500px) 100vw, 1500px" srcset="{{ 'Product-cutout-4.png' | asset_url }} 500w, {{ 'Product-cutout-4.png' | asset_url }} 800w, {{ 'Product-cutout-4.png' | asset_url }} 1080w, {{ 'Product-cutout-4.png' | asset_url }} 1500w" alt="" class="img_hero-jar"></div>
+              <div class="line_dotted red"></div>
+              <div class="bg-gradient-light dark"></div>
+              <div class="contain_side-gfx"><img src="{{ 'side-graphic-red.svg' | asset_url }}" loading="lazy" alt="" class="side-grphc"></div>
+              <div class="wrap_benefits">
+                <div class="block_benefits text-red">
+                  <div class="img_benefit circle red"><img src="{{ 'Ellipse-9.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div>Exosomes</div>
+                </div>
+                <div class="block_benefits text-red">
+                  <div class="img_benefit circle red"><img src="{{ 'Ellipse-10.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div>Coconut<br>complex</div>
+                </div>
+                <div class="block_benefits text-red">
+                  <div class="img_benefit circle red"><img src="{{ 'Ellipse-6.avif' | asset_url }}" loading="lazy" alt="" class="img-inner"></div>
+                  <div>Natural</div>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
 {% endif %} {% schema %} {
     "tag": "section",
     "name": "Benefits Wrapper",
     "class": "benefits_wrapper",
-    "settings": [
-        {
-            "id": "text_founder_1_heading",
-            "type": "text",
-            "label": "Founder 1 heading",
-            "default": "Core features"
-        }
-    ],
     "presets": [
         {
             "name": "Benefits Wrapper",
