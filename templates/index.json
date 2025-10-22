@@ -88,8 +88,17 @@
         "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
         "url_button_link": "shopify://products/lip-candy",
-        "url_tiktok_lc": "",
-        "url_ig_lc": ""
+        "url_tiktok_lc": "https://www.tiktok.com/@haircandynz",
+        "url_ig_lc": "https://www.instagram.com/haircandy_nz/?hl=en"
+      }
+    },
+    "large_graphic_8MUdNM": {
+      "type": "large_graphic",
+      "name": "Large Graphic",
+      "settings": {
+        "text_text_abt_home": "We are here to change the way people view hair products",
+        "text_abt_button_text": "About us",
+        "url_abt_button_link": ""
       }
     },
     "benefits_home": {
@@ -143,15 +152,6 @@
         "instafeed_app_block_8e3Lhj"
       ],
       "settings": {}
-    },
-    "large_graphic_8MUdNM": {
-      "type": "large_graphic",
-      "name": "Large Graphic",
-      "settings": {
-        "text_giant_text": "We are here to change the way people view hair products",
-        "text_abt_button_text": "About us",
-        "url_abt_button_link": ""
-      }
     }
   },
   "layout": "theme",
