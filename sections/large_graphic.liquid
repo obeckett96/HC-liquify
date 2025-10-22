@@ -6,8 +6,8 @@
 <img class="img-inner-standard" src="{{ 'DSC01086.png' | asset_url }}" alt="" sizes="(max-width: 1320px) 100vw, 1320px" loading="lazy" srcset="{{ 'DSC01086-p-500.png' | asset_url }} 500w, {{ 'DSC01086-p-800.png' | asset_url }} 800w, {{ 'DSC01086-p-1080.png' | asset_url }} 1080w, {{ 'DSC01086.png' | asset_url }} 1320w">
 {% endif %}</div>
             <div class="about-block-right align-left">
-              <div word-split="true" prevent-flicker="true" class="text-huge smaller">
-{{ section.settings.text_giant_text }}
+              <div word-split="true" prevent-flicker="true" class="huge-txt smaller">
+{{ section.settings.text_text_abt_home }}
 </div>
               <a href="{{ section.settings.url_abt_button_link }}" class="button w-button"> {{ section.settings.text_abt_button_text }} </a>
             </div>
@@ -23,9 +23,9 @@
             "label": "founders image"
         },
         {
-            "id": "text_giant_text",
+            "id": "text_text_abt_home",
             "type": "text",
-            "label": "giant text",
+            "label": "text abt home",
             "default": "We are here to change the way people view hair products"
         },
         {

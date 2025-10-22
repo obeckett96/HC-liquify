@@ -33,7 +33,7 @@
 {{ section.settings.text_heading }}
 </h2>
               <div class="footer_form-block w-form">
-                {% form 'customer', return_to: '/thank-you', class: 'footer_form' %}
+                {% form 'customer', return_to: '/about-us?view=thank-you', class: 'footer_form' %}
 <div class="newsletter-wrap"><input class="newsletter-field w-input" maxlength="256" name="contact[email]" data-name="Email" placeholder="Email Address" type="email" id="Email"><input type="submit" data-wait="Please wait..." class="submit_newsletter w-button" value="Subscribe"></div>
                   <div li-object="form.errors | default_errors" class="text-error">{{ form.errors | default_errors }}</div>
                   <div id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049453-6f04942f" class="hide-2 w-embed"><input type="hidden" name="contact[accepts_marketing]" value="false"></div><label id="w-node-_4f5d4fb6-b5dd-2625-4bdc-236e6f049454-6f04942f" class="w-checkbox form_checkbox-2" name="contact[accepts_marketing]"><input type="checkbox" name="Accepts-Marketing-2" id="Accepts-Marketing-2" data-name="Accepts Marketing 2" class="w-checkbox-input form_checkbox-icon-2"><span class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2">
