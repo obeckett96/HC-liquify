@@ -13,7 +13,7 @@
       "type": "contact",
       "settings": {
         "text_heading": "Contact us",
-        "richtext_paragraph": "<p>We'll get back to You ASAP! Your questions matter to us.</p>",
+        "richtext_paragraph": "<p>Let's chat!<br/><br/>300 Cashel Street, Christchurch Central, New Zealand, 8011<br/><br/>info@haircandy.nz</p>",
         "text_first_name": "First Name",
         "text_last_name": "Last Name",
         "text_email": "Email",
