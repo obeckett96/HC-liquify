@@ -41,11 +41,6 @@
         "textarea_who_are_we_paragraphs": "<p>HAIR CANDY is a brand built off three factors of LOVE: Hair, People's overall health & well-being, and Our Planet.</p>\n                <p>‍</p>\n                <p>Our founder, entrepreneur Tuscany Hamel, daughter of the world-renowned hairstylist Mike Hamel, started Hair Candy back in 2015.  But After selling out multiple times over, Hair Candy had become to big to handle on her own. This time round we have a team of people on board to bring the bel</p>"
       }
     },
-    "about_carousel_UxjCUi": {
-      "type": "about_carousel",
-      "name": "About Carousel",
-      "settings": {}
-    },
     "videos_section_V4bF9E": {
       "type": "videos_section",
       "name": "Videos Section",
@@ -55,6 +50,11 @@
         "text_video2": "What makes our shampoo different?",
         "text_video3": "What does \"Ugly-free\" mean?"
       }
+    },
+    "about_carousel_UxjCUi": {
+      "type": "about_carousel",
+      "name": "About Carousel",
+      "settings": {}
     },
     "meet_tuscany": {
       "type": "meet_tuscany",
@@ -73,6 +73,33 @@
         "text_founder_2_handle": "@halfofnothing",
         "url_founder_2_url": ""
       }
+    },
+    "1761170737bdaab7aa": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_rcTX4T": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_rcTX4T"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -85,6 +112,7 @@
     "videos_section_V4bF9E",
     "about_carousel_UxjCUi",
     "meet_tuscany",
-    "meet_blue"
+    "meet_blue",
+    "1761170737bdaab7aa"
   ]
 }
