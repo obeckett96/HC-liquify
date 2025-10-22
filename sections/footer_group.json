@@ -1,1 +1,37 @@
-{"type":"footer","name":"Footer Group","sections":{"footer":{"type":"footer","settings":{}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "text_footer_menu_title": "Navigate",
+        "url_ig_link": "",
+        "text_ig_link": "Instagram",
+        "text_tiktok_link": "Tiktok",
+        "url_tiktok_link": "",
+        "text_heading": "Good hair days start here",
+        "text_checkbox": "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.",
+        "text_payment_method": "Payment Methods",
+        "text_privacy_policy_text": "Privacy Policy",
+        "url_privacy_policy": "shopify://policies/privacy-policy",
+        "text_terms_text": "Terms of Service",
+        "url_terms_link": "",
+        "url_tn_link": "",
+        "footer_menu": "footer"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
