@@ -438,7 +438,7 @@
                         <div class="mini-cart_line-item no-scrollbar">
                           <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
                             <template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="../images/Rectangle-15_1.avif" alt="" sizes="100vw" loading="lazy" srcset="{{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 500w, {{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 800w, {{ 'Rectangle-15_1.avif' | asset_url }} 1571w" x-bind:src="product.image">
+    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="../images/Rectangle-15_1.avif" alt="" sizes="100vw" loading="lazy" srcset="{{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 500w, {{ 'Rectangle-15_1Rectangle-15.avif' | asset_url }} 800w, {{ 'Rectangle-15_1.avif' | asset_url }} 1571w" x-bind:src="product.featured_image.url">
                               <div class="mini-cart_line-item_product-info">
                                 <div li-js-object="product.title" class="text-size-regular-3 text-weight-bold" x-text="product.title">Hair Candy Shampoo</div>
                                 <div class="mini-cart_line-item_price">

@@ -1,9 +1,9 @@
 <div class="container-max">
           <div class="block-content about-02">
             <div prevent-flicker="true" button-slide="true" class="img_about-large">{% if section.settings.image_founders_image %}
-{{ section.settings.image_founders_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '(max-width: 1320px) 100vw, 1320px', loading: 'lazy' }}
+{{ section.settings.image_founders_image | image_url: width: 1000 | image_tag: class: 'img-inner-standard', sizes: '100vw', loading: 'lazy' }}
 {% else %}
-<img class="img-inner-standard" src="{{ 'DSC01086.png' | asset_url }}" alt="" sizes="(max-width: 1320px) 100vw, 1320px" loading="lazy" srcset="{{ 'DSC01086-p-500.png' | asset_url }} 500w, {{ 'DSC01086-p-800.png' | asset_url }} 800w, {{ 'DSC01086-p-1080.png' | asset_url }} 1080w, {{ 'DSC01086.png' | asset_url }} 1320w">
+<img class="img-inner-standard" src="{{ 'DSC01086.png' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'DSC01086-p-500.png' | asset_url }} 500w, {{ 'DSC01086-p-800.png' | asset_url }} 800w, {{ 'DSC01086-p-1080.png' | asset_url }} 1080w, {{ 'DSC01086.png' | asset_url }} 1320w">
 {% endif %}</div>
             <div class="about-block-right align-left">
               <div word-split="true" prevent-flicker="true" class="huge-txt smaller">
