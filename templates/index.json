@@ -87,7 +87,9 @@
       "settings": {
         "text_blurb_text": "Introducing Butter Up, the newest and first lip product from LIPCANDY!",
         "text_button_text": "Shop",
-        "url_button_link": "shopify://products/lip-candy"
+        "url_button_link": "shopify://products/lip-candy",
+        "url_tiktok_lc": "",
+        "url_ig_lc": ""
       }
     },
     "benefits_home": {
@@ -114,6 +116,33 @@
       "settings": {
         "custom_liquid": ""
       }
+    },
+    "1761131764d45a1b95": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_8e3Lhj": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_8e3Lhj"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -127,6 +156,7 @@
     "benefits_home",
     "judgeme_section_GaVXma",
     "cta_general",
-    "custom_liquid"
+    "custom_liquid",
+    "1761131764d45a1b95"
   ]
 }
