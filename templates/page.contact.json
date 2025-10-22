@@ -11,7 +11,15 @@
   "sections": {
     "contact": {
       "type": "contact",
-      "settings": {}
+      "settings": {
+        "text_heading": "Contact us",
+        "richtext_paragraph": "<p>We'll get back to You ASAP! Your questions matter to us.</p>",
+        "text_first_name": "First Name",
+        "text_last_name": "Last Name",
+        "text_email": "Email",
+        "text_message": "Message",
+        "richtext_i_accept_the_terms": "<p>I have read and undertand the <a href=\"/pages/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Privacy Policy</a></p>"
+      }
     }
   },
   "layout": "theme",
