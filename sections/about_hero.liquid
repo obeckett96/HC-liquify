@@ -1,4 +1,5 @@
-<div class="hero-video w-embed">{{ section.settings.html_video_embed }} </div>
+<div class="hero-video mobile w-embed">{{ section.settings.html_video_embed_mobile }} </div>
+        <div class="hero-video desktop w-embed">{{ section.settings.html_video_embed }} </div>
         <div class="overlay-about">
           <div class="abt-text-contain">
             <h1 class="heading-style-h1 text-color-alternate">About hair candy</h1>
@@ -8,6 +9,12 @@
     "name": "About Hero",
     "class": "section about-hero",
     "settings": [
+        {
+            "id": "html_video_embed_mobile",
+            "type": "html",
+            "label": "Video Embed Mobile",
+            "default": "<video id=\"hero-video\" class=\"hero-video\" autoplay=\"\" muted=\"\" loop=\"\" playsinline=\"\">\n            <!--  Dropbox video source with the correct format  -->\n            <source src=\"https:\/\/ia601309.us.archive.org\/29\/items\/bts-vertical\/BTS%20-%20Vertical.mp4\" type=\"video\/mp4\">\n            Your browser does not support the video tag.\n          <\/source><\/video>\n          <style>\n@media (max-width: 480px) {\n  .hero-video {\n    position: absolute !important;\n    z-index: 2 !import"
+        },
         {
             "id": "html_video_embed",
             "type": "html",
