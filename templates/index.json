@@ -68,7 +68,7 @@
         "lip_candy_slide_8DkcLx": {
           "type": "lip-candy-slide",
           "settings": {
-            "html_carousel_video_html": ""
+            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" preload=\"metadata\">\n                        <source src=\"https://ia802805.us.archive.org/14/items/female-model-1-no-prop-hero-video/Female%20Model%201%20-%20No%20prop%20-%20Hero%20video.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>\n\n<style>\n.video_carousel-lc {\nz-index: 4;\nmax-width: 100%;\n}\n</style>"
           }
         },
         "lip_candy_slide_LWGNai": {
