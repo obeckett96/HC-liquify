@@ -74,19 +74,19 @@
         "lip_candy_slide_LWGNai": {
           "type": "lip-candy-slide",
           "settings": {
-            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" preload=\"metadata\">\n                        <source src=\"https://ia902805.us.archive.org/14/items/female-model-1-no-prop-hero-video/5.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
+            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" loop=\"\" preload=\"metadata\">\n                        <source src=\"https://ia902805.us.archive.org/14/items/female-model-1-no-prop-hero-video/5.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
           }
         },
         "lip_candy_slide_aeNDgT": {
           "type": "lip-candy-slide",
           "settings": {
-            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" preload=\"metadata\">\n                        <source src=\"https://ia902805.us.archive.org/14/items/female-model-1-no-prop-hero-video/BONUS%20-%20Blue%20Boomerang%20Effect.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
+            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" loop=\"\" preload=\"metadata\">\n                        <source src=\"https://ia902805.us.archive.org/14/items/female-model-1-no-prop-hero-video/BONUS%20-%20Blue%20Boomerang%20Effect.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
           }
         },
         "lip_candy_slide_RKURTR": {
           "type": "lip-candy-slide",
           "settings": {
-            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" preload=\"metadata\">\n                        <source src=\"https://ia802805.us.archive.org/14/items/female-model-1-no-prop-hero-video/Group%20-%20Prop%20-%20Jump%20Cuts.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
+            "html_carousel_video_html": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" loop=\"\" preload=\"metadata\">\n                        <source src=\"https://ia802805.us.archive.org/14/items/female-model-1-no-prop-hero-video/Group%20-%20Prop%20-%20Jump%20Cuts.mp4\" type=\"video/mp4\">\n                        Your browser does not support the video tag.\n                      </source></video>"
           }
         }
       },
