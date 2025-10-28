@@ -360,12 +360,26 @@ setTimeout(() => {
 {% endif %}
                 </div>
               </div>
+              {% for block in section.blocks %}
+    {% if block.type == "bundle-block" %}
+                    <div li-block="Bundle Block">
+                                    
+                            </div>
+            {% endif %}
+{% endfor %}
             </div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Product Hero",
     "class": "section product-hero",
+    "blocks": [
+        {
+            "name": "Bundle Block",
+            "type": "bundle-block",
+            "settings": null
+        }
+    ],
     "settings": [
         {
             "id": "text_without_subscription",
@@ -384,7 +398,11 @@ setTimeout(() => {
         {
             "name": "Product Hero",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "bundle-block"
+                }
+            ]
         }
     ],
     "enabled_on": {
