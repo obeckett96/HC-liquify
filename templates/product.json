@@ -18,9 +18,7 @@
     },
     "benefits_wrapper": {
       "type": "benefits_wrapper",
-      "settings": {
-        "text_founder_1_heading": "Core features"
-      }
+      "settings": {}
     },
     "judgeme_section": {
       "type": "judgeme_section",
@@ -62,6 +60,24 @@
         "instafeed_app_block_9cHR8N"
       ],
       "settings": {}
+    },
+    "17616771204c6d42b6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_CpnC64": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_CpnC64"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -71,6 +87,7 @@
     "benefits_wrapper",
     "judgeme_section",
     "bundles",
-    "176117064782e64771"
+    "176117064782e64771",
+    "17616771204c6d42b6"
   ]
 }
