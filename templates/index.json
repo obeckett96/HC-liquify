@@ -14,9 +14,9 @@
       "settings": {
         "text_hero_heading": "Enter the world of hair candy",
         "text_hero_button_1": "Shop now",
-        "url_hero_button_1": "",
+        "url_hero_button_1": "/collections/all",
         "text_hero_button_2": "About us",
-        "url_hero_button_2": ""
+        "url_hero_button_2": "shopify://pages/about-us"
       }
     },
     "intro": {
