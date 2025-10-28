@@ -103,7 +103,10 @@
     },
     "faq_graphic": {
       "type": "faq_graphic",
-      "settings": {}
+      "settings": {
+        "text_button_text": "Shop Haircandy",
+        "url_button_link": "shopify://collections/hair-candy"
+      }
     }
   },
   "layout": "theme",
