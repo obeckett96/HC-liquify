@@ -113,7 +113,9 @@
 {{ block.settings.image_social_img_1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'img_social-feed' }}
 {% else %}
 <img src="{{ 'Rectangle-51.avif' | asset_url }}" loading="lazy" alt="" class="img_social-feed">
-{% endif %}</div>
+{% endif %}
+                    <div class="video_carousel-lc w-embed">{{ block.settings.html_carousel_video_html }} </div>
+                  </div>
                                     
                 
                             </div>
@@ -281,6 +283,12 @@ setTimeout(() => initializeLipcandyCarouselSwiper(), 2500);
                     "id": "image_social_img_1",
                     "type": "image_picker",
                     "label": "Social img 1"
+                },
+                {
+                    "id": "html_carousel_video_html",
+                    "type": "html",
+                    "label": "carousel video HTML",
+                    "default": "<video id=\"about-video-3\" class=\"video_carousel-lc\" autoplay=\"\" muted=\"\" playsinline=\"\" preload=\"metadata\">\n                        <source src=\"https:\/\/ia601303.us.archive.org\/0\/items\/tuscany-interview-4\/Tuscany%20-%20Interview%204.mp4#t=0.001\" type=\"video\/mp4\">\n                        Your browser does not support the video tag.\n                      <\/source><\/video>"
                 }
             ]
         }
