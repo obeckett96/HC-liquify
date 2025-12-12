@@ -1,6 +1,583 @@
+{% doc %}
+  @prompt
+    variant picker
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-variant-picker-{{ ai_gen_id }} {
+    margin: {{ block.settings.spacing }}px 0;
+  }
+
+  .ai-variant-picker__option-{{ ai_gen_id }} {
+    margin-bottom: 20px;
+  }
+
+  .ai-variant-picker__label-{{ ai_gen_id }} {
+    display: block;
+    margin-bottom: 10px;
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: {{ block.settings.label_weight }};
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-variant-picker__values-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }} {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-variant-picker__button-{{ ai_gen_id }} {
+    padding: {{ block.settings.button_padding }}px {{ block.settings.button_padding | times: 1.5 }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .ai-variant-picker__button-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.hover_border_color }};
+    background-color: {{ block.settings.hover_background_color }};
+    color: {{ block.settings.hover_text_color }};
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }}:checked + .ai-variant-picker__button-{{ ai_gen_id }} {
+    border-color: {{ block.settings.selected_border_color }};
+    background-color: {{ block.settings.selected_background_color }};
+    color: {{ block.settings.selected_text_color }};
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }}:disabled + .ai-variant-picker__button-{{ ai_gen_id }} {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .ai-variant-picker__color-swatch-{{ ai_gen_id }} {
+    width: {{ block.settings.swatch_size }}px;
+    height: {{ block.settings.swatch_size }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    {% if block.settings.swatch_shape == 'circle' %}
+      border-radius: 50%;
+    {% else %}
+      border-radius: {{ block.settings.border_radius }}px;
+    {% endif %}
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .ai-variant-picker__color-swatch-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.hover_border_color }};
+    transform: scale(1.05);
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }}:checked + .ai-variant-picker__color-swatch-{{ ai_gen_id }} {
+    border-color: {{ block.settings.selected_border_color }};
+    border-width: {{ block.settings.border_width | times: 1.5 }}px;
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }}:disabled + .ai-variant-picker__color-swatch-{{ ai_gen_id }} {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .ai-variant-picker__input-{{ ai_gen_id }}:disabled + .ai-variant-picker__color-swatch-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    right: -5%;
+    height: 2px;
+    background-color: {{ block.settings.border_color }};
+    transform: rotate(-45deg);
+  }
+
+  .ai-variant-picker__dropdown-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.button_padding }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    cursor: pointer;
+  }
+
+  .ai-variant-picker__dropdown-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.hover_border_color }};
+  }
+
+  .ai-variant-picker__unavailable-{{ ai_gen_id }} {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.border_radius }}px;
+    font-size: 14px;
+    color: #666;
+  }
+{% endstyle %}
+
+<variant-picker-{{ ai_gen_id }}
+  class="ai-variant-picker-{{ ai_gen_id }}"
+  data-product-id="{{ product.id }}"
+  data-section-id="{{ section.id }}"
+  {{ block.shopify_attributes }}
+>
+  {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+      <div class="ai-variant-picker__option-{{ ai_gen_id }}">
+        <label class="ai-variant-picker__label-{{ ai_gen_id }}">
+          {{ option.name }}
+        </label>
+
+        {% assign option_index = forloop.index0 %}
+        {% assign is_color = false %}
+        {% assign option_name_downcase = option.name | downcase %}
+        {% if option_name_downcase contains 'color' or option_name_downcase contains 'colour' %}
+          {% assign is_color = true %}
+        {% endif %}
+
+        {% if block.settings.picker_type == 'dropdown' %}
+          <select
+            class="ai-variant-picker__dropdown-{{ ai_gen_id }}"
+            data-option-index="{{ option_index }}"
+          >
+            {% for value in option.values %}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}selected{% endif %}
+              >
+                {{ value }}
+              </option>
+            {% endfor %}
+          </select>
+        {% else %}
+          <div class="ai-variant-picker__values-{{ ai_gen_id }}">
+            {% for value in option.values %}
+              {% assign option_disabled = true %}
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  {% case option_index %}
+                    {% when 0 %}
+                      {% if variant.option1 == value %}
+                        {% assign option_disabled = false %}
+                      {% endif %}
+                    {% when 1 %}
+                      {% if variant.option2 == value %}
+                        {% assign option_disabled = false %}
+                      {% endif %}
+                    {% when 2 %}
+                      {% if variant.option3 == value %}
+                        {% assign option_disabled = false %}
+                      {% endif %}
+                  {% endcase %}
+                {% endif %}
+              {% endfor %}
+
+              <div>
+                <input
+                  type="radio"
+                  id="{{ ai_gen_id }}-{{ option.position }}-{{ forloop.index0 }}"
+                  name="{{ ai_gen_id }}-{{ option.position }}"
+                  value="{{ value | escape }}"
+                  class="ai-variant-picker__input-{{ ai_gen_id }}"
+                  data-option-index="{{ option_index }}"
+                  {% if option.selected_value == value %}checked{% endif %}
+                  {% unless option_disabled %}{% else %}disabled{% endunless %}
+                >
+                {% if is_color and block.settings.show_color_swatches %}
+                  <label
+                    for="{{ ai_gen_id }}-{{ option.position }}-{{ forloop.index0 }}"
+                    class="ai-variant-picker__color-swatch-{{ ai_gen_id }}"
+                    style="background-color: {{ value | handle }};"
+                    title="{{ value }}"
+                  ></label>
+                {% else %}
+                  <label
+                    for="{{ ai_gen_id }}-{{ option.position }}-{{ forloop.index0 }}"
+                    class="ai-variant-picker__button-{{ ai_gen_id }}"
+                  >
+                    {{ value }}
+                  </label>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <div class="ai-variant-picker__unavailable-{{ ai_gen_id }}" style="display: none;">
+      {{ block.settings.unavailable_text }}
+    </div>
+
+    <select name="id" style="display: none;" data-variant-select>
+      {% for variant in product.variants %}
+        <option
+          value="{{ variant.id }}"
+          {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+          {% unless variant.available %}disabled{% endunless %}
+        >
+          {{ variant.title }}
+        </option>
+      {% endfor %}
+    </select>
+  {% endunless %}
+</variant-picker-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VariantPicker{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.variantSelect = this.querySelector('[data-variant-select]');
+        this.optionInputs = this.querySelectorAll('[data-option-index]');
+        this.unavailableMessage = this.querySelector('.ai-variant-picker__unavailable-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+        this.updateAvailability();
+      }
+
+      setupEventListeners() {
+        this.optionInputs.forEach((input) => {
+          input.addEventListener('change', () => {
+            this.onOptionChange();
+          });
+        });
+      }
+
+      onOptionChange() {
+        const selectedOptions = this.getSelectedOptions();
+        const variant = this.getVariantFromOptions(selectedOptions);
+
+        if (variant) {
+          this.variantSelect.value = variant.id;
+          this.updateURL(variant.id);
+          this.updateAvailability();
+          this.dispatchVariantChangeEvent(variant);
+        }
+      }
+
+      getSelectedOptions() {
+        const options = [];
+        const selects = this.querySelectorAll('select[data-option-index]');
+        const radios = this.querySelectorAll('input[type="radio"]:checked');
+
+        if (selects.length > 0) {
+          selects.forEach((select) => {
+            options[parseInt(select.dataset.optionIndex)] = select.value;
+          });
+        } else {
+          radios.forEach((radio) => {
+            options[parseInt(radio.dataset.optionIndex)] = radio.value;
+          });
+        }
+
+        return options;
+      }
+
+      getVariantFromOptions(options) {
+        const variantOptions = this.variantSelect.querySelectorAll('option');
+        
+        for (let i = 0; i < variantOptions.length; i++) {
+          const option = variantOptions[i];
+          const variantTitle = option.textContent.trim();
+          const optionsString = options.join(' / ');
+          
+          if (variantTitle === optionsString) {
+            return {
+              id: option.value,
+              available: !option.disabled
+            };
+          }
+        }
+        
+        return null;
+      }
+
+      updateAvailability() {
+        const selectedVariantOption = this.variantSelect.querySelector('option:checked');
+        const isAvailable = selectedVariantOption && !selectedVariantOption.disabled;
+
+        if (this.unavailableMessage) {
+          if (isAvailable) {
+            this.unavailableMessage.style.display = 'none';
+          } else {
+            this.unavailableMessage.style.display = 'block';
+          }
+        }
+      }
+
+      updateURL(variantId) {
+        if (!variantId) return;
+        
+        const url = new URL(window.location.href);
+        url.searchParams.set('variant', variantId);
+        window.history.replaceState({}, '', url.toString());
+      }
+
+      dispatchVariantChangeEvent(variant) {
+        this.dispatchEvent(new CustomEvent('variant-change', {
+          detail: { variant },
+          bubbles: true
+        }));
+      }
+    }
+
+    customElements.define('variant-picker-{{ ai_gen_id }}', VariantPicker{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Variant picker",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Picker style"
+    },
+    {
+      "type": "select",
+      "id": "picker_type",
+      "label": "Picker type",
+      "options": [
+        {
+          "value": "button",
+          "label": "Buttons"
+        },
+        {
+          "value": "dropdown",
+          "label": "Dropdown"
+        }
+      ],
+      "default": "button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_swatches",
+      "label": "Show color swatches",
+      "info": "Displays color swatches for options with 'color' or 'colour' in the name",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "swatch_shape",
+      "label": "Swatch shape",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "range",
+      "id": "swatch_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Swatch size",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Label"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "label_weight",
+      "label": "Label weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "min": 6,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Default colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#cccccc"
+    },
+    {
+      "type": "header",
+      "content": "Hover colors"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "Background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "hover_border_color",
+      "label": "Border",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Selected colors"
+    },
+    {
+      "type": "color",
+      "id": "selected_background_color",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "selected_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "selected_border_color",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "text",
+      "id": "unavailable_text",
+      "label": "Unavailable text",
+      "default": "This variant is currently unavailable"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Variant picker"
+    }
+  ]
+}
 {% endschema %}
