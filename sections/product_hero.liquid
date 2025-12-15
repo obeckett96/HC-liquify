@@ -326,7 +326,7 @@ setTimeout(() => {
 {% if color_option %}
   <div class="product-header_variant-selector">
     <div class="product-header_variant-label">Color</div>
-    <div class="product-header_variant-options">
+    <div class="product-header_variant-options is-horizontal">
       {% for value in color_option.values %}
         <label class="product-header_subscription_radio-lable w-radio">
           <input 
@@ -337,6 +337,7 @@ setTimeout(() => {
             value="{{ value | escape }}"
             {% if color_option.selected_value == value %}checked=""{% endif %}
             x-on:click="updateVariantOption('Color', '{{ value | escape }}')">
+          <div class="variant-color-swatch" data-color="{{ value | handleize }}"></div>
           <span class="w-form-label">{{ value }}</span>
         </label>
       {% endfor %}
@@ -349,7 +350,7 @@ setTimeout(() => {
 {% if size_option %}
   <div class="product-header_variant-selector">
     <div class="product-header_variant-label">Size</div>
-    <div class="product-header_variant-options">
+    <div class="product-header_variant-options is-horizontal">
       {% for value in size_option.values %}
         <label class="product-header_subscription_radio-lable w-radio">
           <input 
@@ -367,7 +368,7 @@ setTimeout(() => {
   </div>
 {% endif %}
 
-{% comment %} Add some spacing CSS {% endcomment %}
+{% comment %} Styling {% endcomment %}
 <style>
   .product-header_variant-selector {
     margin-top: 1.5rem;
@@ -379,10 +380,37 @@ setTimeout(() => {
     margin-bottom: 0.75rem;
   }
   
-  .product-header_variant-options {
+  .product-header_variant-options.is-horizontal {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .product-header_variant-options.is-horizontal .product-header_subscription_radio-lable {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
+  }
+  
+  /* Color Swatch Styling */
+  .variant-color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    flex-shrink: 0;
+  }
+  
+  /* Add your color mappings here */
+  .variant-color-swatch[data-color="watermelon"] { background-color: #FF69CA; }
+  .variant-color-swatch[data-color="strawberry"] { background-color: #FFD7FD; }
+  .variant-color-swatch[data-color="cherry"] { background-color: #FF1A1A; }
+  
+  /* Active state for selected color */
+  .product-header_subscription_radio-lable:has(input:checked) .variant-color-swatch {
+    border-color: #000;
+    border-width: 3px;
   }
 </style>
                       <div class="product-header_add-to-cart-wrapper">
