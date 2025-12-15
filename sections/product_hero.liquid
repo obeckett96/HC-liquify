@@ -315,6 +315,76 @@ setTimeout(() => {
                     {% endfor %}    </div>
                           </div>
 {% endif %}
+{% comment %}
+  Add this code right after the selling plan section closes and before the "Add to Cart" wrapper
+  Insert it after line 215 (after the closing </div> of the selling plan section)
+  and before the <div class="product-header_add-to-cart-wrapper"> line
+{% endcomment %}
+
+{% comment %} Color Variant Selector {% endcomment %}
+{% assign color_option = product.options_by_name['Color'] %}
+{% if color_option %}
+  <div class="product-header_variant-selector">
+    <div class="product-header_variant-label">Color</div>
+    <div class="product-header_variant-options">
+      {% for value in color_option.values %}
+        <label class="product-header_subscription_radio-lable w-radio">
+          <input 
+            class="w-form-formradioinput w-radio-input" 
+            name="option-color" 
+            data-name="Color" 
+            type="radio" 
+            value="{{ value | escape }}"
+            {% if color_option.selected_value == value %}checked=""{% endif %}
+            x-on:click="updateVariantOption('Color', '{{ value | escape }}')">
+          <span class="w-form-label">{{ value }}</span>
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} Size Variant Selector {% endcomment %}
+{% assign size_option = product.options_by_name['Size'] %}
+{% if size_option %}
+  <div class="product-header_variant-selector">
+    <div class="product-header_variant-label">Size</div>
+    <div class="product-header_variant-options">
+      {% for value in size_option.values %}
+        <label class="product-header_subscription_radio-lable w-radio">
+          <input 
+            class="w-form-formradioinput w-radio-input" 
+            name="option-size" 
+            data-name="Size" 
+            type="radio" 
+            value="{{ value | escape }}"
+            {% if size_option.selected_value == value %}checked=""{% endif %}
+            x-on:click="updateVariantOption('Size', '{{ value | escape }}')">
+          <span class="w-form-label">{{ value }}</span>
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} Add some spacing CSS {% endcomment %}
+<style>
+  .product-header_variant-selector {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-header_variant-label {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .product-header_variant-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>
                       <div class="product-header_add-to-cart-wrapper">
                         <template x-if="selected_or_first_available_variant.available">
             <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
@@ -360,26 +430,12 @@ setTimeout(() => {
 {% endif %}
                 </div>
               </div>
-              {% for block in section.blocks %}
-    {% if block.type == "bundle-block" %}
-                    <div li-block="Bundle Block">
-                                    
-                            </div>
-            {% endif %}
-{% endfor %}
             </div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Product Hero",
     "class": "section product-hero",
-    "blocks": [
-        {
-            "name": "Bundle Block",
-            "type": "bundle-block",
-            "settings": null
-        }
-    ],
     "settings": [
         {
             "id": "text_without_subscription",
@@ -398,11 +454,7 @@ setTimeout(() => {
         {
             "name": "Product Hero",
             "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "bundle-block"
-                }
-            ]
+            "blocks": []
         }
     ],
     "enabled_on": {
