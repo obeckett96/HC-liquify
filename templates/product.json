@@ -20,6 +20,20 @@
       "type": "benefits_wrapper",
       "settings": {}
     },
+    "judgeme_section": {
+      "type": "judgeme_section",
+      "settings": {}
+    },
+    "bundles": {
+      "type": "bundles",
+      "settings": {
+        "text_heading_text": "Make it a bundle",
+        "text_button_text": "All Bundles",
+        "url_button_link": "shopify://collections/bundles",
+        "collection_bundles": "bundles",
+        "collection_bundles_limit": 3
+      }
+    },
     "bundles_slider_T4P3Uc": {
       "type": "bundles_slider",
       "name": "Bundles Slider",
@@ -33,20 +47,6 @@
         "text_bundle_slider_3": "HAIR CANDY HOODIE",
         "url_bundle_slide_3": "shopify://products/hair-candy-boxy-hoodie",
         "image_bundle_slide_3": "shopify://shop_images/Screenshot_2025-12-16_at_12.19.48_AM.png"
-      }
-    },
-    "judgeme_section": {
-      "type": "judgeme_section",
-      "settings": {}
-    },
-    "bundles": {
-      "type": "bundles",
-      "settings": {
-        "text_heading_text": "Make it a bundle",
-        "text_button_text": "All Bundles",
-        "url_button_link": "shopify://collections/bundles",
-        "collection_bundles": "bundles",
-        "collection_bundles_limit": 3
       }
     },
     "176117064782e64771": {
@@ -82,9 +82,9 @@
   "order": [
     "product_hero",
     "benefits_wrapper",
-    "bundles_slider_T4P3Uc",
     "judgeme_section",
     "bundles",
+    "bundles_slider_T4P3Uc",
     "176117064782e64771"
   ]
 }
