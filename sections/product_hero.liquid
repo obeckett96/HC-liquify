@@ -368,6 +368,29 @@ setTimeout(() => {
   </div>
 {% endif %}
 
+{% comment %} Fragrance Variant Selector {% endcomment %}
+{% assign fragrance_option = product.options_by_name['Fragrance'] %}
+{% if fragrance_option %}
+  <div class="product-header_variant-selector">
+    <div class="product-header_variant-label">Fragrance</div>
+    <div class="product-header_variant-options is-horizontal">
+      {% for value in fragrance_option.values %}
+        <label class="product-header_subscription_radio-lable w-radio">
+          <input 
+            class="w-form-formradioinput w-radio-input" 
+            name="option-fragrance" 
+            data-name="Fragrance" 
+            type="radio" 
+            value="{{ value | escape }}"
+            {% if fragrance_option.selected_value == value %}checked=""{% endif %}
+            x-on:click="updateVariantOption('Fragrance', '{{ value | escape }}')">
+          <span class="w-form-label">{{ value }}</span>
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
 {% comment %} Styling {% endcomment %}
 <style>
   .product-header_variant-selector {
