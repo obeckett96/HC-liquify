@@ -326,17 +326,18 @@ setTimeout(() => {
 {% if color_option %}
   <div class="product-header_variant-selector">
     <div class="product-header_variant-label">Color</div>
-    <div class="product-header_variant-options is-horizontal">
+    <div class="product-header_variant-options is-horizontal" data-productVariantsLoop>
       {% for value in color_option.values %}
         <label class="product-header_subscription_radio-lable w-radio">
+          <span class="w-form-formradioinput w-radio-input"></span>
           <input 
-            class="w-form-formradioinput w-radio-input" 
-            name="option-color" 
-            data-name="Color" 
+            class="w-form-formradioinput w-radio-input"
+            li-element="product-option-input"
+            name="Color"
             type="radio" 
             value="{{ value | escape }}"
-            {% if color_option.selected_value == value %}checked=""{% endif %}
-            x-on:click="updateVariantOption('Color', '{{ value | escape }}')">
+            {% if color_option.selected_value == value %}checked{% endif %}
+            x-on:change="setVariant()">
           <div class="variant-color-swatch" data-color="{{ value | handleize }}"></div>
           <span class="w-form-label">{{ value }}</span>
         </label>
@@ -350,17 +351,18 @@ setTimeout(() => {
 {% if size_option %}
   <div class="product-header_variant-selector">
     <div class="product-header_variant-label">Size</div>
-    <div class="product-header_variant-options is-horizontal">
+    <div class="product-header_variant-options is-horizontal" data-productVariantsLoop>
       {% for value in size_option.values %}
         <label class="product-header_subscription_radio-lable w-radio">
+          <span class="w-form-formradioinput w-radio-input"></span>
           <input 
-            class="w-form-formradioinput w-radio-input" 
-            name="option-size" 
-            data-name="Size" 
+            class="w-form-formradioinput w-radio-input"
+            li-element="product-option-input"
+            name="Size"
             type="radio" 
             value="{{ value | escape }}"
-            {% if size_option.selected_value == value %}checked=""{% endif %}
-            x-on:click="updateVariantOption('Size', '{{ value | escape }}')">
+            {% if size_option.selected_value == value %}checked{% endif %}
+            x-on:change="setVariant()">
           <span class="w-form-label">{{ value }}</span>
         </label>
       {% endfor %}
