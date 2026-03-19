@@ -24,6 +24,10 @@
       "type": "judgeme_section",
       "settings": {}
     },
+    "1773960789ad058c5c": {
+      "type": "apps",
+      "settings": {}
+    },
     "bundles": {
       "type": "bundles",
       "settings": {
@@ -75,6 +79,10 @@
         "instafeed_app_block_9cHR8N"
       ],
       "settings": {}
+    },
+    "1773960761031be2df": {
+      "type": "apps",
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -83,8 +91,10 @@
     "product_hero",
     "benefits_wrapper",
     "judgeme_section",
+    "1773960789ad058c5c",
     "bundles",
     "bundles_slider_T4P3Uc",
-    "176117064782e64771"
+    "176117064782e64771",
+    "1773960761031be2df"
   ]
 }
