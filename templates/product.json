@@ -16,6 +16,24 @@
         "text_with_subscription": "Subscribe & Save 15%"
       }
     },
+    "17739615026a3422b6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_MUcyhd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "other_products_reviews"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_MUcyhd"
+      ],
+      "settings": {}
+    },
     "benefits_wrapper": {
       "type": "benefits_wrapper",
       "settings": {}
@@ -89,6 +107,7 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "product_hero",
+    "17739615026a3422b6",
     "benefits_wrapper",
     "judgeme_section",
     "1773960789ad058c5c",
