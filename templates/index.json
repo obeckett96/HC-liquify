@@ -123,6 +123,23 @@
       "name": "Judgeme Section",
       "settings": {}
     },
+    "1773961318ef68f973": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_homepage_jDCDJX": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "",
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_homepage_jDCDJX"
+      ],
+      "settings": {}
+    },
     "cta_general": {
       "type": "cta_general",
       "settings": {
@@ -178,6 +195,7 @@
     "large_graphic_8MUdNM",
     "benefits_home",
     "judgeme_section_GaVXma",
+    "1773961318ef68f973",
     "cta_general",
     "custom_liquid",
     "1761131764d45a1b95"
