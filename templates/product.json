@@ -53,7 +53,7 @@
             "header_text_color": "#000000",
             "card_color": "#f7c2e1",
             "stars_color": "#f7c2e1",
-            "text_color": "#FFFFFF",
+            "text_color": "#ffffff",
             "arrows_color": "#000000",
             "show_drop_shadow": false,
             "show_border": false,
@@ -140,6 +140,45 @@
     "1773960761031be2df": {
       "type": "apps",
       "settings": {}
+    },
+    "17783769827f4be85a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_47d6ca7_wQJRrE": {
+          "type": "ai_gen_block_47d6ca7",
+          "settings": {
+            "title": "See it in action",
+            "description": "<p>Watch how our product works and transforms your routine</p>",
+            "text_alignment": "center",
+            "video_1": "shopify://files/videos/Hair_Candy_Product_A_drone_shot_captures_a_diverse_group_of_people_9LOLE-4A.mp4",
+            "video_1_caption": "",
+            "video_2": "shopify://files/videos/Hair_Candy_Product_Three_pink_tubes_of_HAIRCANDY_Slick_Stick_Cream_SdsqmXdg.mp4",
+            "video_2_caption": "",
+            "video_3_caption": "",
+            "video_4_caption": "",
+            "columns_desktop": 2,
+            "columns_mobile": "1",
+            "grid_gap": 20,
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "background_color": "#f7c2e1",
+            "title_color": "#ff0000",
+            "description_color": "#ff0000",
+            "caption_color": "#333333",
+            "play_button_color": "#f7c2e1",
+            "play_icon_color": "#ff0000",
+            "title_size": 32,
+            "description_size": 16,
+            "caption_size": 14,
+            "video_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_47d6ca7_wQJRrE"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -148,6 +187,7 @@
     "product_hero",
     "17739615026a3422b6",
     "benefits_wrapper",
+    "17783769827f4be85a",
     "judgeme_section",
     "17739615295fda3ac6",
     "1773960789ad058c5c",
