@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_hero": {
+      "type": "product_hero",
+      "settings": {
+        "text_without_subscription": "One-time purchase",
+        "text_with_subscription": "Subscribe & Save 15%"
+      }
+    },
+    "17739615026a3422b6": {
+      "type": "apps",
+      "settings": {}
+    },
+    "benefits_wrapper": {
+      "type": "benefits_wrapper",
+      "settings": {}
+    },
+    "17783769827f4be85a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_32f01a3_EXrtif": {
+          "type": "ai_gen_block_32f01a3",
+          "settings": {
+            "image": "shopify://shop_images/Hair_Candy_Product_A_bright_pink_tube_of_HAIRCANDY_hair_cream_is_XQsGyXju.png",
+            "link": "",
+            "desktop_width_percent": 50,
+            "aspect_ratio": "3/4",
+            "image_fit": "cover",
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_47d6ca7_wQJRrE": {
+          "type": "ai_gen_block_47d6ca7",
+          "disabled": true,
+          "settings": {
+            "title": "See it in action",
+            "description": "<p>Watch how our product works and transforms your routine</p>",
+            "text_alignment": "center",
+            "video_1": "shopify://files/videos/Hair_Candy_Product_A_drone_shot_captures_a_diverse_group_of_people_9LOLE-4A.mp4",
+            "video_1_caption": "",
+            "video_2": "shopify://files/videos/Hair_Candy_Product_Three_pink_tubes_of_HAIRCANDY_Slick_Stick_Cream_SdsqmXdg.mp4",
+            "video_2_caption": "",
+            "video_3_caption": "",
+            "video_4_caption": "",
+            "columns_desktop": 2,
+            "columns_mobile": "1",
+            "grid_gap": 20,
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "background_color": "#f7c2e1",
+            "title_color": "#ff0000",
+            "description_color": "#ff0000",
+            "caption_color": "#333333",
+            "play_button_color": "#f7c2e1",
+            "play_icon_color": "#ff0000",
+            "title_size": 32,
+            "description_size": 16,
+            "caption_size": 14,
+            "video_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_32f01a3_EXrtif",
+        "ai_gen_block_47d6ca7_wQJRrE"
+      ],
+      "settings": {}
+    },
+    "judgeme_section": {
+      "type": "judgeme_section",
+      "settings": {}
+    },
+    "17739615295fda3ac6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_videos_carousel_imV6HL": {
+          "type": "shopify://apps/judge-me-reviews/blocks/videos_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [
+              "keratin-conditioning-treatment",
+              "hair-candy-shampoo"
+            ],
+            "star_rating": "all",
+            "review_type": "photo_and_video",
+            "max_reviews": 20,
+            "show_reviewer_name": true,
+            "stars_size": "medium",
+            "text_size": "medium",
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "extra_round",
+            "header_text_color": "#000000",
+            "card_color": "#f7c2e1",
+            "stars_color": "#f7c2e1",
+            "text_color": "#ffffff",
+            "arrows_color": "#000000",
+            "show_drop_shadow": false,
+            "show_border": false,
+            "border_color": "#108474",
+            "autoplay_media": true,
+            "transition_speed": 5,
+            "carousel_style": "highlight",
+            "header_text": "Real customer stories",
+            "show_average_rating": true
+          }
+        },
+        "judge_me_reviews_review_widget_AVXXXH": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "other_products_reviews"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_videos_carousel_imV6HL",
+        "judge_me_reviews_review_widget_AVXXXH"
+      ],
+      "settings": {}
+    },
+    "1773960789ad058c5c": {
+      "type": "apps",
+      "settings": {}
+    },
+    "bundles": {
+      "type": "bundles",
+      "settings": {
+        "text_heading_text": "Make it a bundle",
+        "text_button_text": "All Bundles",
+        "url_button_link": "shopify://collections/bundles",
+        "collection_bundles": "bundles",
+        "collection_bundles_limit": 3
+      }
+    },
+    "bundles_slider_T4P3Uc": {
+      "type": "bundles_slider",
+      "name": "Bundles Slider",
+      "settings": {
+        "text_bundle_slider_1": "HAIR CANDY HOODIE",
+        "url_bundle_slide_1": "shopify://products/hair-candy-boxy-hoodie",
+        "image_bundle_slide_1": "shopify://shop_images/13818a4f-49b6-4919-a852-6b041554c5d2.png",
+        "text_bundle_slider_2": "HAIR CANDY HOODIE",
+        "url_bundle_slide_2": "shopify://products/hair-candy-boxy-hoodie",
+        "image_bundle_slide_2": "shopify://shop_images/1765447843653-c8jjlkxea17.png",
+        "text_bundle_slider_3": "HAIR CANDY HOODIE",
+        "url_bundle_slide_3": "shopify://products/hair-candy-boxy-hoodie",
+        "image_bundle_slide_3": "shopify://shop_images/Screenshot_2025-12-16_at_12.19.48_AM.png"
+      }
+    },
+    "176117064782e64771": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_9cHR8N": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_9cHR8N"
+      ],
+      "settings": {}
+    },
+    "1773960761031be2df": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "product_hero",
+    "17739615026a3422b6",
+    "benefits_wrapper",
+    "17783769827f4be85a",
+    "judgeme_section",
+    "17739615295fda3ac6",
+    "1773960789ad058c5c",
+    "bundles",
+    "bundles_slider_T4P3Uc",
+    "176117064782e64771",
+    "1773960761031be2df"
+  ]
+}
