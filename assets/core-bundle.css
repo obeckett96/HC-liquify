@@ -1,0 +1,714 @@
+{{ 'core-bundle.css' | asset_url | stylesheet_tag }}
+
+<style>
+  @font-face {
+    font-family: 'Recent Grotesk';
+    src: url('{{ "Recent_Grotesk_Regular.otf" | asset_url }}') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Recent Grotesk';
+    src: url('{{ "Recent_Grotesk_Medium.otf" | asset_url }}') format('opentype');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Recent Grotesk';
+    src: url('{{ "Recent_Grotesk_Medium.otf" | asset_url }}') format('opentype');
+    font-weight: 600 900; font-style: normal; font-display: swap;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { overflow-x: hidden !important; }
+  .page-wrapper { overflow: visible !important; overflow-x: clip !important; }
+
+  /* ──────────────────────────────────────────
+     HERO SECTION
+  ───────────────────────────────────────── */
+  .cb-hero-section {
+    background-image: url('{{ "product-bg-1_1.avif" | asset_url }}') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-color: #d4a0bc !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .cb-hero {
+    display: grid !important;
+    grid-template-columns: 50% 50% !important;
+    width: 100% !important;
+    min-height: calc(100vh - 72px) !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+
+  /* ──────────────────────────────────────────
+     LEFT GALLERY
+  ───────────────────────────────────────── */
+  .cb-gallery {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    padding: 80px 40px 48px !important;
+    gap: 16px !important;
+    overflow: visible !important;
+  }
+
+  .cb-gallery__main-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    max-height: 55vh !important;
+  }
+
+  .cb-gallery__main {
+    width: 85% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    filter: drop-shadow(0 20px 40px rgba(60,5,25,0.28)) !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .cb-gallery__main.fading { opacity: 0 !important; }
+
+  .cb-gallery__thumbs {
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    flex-shrink: 0 !important;
+    padding: 4px 0 !important;
+  }
+  .cb-gallery__thumbs::-webkit-scrollbar { display: none !important; }
+
+  .cb-gallery__thumb {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+    border: 2px solid rgba(255,255,255,0.55) !important;
+    background: rgba(255,255,255,0.75) !important;
+    padding: 4px !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    transition: border-color 0.18s !important;
+  }
+  .cb-gallery__thumb.active {
+    border-color: #fff !important;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.85) !important;
+  }
+  .cb-gallery__thumb:hover { border-color: #fff !important; }
+
+  .cb-gallery__badges {
+    display: flex !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    background: rgba(255,255,255,0.28) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,0.45) !important;
+    flex-shrink: 0 !important;
+  }
+  .cb-gallery__badge {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    color: #fff !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    text-align: center !important;
+    min-width: 44px !important;
+  }
+  .cb-gallery__badge svg { width: 22px !important; height: 22px !important; }
+
+  .cb-gift-strip {
+    display: flex !important;
+    gap: 10px !important;
+    background: rgba(255,255,255,0.28) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    padding: 12px 14px !important;
+    border: 1px solid rgba(255,255,255,0.45) !important;
+    flex-shrink: 0 !important;
+  }
+  .cb-gift-strip__item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  .cb-gift-strip__img {
+    width: 36px !important; height: 36px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    background: rgba(255,255,255,0.35) !important;
+    flex-shrink: 0 !important;
+  }
+  .cb-gift-strip__icon {
+    flex-shrink: 0 !important; color: #fff !important;
+    width: 24px !important; height: 24px !important; margin-top: 2px !important;
+  }
+  .cb-gift-strip__label {
+    display: block !important;
+    font-size: 8px !important; font-weight: 700 !important; color: #fff !important;
+    letter-spacing: 0.10em !important; text-transform: uppercase !important;
+    font-family: 'Recent Grotesk', sans-serif !important; margin-bottom: 2px !important;
+  }
+  .cb-gift-strip__desc {
+    font-size: 10px !important; color: rgba(255,255,255,0.92) !important;
+    font-family: 'Recent Grotesk', sans-serif !important; line-height: 1.4 !important;
+  }
+
+  /* ──────────────────────────────────────────
+     RIGHT DETAILS PANEL
+  ───────────────────────────────────────── */
+  .cb-details {
+    background: #F9E4EE !important;
+    border-left: 1px solid #F2C4D8 !important;
+    padding: 80px 44px 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    overflow-y: auto !important;
+    overflow-x: visible !important;
+    gap: 0 !important;
+  }
+
+  .cb-heading {
+    font-size: 28px !important;
+    font-weight: 900 !important;
+    color: #1A0A10 !important;
+    line-height: 1.05 !important;
+    margin: 0 0 10px !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: -0.01em !important;
+    word-break: break-word !important;
+    -webkit-text-stroke: 0.6px #1A0A10 !important;
+    paint-order: stroke fill !important;
+  }
+
+  .cb-rating {
+    display: flex !important; align-items: center !important;
+    gap: 6px !important; margin-bottom: 8px !important;
+  }
+  .cb-stars { color: #D94F82 !important; font-size: 14px !important; letter-spacing: 2px !important; }
+  .cb-rating-count { font-size: 12px !important; color: #8B5A6E !important; font-family: 'Recent Grotesk', sans-serif !important; }
+
+  .cb-subtitle {
+    font-size: 9px !important; font-weight: 700 !important; color: #8B5A6E !important;
+    letter-spacing: 0.14em !important; text-transform: uppercase !important;
+    margin-bottom: 10px !important; font-family: 'Recent Grotesk', sans-serif !important;
+  }
+  .cb-description {
+    font-size: 13px !important; line-height: 1.6 !important;
+    color: #6B3F55 !important; margin-bottom: 10px !important;
+  }
+  .cb-description p { margin: 0 !important; }
+
+  .cb-bullets {
+    list-style: none !important; padding: 0 !important;
+    margin: 0 0 12px !important;
+    display: flex !important; flex-direction: column !important; gap: 5px !important;
+  }
+  .cb-bullets li {
+    display: flex !important; align-items: flex-start !important; gap: 8px !important;
+    font-size: 12px !important; color: #6B3F55 !important;
+    font-family: 'Recent Grotesk', sans-serif !important; line-height: 1.45 !important;
+  }
+  .cb-bullets li::before {
+    content: "" !important;
+    width: 14px !important; height: 14px !important;
+    border-radius: 50% !important; flex-shrink: 0 !important; margin-top: 2px !important;
+    background-color: #D94F82 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 8px !important;
+  }
+
+  .cb-price-row {
+    display: flex !important; align-items: center !important;
+    gap: 10px !important; margin-bottom: 10px !important; flex-wrap: wrap !important;
+  }
+  .cb-price-main {
+    font-size: clamp(24px, 2.4vw, 34px) !important; font-weight: 900 !important;
+    color: #1A0A10 !important; font-family: 'Recent Grotesk', sans-serif !important; line-height: 1 !important;
+  }
+  .cb-price-save {
+    font-size: 10px !important; color: #fff !important; font-weight: 700 !important;
+    background: #D94F82 !important; padding: 4px 12px !important;
+    border-radius: 20px !important; white-space: nowrap !important;
+  }
+  .cb-purchase-label {
+    font-size: 9px !important; font-weight: 700 !important; color: #8B5A6E !important;
+    letter-spacing: 0.18em !important; text-transform: uppercase !important;
+    margin-bottom: 8px !important; font-family: 'Recent Grotesk', sans-serif !important;
+  }
+
+  /* ──────────────────────────────────────────
+     PURCHASE TOGGLE OPTIONS
+  ───────────────────────────────────────── */
+  .cb-toggle {
+    display: flex !important; flex-direction: column !important;
+    gap: 8px !important; margin-bottom: 12px !important;
+  }
+  .cb-toggle__option {
+    border: 1.5px solid #F2C4D8 !important; border-radius: 12px !important;
+    padding: 11px 14px !important; cursor: pointer !important;
+    background: #fff !important; transition: border-color 0.2s, box-shadow 0.2s !important;
+  }
+  .cb-toggle__option.active {
+    border-color: #D94F82 !important;
+    box-shadow: 0 0 0 2px rgba(217,79,130,0.10) !important;
+    background: #FFF5F9 !important;
+  }
+  .cb-toggle__option-left {
+    display: flex !important; align-items: flex-start !important;
+    gap: 10px !important; margin-bottom: 4px !important;
+  }
+  .cb-toggle__radio {
+    width: 16px !important; height: 16px !important; border-radius: 50% !important;
+    border: 2px solid #F2C4D8 !important; flex-shrink: 0 !important; margin-top: 2px !important;
+  }
+  .cb-toggle__radio.active {
+    border-color: #D94F82 !important; background: #D94F82 !important;
+    box-shadow: inset 0 0 0 3px #fff !important;
+  }
+  .cb-toggle__title {
+    font-size: 11px !important; font-weight: 700 !important; color: #1A0A10 !important;
+    text-transform: uppercase !important; letter-spacing: 0.05em !important;
+    font-family: 'Recent Grotesk', sans-serif !important; margin-bottom: 1px !important;
+  }
+  .cb-toggle__badge {
+    display: inline-block !important; background: #D94F82 !important; color: white !important;
+    font-size: 7px !important; font-weight: 700 !important; padding: 2px 7px !important;
+    border-radius: 10px !important; letter-spacing: 0.06em !important;
+    text-transform: uppercase !important; margin-left: 5px !important; vertical-align: middle !important;
+  }
+  .cb-toggle__price {
+    font-size: 13px !important; font-weight: 700 !important;
+    color: #1A0A10 !important; font-family: 'Recent Grotesk', sans-serif !important;
+  }
+  .cb-toggle__freq { font-size: 10px !important; color: #8B5A6E !important; margin-left: 4px !important; }
+  .cb-toggle__perks {
+    padding-left: 26px !important; display: flex !important;
+    flex-direction: column !important; gap: 2px !important;
+  }
+  .cb-toggle__perks div {
+    font-size: 10px !important; color: #8B5A6E !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+  }
+  .cb-toggle__perks div::before { content: "– " !important; }
+
+  /* ──────────────────────────────────────────
+     ATC ROW
+  ───────────────────────────────────────── */
+  .cb-atc-row {
+    display: flex !important; gap: 10px !important;
+    align-items: stretch !important; margin-bottom: 10px !important;
+  }
+  .cb-qty {
+    display: flex !important; align-items: center !important;
+    border: 1.5px solid #F2C4D8 !important; border-radius: 12px !important;
+    background: #fff !important; flex-shrink: 0 !important; overflow: hidden !important;
+  }
+  .cb-qty__btn {
+    width: 36px !important; min-height: 48px !important;
+    background: transparent !important; border: none !important; color: #1A0A10 !important;
+    font-size: 18px !important; cursor: pointer !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+  }
+  .cb-qty__btn:hover { background: #F9E4EE !important; }
+  .cb-qty__input {
+    width: 38px !important; text-align: center !important;
+    background: transparent !important; border: none !important;
+    color: #1A0A10 !important; font-size: 14px !important; font-weight: 700 !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    -moz-appearance: textfield !important;
+  }
+  .cb-qty__input::-webkit-outer-spin-button,
+  .cb-qty__input::-webkit-inner-spin-button { -webkit-appearance: none !important; }
+
+  .cb-atc-button {
+    flex: 1 !important; height: 48px !important; padding: 0 20px !important;
+    background: #FF6B35 !important; color: white !important;
+    border: none !important; border-radius: 12px !important;
+    font-size: 13px !important; font-weight: 900 !important; cursor: pointer !important;
+    letter-spacing: 0.12em !important; text-transform: uppercase !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    box-shadow: 0 4px 18px rgba(255,107,53,0.35) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important; white-space: nowrap !important;
+  }
+  .cb-atc-button:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 24px rgba(255,107,53,0.48) !important; }
+  .cb-atc-button:disabled { background: #ccc !important; box-shadow: none !important; cursor: not-allowed !important; transform: none !important; }
+
+  .cb-afterpay {
+    font-size: 10px !important; color: #8B5A6E !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    text-align: center !important; margin-top: 6px !important;
+  }
+  .cb-afterpay strong { color: #2C0A16 !important; }
+
+  /* ──────────────────────────────────────────
+     STICKY BAR — light pink #FEDCFA palette
+  ───────────────────────────────────────── */
+  .cb-sticky {
+    position: fixed !important; left: 0 !important; right: 0 !important;
+    bottom: 0 !important; top: auto !important; z-index: 9999 !important;
+    background: #FEDCFA !important;
+    padding: 10px 24px !important;
+    display: flex !important; align-items: center !important; gap: 16px !important;
+    transform: translateY(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1) !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    border-top: 1px solid #F2B8F0 !important;
+    box-shadow: 0 -4px 24px rgba(217,79,130,0.15) !important;
+    min-height: 64px !important;
+  }
+  @media (min-width: 900px) {
+    .cb-sticky { padding: 10px 48px !important; }
+  }
+  .cb-sticky.visible { transform: translateY(0) !important; }
+
+  .cb-sticky__img {
+    width: 48px !important; height: 48px !important;
+    object-fit: contain !important; border-radius: 6px !important;
+    background: rgba(255,255,255,0.60) !important;
+    flex-shrink: 0 !important; padding: 3px !important;
+  }
+  .cb-sticky__info { flex-shrink: 0 !important; min-width: 0 !important; }
+  .cb-sticky__name {
+    font-size: 13px !important; font-weight: 700 !important;
+    color: #1A0A10 !important; white-space: nowrap !important;
+    overflow: hidden !important; text-overflow: ellipsis !important;
+    max-width: 220px !important;
+  }
+  .cb-sticky__sub {
+    font-size: 12px !important; color: #8B5A6E !important;
+    font-weight: 500 !important; margin-top: 2px !important;
+  }
+  .cb-sticky__select-wrap {
+    flex: 1 !important; min-width: 0 !important;
+    display: flex !important; align-items: center !important;
+    justify-content: center !important;
+  }
+  .cb-sticky__select-inner {
+    display: flex !important; align-items: center !important;
+    background: rgba(255,255,255,0.65) !important;
+    border: 1px solid #F2B8F0 !important;
+    border-radius: 8px !important; overflow: hidden !important;
+    max-width: 340px !important; width: 100% !important;
+  }
+  .cb-sticky__select {
+    flex: 1 !important;
+    background: transparent !important; border: none !important; outline: none !important;
+    color: #1A0A10 !important; font-size: 13px !important; font-weight: 700 !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+    padding: 10px 32px 10px 14px !important; cursor: pointer !important;
+    appearance: none !important; -webkit-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A0A10' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+  }
+  .cb-sticky__select option { background: #FEDCFA !important; color: #1A0A10 !important; }
+  .cb-sticky__select-price {
+    padding: 10px 14px !important;
+    border-left: 1px solid #F2B8F0 !important;
+    color: #6B3F55 !important; font-size: 12px !important;
+    font-weight: 600 !important; white-space: nowrap !important; flex-shrink: 0 !important;
+    font-family: 'Recent Grotesk', sans-serif !important;
+  }
+  .cb-sticky__btn {
+    background: #FF6B35 !important; color: white !important; border: none !important;
+    border-radius: 8px !important; padding: 12px 28px !important;
+    font-size: 13px !important; font-weight: 900 !important; cursor: pointer !important;
+    white-space: nowrap !important; font-family: 'Recent Grotesk', sans-serif !important;
+    flex-shrink: 0 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important;
+    box-shadow: 0 4px 16px rgba(255,107,53,0.40) !important;
+    transition: background 0.18s, box-shadow 0.18s !important;
+  }
+  .cb-sticky__btn:hover { background: #e55a28 !important; box-shadow: 0 6px 20px rgba(255,107,53,0.55) !important; }
+  .cb-sticky__btn:disabled { background: #ccc !important; box-shadow: none !important; cursor: not-allowed !important; }
+
+  @media (max-width: 600px) {
+    .cb-sticky__select-wrap { display: none !important; }
+    .cb-sticky__name { max-width: 140px !important; font-size: 12px !important; }
+    .cb-sticky__btn { padding: 12px 18px !important; font-size: 12px !important; }
+  }
+
+  /* ──────────────────────────────────────────
+     RESPONSIVE BREAKPOINTS
+  ───────────────────────────────────────── */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .cb-hero { min-height: calc(100vh - 72px) !important; }
+    .cb-gallery { padding: 72px 32px 40px !important; gap: 14px !important; }
+    .cb-gallery__main { width: 82% !important; max-width: 420px !important; }
+    .cb-gallery__main-wrap { max-height: 52vh !important; }
+    .cb-details { padding: 72px 36px 48px !important; }
+    .cb-heading { font-size: 26px !important; }
+    .cb-price-main { font-size: clamp(22px, 2.2vw, 28px) !important; }
+    .cb-description { font-size: 12px !important; }
+    .cb-bullets li { font-size: 11px !important; }
+    .cb-toggle__option { padding: 10px 12px !important; }
+    .cb-gift-strip { padding: 10px 12px !important; }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cb-hero { grid-template-columns: 50% 50% !important; min-height: 520px !important; }
+    .cb-gallery { padding: 72px 24px 36px !important; gap: 12px !important; }
+    .cb-gallery__main { width: 80% !important; max-width: 360px !important; }
+    .cb-gallery__main-wrap { max-height: 48vh !important; }
+    .cb-gallery__thumb { width: 48px !important; height: 48px !important; }
+    .cb-details { padding: 72px 28px 40px !important; }
+    .cb-heading { font-size: 22px !important; }
+    .cb-description { font-size: 12px !important; }
+    .cb-bullets li { font-size: 11px !important; }
+    .cb-price-main { font-size: 22px !important; }
+    .cb-toggle__title { font-size: 10px !important; }
+    .cb-toggle__price { font-size: 12px !important; }
+    .cb-toggle__option { padding: 9px 12px !important; }
+    .cb-gift-strip { flex-direction: column !important; padding: 10px 12px !important; }
+    .cb-atc-button { font-size: 12px !important; }
+  }
+
+  @media (max-width: 767px) {
+    .cb-hero { grid-template-columns: 1fr !important; min-height: 0 !important; }
+    .cb-gallery { padding: 72px 20px 24px !important; gap: 12px !important; justify-content: flex-start !important; }
+    .cb-gallery__main { width: 78vw !important; max-width: 300px !important; }
+    .cb-gallery__main-wrap { max-height: none !important; }
+    .cb-gallery__thumb { width: 48px !important; height: 48px !important; }
+    .cb-gallery__badges { padding: 8px 10px !important; gap: 4px !important; }
+    .cb-gallery__badge { min-width: 38px !important; font-size: 7px !important; }
+    .cb-gift-strip { flex-direction: column !important; padding: 10px 12px !important; }
+    .cb-details { padding: 28px 20px 48px !important; border-left: none !important; border-top: 1px solid #F2C4D8 !important; justify-content: flex-start !important; overflow-y: visible !important; }
+    .cb-heading { font-size: 22px !important; -webkit-text-stroke: 0.4px #1A0A10 !important; }
+    .cb-description { font-size: 13px !important; }
+    .cb-bullets li { font-size: 12px !important; }
+    .cb-price-main { font-size: clamp(22px, 6vw, 28px) !important; }
+    .cb-atc-row { flex-direction: column !important; }
+    .cb-atc-button { width: 100% !important; height: 52px !important; font-size: 14px !important; }
+    .cb-toggle__title { font-size: 11px !important; }
+    .cb-toggle__price { font-size: 13px !important; }
+  }
+
+  /* ──────────────────────────────────────────
+     BENEFITS SECTION — untouched
+  ───────────────────────────────────────── */
+  .benefits_wrapper .section.hero,
+  .benefits_wrapper .section.lc_benefits { padding-top: 24px !important; padding-bottom: 40px !important; }
+  .benefits_wrapper .wrap_benefits-graphic { align-items: center !important; }
+  .benefits_wrapper .img_sustain-product { display: flex !important; justify-content: center !important; align-items: center !important; }
+  .benefits_wrapper .img_sustain-product img { max-width: 280px !important; width: 100% !important; height: auto !important; object-fit: contain !important; }
+  .benefits_wrapper .block_benefits { gap: 8px !important; }
+</style>
+
+{% assign variant = product.selected_or_first_available_variant %}
+{% assign sub_price = variant.price | times: 0.85 | money_without_currency %}
+{% assign full_price = variant.price | money_without_currency %}
+
+<section class="cb-hero-section">
+  <div class="cb-hero">
+
+    <div class="cb-gallery">
+      <div class="cb-gallery__main-wrap">
+        <img id="cb-main-image" class="cb-gallery__main"
+          src="{{ product.images[0] | image_url: width: 1200 }}"
+          alt="{{ product.images[0].alt | escape }}"
+          width="1200" height="1200" loading="eager">
+      </div>
+      <div class="cb-gallery__thumbs">
+        {% for image in product.images %}
+          <img class="cb-gallery__thumb{% if forloop.first %} active{% endif %}"
+            src="{{ image | image_url: width: 160 }}"
+            data-full="{{ image | image_url: width: 1200 }}"
+            alt="{{ image.alt | escape }}"
+            width="160" height="160" loading="lazy">
+        {% endfor %}
+      </div>
+      <div class="cb-gallery__badges">
+        <div class="cb-gallery__badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+          <span>100% Ugly Pink</span>
+        </div>
+        <div class="cb-gallery__badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>NZ Made</span>
+        </div>
+        <div class="cb-gallery__badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>Paraben Free</span>
+        </div>
+        <div class="cb-gallery__badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          <span>Sulphate Free</span>
+        </div>
+        <div class="cb-gallery__badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18.364 5.636a9 9 0 11-12.728 0"/></svg>
+          <span>Silicone Free</span>
+        </div>
+      </div>
+      <div class="cb-gift-strip">
+        <div class="cb-gift-strip__item">
+          <img src="{{ product.images[0] | image_url: width: 80 }}" alt="Free Gift" width="52" height="52" loading="lazy" class="cb-gift-strip__img">
+          <div>
+            <div class="cb-gift-strip__label">FREE GIFT INCLUDED</div>
+            <div class="cb-gift-strip__desc">Receive a FREE Lip Candy with every subscription order (worth $30)</div>
+          </div>
+        </div>
+        <div class="cb-gift-strip__item">
+          <svg class="cb-gift-strip__icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <div>
+            <div class="cb-gift-strip__label">DELIVERED TO YOUR DOOR</div>
+            <div class="cb-gift-strip__desc">Automatically delivered when you need it. Cancel anytime.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-details">
+      <h1 class="cb-heading">{{ section.settings.heading | default: "HAIRCANDY CORE BUNDLE" }}</h1>
+      <div class="cb-rating">
+        <span class="cb-stars">★★★★★</span>
+        <span class="cb-rating-count">
+          {% assign rating_count = product.metafields.reviews.rating_count.value %}
+          {% if rating_count != blank %}{{ rating_count }} Reviews{% else %}1 Reviews{% endif %}
+        </span>
+      </div>
+      <div class="cb-subtitle">SHAMPOO WHIP | CONDITIONER | KERATIN TREATMENT</div>
+      <div class="cb-description">{{ section.settings.description }}</div>
+      <ul class="cb-bullets">
+        <li>Shampoo whip lathers from only 4ml</li>
+        <li>Paraben free, sulphate and silicone free</li>
+        <li>Delivering every 2 months, automatically recharged</li>
+        <li>Vegan friendly</li>
+        <li>FREE Lip Candy with every order</li>
+      </ul>
+
+      <div class="cb-price-row"
+        data-price-full="{{ variant.price }}"
+        data-price-sub="{{ variant.price | times: 85 | divided_by: 100 }}">
+        <span id="cb-price-main" class="cb-price-main">NZD${{ sub_price }}</span>
+        {% if variant.compare_at_price > variant.price %}
+          {% assign savings = variant.compare_at_price | minus: variant.price | money_without_currency %}
+          <span class="cb-price-save">SAVE NZD${{ savings }}</span>
+        {% endif %}
+      </div>
+
+      <div class="cb-purchase-label">CHOOSE YOUR OPTION:</div>
+      {% if section.settings.show_subscribe_save != false %}
+        <div class="cb-toggle" id="cb-toggle">
+          <div class="cb-toggle__option active" id="cb-subscribe" role="button" tabindex="0">
+            <div class="cb-toggle__option-left">
+              <div class="cb-toggle__radio active" id="cb-radio-sub"></div>
+              <div>
+                <div class="cb-toggle__title">SUBSCRIBE &amp; SAVE 15% <span class="cb-toggle__badge">Most Popular</span></div>
+                <div class="cb-toggle__price"><span id="cb-sub-toggle-price">NZD${{ sub_price }}</span> <span class="cb-toggle__freq">every 2 months</span></div>
+              </div>
+            </div>
+            <div class="cb-toggle__perks">
+              <div>15% off every order</div>
+              <div>FREE Lip Candy (worth $30)</div>
+              <div>Free shipping over $100</div>
+              <div>Pause, skip, cancel anytime</div>
+            </div>
+          </div>
+          <div class="cb-toggle__option" id="cb-onetime" role="button" tabindex="0">
+            <div class="cb-toggle__option-left">
+              <div class="cb-toggle__radio" id="cb-radio-one"></div>
+              <div>
+                <div class="cb-toggle__title">ONE TIME PURCHASE</div>
+                <div class="cb-toggle__price"><span id="cb-one-toggle-price">NZD${{ full_price }}</span></div>
+              </div>
+            </div>
+            <div class="cb-toggle__perks">
+              <div>Standard once-off</div>
+              <div>Shipping calculated at checkout</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% form 'product', product, id: 'CoreBundleProductForm', novalidate: 'novalidate' %}
+        <input type="hidden" name="id" value="{{ variant.id }}">
+        <input type="hidden" name="selling_plan" id="cb-selling-plan-input"
+          value="{{ product.selling_plan_groups.first.selling_plans.first.id }}" disabled
+          data-selling-plan-id="{{ product.selling_plan_groups.first.selling_plans.first.id }}">
+        <div class="cb-atc-row">
+          <div class="cb-qty">
+            <button type="button" class="cb-qty__btn" id="cb-qty-minus">-</button>
+            <input type="number" name="quantity" id="cb-qty-input" value="1" min="1" class="cb-qty__input">
+            <button type="button" class="cb-qty__btn" id="cb-qty-plus">+</button>
+          </div>
+          <button type="submit" name="add" id="cb-atc-btn" class="cb-atc-button"
+            {% if variant.available == false %}disabled{% endif %}>
+            <span id="cb-btn-text">{% if variant.available %}ADD TO CART{% else %}OUT OF STOCK{% endif %}</span>
+          </button>
+        </div>
+      {% endform %}
+      <div class="cb-afterpay">or 4 interest-free payments of NZD $33.50 with <strong>afterpay</strong></div>
+    </div>
+
+  </div>
+</section>
+
+{% comment %} ── Bottom sticky bar ── {% endcomment %}
+<div class="cb-sticky" id="cb-sticky" aria-hidden="true">
+  <img class="cb-sticky__img"
+    src="{{ product.images[0] | image_url: width: 96 }}"
+    alt="{{ product.title | escape }}"
+    width="48" height="48" loading="lazy">
+  <div class="cb-sticky__info">
+    <div class="cb-sticky__name">{{ product.title }}</div>
+    <div class="cb-sticky__sub">Variety Pack</div>
+  </div>
+  <div class="cb-sticky__select-wrap">
+    <div class="cb-sticky__select-inner">
+      <select class="cb-sticky__select" id="cb-sticky-select" aria-label="Choose supply option">
+        {% if product.selling_plan_groups.size > 0 %}
+          {% assign sp = product.selling_plan_groups.first.selling_plans.first %}
+          <option value="sub" data-selling-plan="{{ sp.id }}">{{ sp.name }} (Save 15%)</option>
+        {% endif %}
+        <option value="one">One Time Purchase</option>
+      </select>
+      <div class="cb-sticky__select-price" id="cb-sticky-price">NZD${{ sub_price }} / mo</div>
+    </div>
+  </div>
+  <button class="cb-sticky__btn" id="cb-sticky-btn" type="button"
+    {% if variant.available == false %}disabled{% endif %}>
+    {% if variant.available %}ADD TO CART – NZD${{ sub_price }}/MO{% else %}OUT OF STOCK{% endif %}
+  </button>
+</div>
+
+{{ 'core-bundle.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Core Bundle Main",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "HAIRCANDY CORE BUNDLE" },
+    { "type": "richtext", "id": "description", "label": "Description", "default": "<p>Your all-in-one hair dream team.</p>" },
+    { "type": "checkbox", "id": "show_subscribe_save", "label": "Show Subscribe & Save", "default": true }
+  ],
+  "presets": [{ "name": "Core Bundle Main" }]
+}
+{% endschema %}
