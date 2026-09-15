@@ -16,7 +16,7 @@
 <div role="listitem" class="product_list-item w-dyn-item">
     
                     
-    {% render 'product_item', product: This is the default text value %}
+    {% render 'product_item', product: This %}
     
                   
 </div>
@@ -76,4 +76,13 @@
             "product"
         ]
     }
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product_item', product: This is the default text value %}"
+  to: "{% render 'product_item', product: This %}"
+  position: 1032..1074
+{%- endcomment -%}
